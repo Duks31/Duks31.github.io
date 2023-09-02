@@ -1,4 +1,4 @@
-baseURL = ""
+baseURL = "https://Duks31.github.io/website/"
 languageCode = 'en-us'
 title = 'Ndukwe Chidubem'
 theme = 'hugo-coder'
