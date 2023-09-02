@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Artificial Intelligence on Ndukwe Chidubem</title>
+    <link>https://Duks31.github.io/website/tags/artificial-intelligence/</link>
+    <description>Recent content in Artificial Intelligence on Ndukwe Chidubem</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 11 Aug 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://Duks31.github.io/website/tags/artificial-intelligence/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Understanding Gradient Descent</title>
+      <link>https://Duks31.github.io/website/posts/2023-08-11-understanding-gradient-descent/</link>
+      <pubDate>Fri, 11 Aug 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://Duks31.github.io/website/posts/2023-08-11-understanding-gradient-descent/</guid>
+      <description>Introduction
+Gradient Descent (GD) is a first order optimization algorithms that is used to find the minimum of a given function, it is commonly used in training machine learning and deep learning algorithms.
+In machine learning after you train a model you would like to check how the model performed either by checking the accuracy or any other measure that suites the problem, let’s say you generate a **cost function **which is a measure of how wrong the model is finding a relationship between the input and the output, this is where Gradient Descent comes in, the gradient descent algorithm will optimize the cost function, it will give the minimum value of possible error of your model.</description>
+    </item>
+    
+    <item>
+      <title>9 Different levels of Measuring Distance</title>
+      <link>https://Duks31.github.io/website/posts/2023-07-25-9-levels-of-measuring-distance/</link>
+      <pubDate>Tue, 25 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://Duks31.github.io/website/posts/2023-07-25-9-levels-of-measuring-distance/</guid>
+      <description>In our daily lives, we encounter the concept of distance in various forms and contexts. Whether we’re navigating through a busy city, exploring the vastness of the universe, or even contemplating the emotional space between ourselves and others, distance plays a fundamental role in shaping our experiences and understanding of the world. But did you know that distance can be perceived and measured in numerous ways, each offering unique insights into the relationships between objects, ideas, and individuals?</description>
+    </item>
+    
+    <item>
+      <title>Understanding Confusion Matrix</title>
+      <link>https://Duks31.github.io/website/posts/2022-10-16-understanding-confusion-matrix/</link>
+      <pubDate>Sun, 16 Oct 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://Duks31.github.io/website/posts/2022-10-16-understanding-confusion-matrix/</guid>
+      <description>If you have ever made a classification model, you have probably found out the quality of your model by maybe checking the accuracy. Well that good but check this out.
+Imagine you have a model that predict cats when it is trained on 1000 features containing 990 cats and 10 dogs, if we are to calculate the accuracy it will be 99%. But here the model completely misclassifies all of the apples.</description>
+    </item>
+    
+    <item>
+      <title>Why Deep Learning?</title>
+      <link>https://Duks31.github.io/website/posts/2022-10-12-why-deep-learning/</link>
+      <pubDate>Wed, 12 Oct 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://Duks31.github.io/website/posts/2022-10-12-why-deep-learning/</guid>
+      <description>In the Recent Trends in the Field of Artificial Intelligence, DeepLearning has gained more popularity in Reasearch over the years compared to Traditional Machine Learning.
+The Question is Why? If you would like to know continue Reading 🙂
+Firstly, Deep learning is a subset of machine learning which provides the ability to machine to perform human-like tasks without human involvement. It provides the ability to an AI agent to mimic the human brain.</description>
+    </item>
+    
+    <item>
+      <title>An Honest AI /Machine Learning Journey</title>
+      <link>https://Duks31.github.io/website/posts/2020-08-20-an-honest-ml-journey/</link>
+      <pubDate>Thu, 20 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://Duks31.github.io/website/posts/2020-08-20-an-honest-ml-journey/</guid>
+      <description>In this article I would like to share my journey in the field of Machine Learning and Artificial Intelligence, it will be useful for you if you want to start a career in Machine Learning / AI; the Do’s and Don’ts 🙂 at least from my experience.
+I will be kinda brief 🤞…
+I learnt Python in 2020, as a geek i get fascinated with anything tech and I always loved programming.</description>
+    </item>
+    
+  </channel>
+</rss>
