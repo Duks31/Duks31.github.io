@@ -9,7 +9,7 @@ tags:
   - Career
 ---
 
-![anhonestjourney](/images/anhonestjourney.jpg)
+![anhonestjourney](./images/anhonestjourney.jpg)
 
 In this article I would like to share my journey in the field of Machine Learning and Artificial Intelligence, it will be useful for you if you want to start a career in Machine Learning / AI; the Do’s and Don’ts 🙂 at least from my experience.
 
