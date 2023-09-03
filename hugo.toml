@@ -184,3 +184,5 @@ url = "contact/"
 
 [params.meta]
 favicon = true
+
+canonifyURLs = true
