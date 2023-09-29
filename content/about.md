@@ -10,5 +10,7 @@ I interned at Hamoye AI and was exposed to many new technologies like GCP, Azure
 
 I also use [Kaggle](https://www.kaggle.com/chidubemndukwe) to practice my machine learning skills. 
 
-I also have skills in Python, SQL, Machine, Learning, MATLAB, Github, Microsoft Office Suite, Leadership, OpenCV, SQL, Data Analysis.
+I play chess ♟️ :) 
+
+I also have skills in Python, SQL, Machine, Learning, MATLAB, Github, Leadership, OpenCV, SQL, Data Analysis.
 
