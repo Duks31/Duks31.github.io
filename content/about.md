@@ -12,5 +12,5 @@ I also use [Kaggle](https://www.kaggle.com/chidubemndukwe) to practice my machin
 
 I play chess ♟️ :) 
 
-I also have skills in Python, SQL, Machine, Learning, MATLAB, Github, Leadership, OpenCV, SQL, Data Analysis.
+I also have skills in Python, SQL, MachineLearning, MATLAB, Github, Leadership, OpenCV, SQL, Data Analysis.
 
