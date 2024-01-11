@@ -12,3 +12,4 @@ I also use [Kaggle](https://www.kaggle.com/chidubemndukwe) to practice my machin
 
 I also have skills in Python, SQL, Machine, Learning, MATLAB, Github, Microsoft Office Suite, Leadership, OpenCV, SQL, Data Analysis.
 
+You can subscribe to my newsletter [here](https://ncep.substack.com/subscribe).
