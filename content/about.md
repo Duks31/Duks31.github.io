@@ -14,4 +14,4 @@ I play chess ♟️ :)
 
 I also have skills in Python, SQL, MachineLearning, MATLAB, Github, Leadership, OpenCV, SQL, Data Analysis.
 
-You can subscribe to my newsletter [here](https://ncep.substack.com/subscribe).
+You can subscribe to my SubStack newsletter [here](https://ncep.substack.com/subscribe).
