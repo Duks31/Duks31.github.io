@@ -9,7 +9,7 @@ tags:
 
 ![why-deep-learning](/images/whydl.jpg)
 
-In the Recent Trends in the Field of Artificial Intelligence, DeepLearning has gained more popularity in Reasearch over the years compared to Traditional Machine Learning.
+In the Recent Trends in the Field of Artificial Intelligence (AI), DeepLearning has gained more popularity in Reasearch over the years compared to Traditional Machine Learning.
 
 ![dltrend](/images/dl-trend.jpg)
 
