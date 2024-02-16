@@ -13,7 +13,7 @@ Check out the project on [github](https://github.com/Duks31/news-harbor)
 
 News Harbor is a news platform that detects the sentiment of News articles. check out this [demo](https://drive.google.com/file/d/1FEtVAbNGc0cyHIeUU4fDTx3miG0SN6r4/view?usp=sharing)
 
-This is how the project workflow is: ![workflow](/images/newsharbor_workflow.png)
+![workflow](/images/newsharbor_workflow.png)
 
 Sentiment analysis in NLP is the process of determining the emotion or tone behind a piece of text, classifying it as positive, negative, or neutral. It's used to gauge public opinion, feedback, or reactions. Techniques include lexicon-based methods using sentiment dictionaries and machine learning models trained on labeled data. In this project it was used to classifiy the news articles. 
 
