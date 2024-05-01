@@ -161,7 +161,7 @@ url = "https://www.kaggle.com/chidubemndukwe"
 
 [[params.social]]
 name = "substack"
-icon = "fa fa-2x fa-newsletter"
+icon = "fa fa-2x fa-newspaper"
 weight = 6
 url = "https://ncep.substack.com/"
 
