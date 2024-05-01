@@ -159,6 +159,12 @@ icon = "fa fa-2x fa-kaggle"
 weight = 6
 url = "https://www.kaggle.com/chidubemndukwe"
 
+[[params.social]]
+name = "substack"
+icon = "fa fa-2x fa-envelope"
+weight = 6
+url = "https://ncep.substack.com/"
+
 [languages.en]
 languageName = ":uk:"
 
