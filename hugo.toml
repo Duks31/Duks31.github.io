@@ -138,25 +138,25 @@ url = "https://github.com/Duks31/"
 [[params.social]]
 name = "Twitter"
 icon = "fa fa-2x fa-twitter"
-weight = 3
+weight = 2
 url = "https://twitter.com/ChidubemNdukwe/"
 
 [[params.social]]
 name = "LinkedIn"
 icon = "fa fa-2x fa-linkedin"
-weight = 4
+weight = 3
 url = "https://www.linkedin.com/in/chidubem-ndukwe-b8778920a/"
 
 [[params.social]]
 name = "Medium"
 icon = "fa fa-2x fa-medium"
-weight = 5
+weight = 4
 url = "https://medium.com/@chidubemndukwe"
 
 [[params.social]]
 name = "Kaggle"
 icon = "fa fa-2x fa-kaggle"
-weight = 6
+weight = 5
 url = "https://www.kaggle.com/chidubemndukwe"
 
 [[params.social]]
