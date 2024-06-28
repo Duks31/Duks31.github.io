@@ -7,6 +7,7 @@ date: 2024-04-23
 
 Check out the project on [github](https://github.com/Duks31/dishdash)
 
+
 ## Demo
 
 <div style= "overflow-x : auto;">
@@ -16,6 +17,8 @@ Check out the project on [github](https://github.com/Duks31/dishdash)
 | ![Demo_1](/images/dishdash_demo_1.png) | ![Demo_2](/images/dishdash_demo_2.png) | ![Demo_3](/images/dishdash_demo_3.png) | ![Demo_4](/images/dishdash_demo_4.png) | ![Demo_5](/images/dishdash_demo_5.png) | ![Demo_6](/images/dishdash_demo_6.png) | ![Demo_7](/images/dishdash_demo_7.png) | ![Demo_8](/images/dishdash_demo_8.png) | ![Demo_9](/images/dishdash_demo_9.png) | ![Demo_10](/images/dishdash_demo_10.png) |
 
 </div>
+
+Check out the video demo on my [linkedIn post](https://www.linkedin.com/posts/chidubem-ndukwe-b8778920a_android-flutter-firebase-activity-7189488150635765760-8N2T?utm_source=share&utm_medium=member_desktop)
 
 ## Features
 
