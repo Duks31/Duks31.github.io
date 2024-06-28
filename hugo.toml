@@ -129,12 +129,6 @@ icon = "fa fa-2x fa-github"
 weight = 1
 url = "https://github.com/Duks31/"
 
-#[[params.social]]
-#name = "Gitlab"
-#icon = "fa fa-2x fa-gitlab"
-#weight = 2
-#url = "https://gitlab.com/johndoe/"
-
 [[params.social]]
 name = "Twitter"
 icon = "fa fa-2x fa-twitter"
@@ -152,12 +146,6 @@ name = "Medium"
 icon = "fa fa-2x fa-medium"
 weight = 4
 url = "https://medium.com/@chidubemndukwe"
-
-[[params.social]]
-name = "Kaggle"
-icon = "fa fa-2x fa-kaggle"
-weight = 5
-url = "https://www.kaggle.com/chidubemndukwe"
 
 [[params.social]]
 name = "substack"
