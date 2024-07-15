@@ -2,7 +2,7 @@
 title: "Churn Prediction"
 excerpt: "Churn predictor using machine learning and powerBI visualization"
 collection: portfolio
-date: 2024-04-23
+date: 2024-07-15
 ---
 
 Check out the project on [github](https://github.com/Duks31/churn_prediction)
@@ -11,9 +11,7 @@ Check out the project on [github](https://github.com/Duks31/churn_prediction)
 
 Churn prediction is the process of identifying customers who are likely to stop using a company's products or services. It is particularly important in subscription-based businesses, telecommunications, banking, and other industries where retaining customers is crucial for long-term success.
 
-<div style="text-align: center;">
-  <img src="/images/excali_churn.png" alt="Project workflow">
-</div>
+![Project workflow](/images/excali_churn.png)
 
 ## Project Overview
 
