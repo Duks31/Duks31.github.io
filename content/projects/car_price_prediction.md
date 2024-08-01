@@ -1,15 +1,9 @@
 ---
-title: 'Machine learning systems'
+title: "Car Price Prediction"
+excerpt: "Building machine learning systems"
+collection: portfolio
 date: 2024-08-01
-permalink: /posts/2024/03/mlops/
-tags:
-  - Artificial Intelligence
-  - Machine Learning
-  - MLOps
-  - Data Science
-  - Docker
 ---
-
 
 ## ML: From Data scraping to Deployment
 
