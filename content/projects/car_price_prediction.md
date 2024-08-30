@@ -621,7 +621,7 @@ This configuration file sets up two programs to be managed by supervisord: a Fas
 
 So, with that setup I the created the Dockerfile :
 
-```yaml
+```Bash
     # syntax=docker/dockerfile:1
     
     ARG PYTHON_VERSION=3.11.9
