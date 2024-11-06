@@ -5,7 +5,9 @@ draft: False
 ---
 
 Briefly,  
-I am an undergraduate in Mechatronics, I have passion for Robotics with Artificial Intelligence. I am always working on something, big or small. Learning Every day is a hobby.
+I am an undergraduate in Mechatronics, I have passion for Robotics with Artificial Intelligence. I am always working on something, big or small. Learning Every day is a hobby. 
+
+Engineering is about solving problems
 
 Personal website: [here](https://duks31.github.io/)  
 GitHub: [here](https://github.com/Duks31/)  
