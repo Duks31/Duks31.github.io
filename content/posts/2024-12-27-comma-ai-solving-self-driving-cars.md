@@ -1,6 +1,6 @@
 ---
 title: 'Comma.ai — Solving Self driving cars'
-date: 2024-04-29
+date: 2024-12-27
 permalink: /posts/2024/03/Commaai Solving Self driving cars/
 tags:
   - Artificial Intelligence
