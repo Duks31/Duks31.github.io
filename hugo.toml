@@ -150,7 +150,7 @@ url = "https://medium.com/@chidubemndukwe"
 [[params.social]]
 name = "substack"
 icon = "fa fa-2x fa-newspaper"
-weight = 6
+weight = 5
 url = "https://ncep.substack.com/"
 
 [languages.en]
