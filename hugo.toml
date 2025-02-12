@@ -148,8 +148,8 @@ weight = 4
 url = "https://medium.com/@chidubemndukwe"
 
 [[params.social]]
-name = "substack"
-icon = "fa fa-2x fa-newspaper"
+name = "Substack"
+icon = "fa fa-2x fa-newspaper-o"
 weight = 5
 url = "https://ncep.substack.com/"
 
