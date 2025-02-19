@@ -8,8 +8,6 @@ tags:
   - comma ai
 ---
 
-## Comma.ai — Solving Self driving cars
-
 *The bitter lesson in ML is that we must make methods that learn how to discover, not contain what we have discovered*
 
 ![source: [comma ai](https://comma.ai/)](https://cdn-images-1.medium.com/max/2000/0*v7SCZDNkIuoyS2i9.jpeg)

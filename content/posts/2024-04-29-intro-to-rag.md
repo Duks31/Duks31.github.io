@@ -7,8 +7,6 @@ tags:
   - RAG
 ---
 
-## Building RAG applications …pt1
-
 Brief Introduction to RAG (Retrieval Augmented Generation)
 
 Imagine this, you are the owner of a company, and your company has a customer service department, the customer service department is responsible for all customer request and complaint about the product the company has to offer and it even goes beyond that, the customer service department ensures that customers have a seamless experience with the company’s products or services from the moment they inquire about them to after-sales support. The team handles inquiries, resolves issues, provides product information, offers technical support, and gathers feedback to continually improve the customer experience. They serve as the bridge between the customers and the company, fostering trust, loyalty, and satisfaction. To ensure efficiency and effectiveness, the customer service department utilizes various tools and technologies, implements best practices, and continuously trains its staff to deliver exceptional service.
