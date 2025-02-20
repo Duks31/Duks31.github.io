@@ -1,5 +1,5 @@
 ---
-title: 'Monolith By TikTok (0ByteDance)'
+title: 'Monolith By TikTok (ByteDance)'
 date: 2025-02-19
 permalink: /posts/2025/02/Monolith By TikTok ByteDance/
 tags:
