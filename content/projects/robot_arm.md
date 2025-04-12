@@ -4,10 +4,10 @@ excerpt: "Robot Arm using ROS2 and Fusion360"
 collection: portfolio
 date: 2025-01-24
 ---
-
-![Robot Arm](images/robot_arm.png)
-
 # ROS2 Robotic Arm Project
+
+![RobotArm](/images/robot_arm.png)
+
 
 This project involves the development of a robotic arm using ROS2 (Robot Operating System 2). The robotic arm is simulated in Gazebo, controlled through ROS2 nodes, and equipped with various configuration and control capabilities.
 
