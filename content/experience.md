@@ -4,6 +4,16 @@ date: 2025-02-15T13:46:46+01:00
 draft: False
 ---
 
+<!-- ### Reservoir Performance Intern  
+**SLB** | *Mar 2025 – present*  
+**Location:** Nigeria  
+
+- Coiled tubing (TLM) Intern, maintenance of oil field equipments for coiled tubing and pressure pumping services  
+
+**Skills:** 
+
+--- -->
+
 
 ### Engineering Intern (Information Technology)  
 **Seplat Energy Plc** | *Aug 2024 – Sep 2024 (2 months)*  

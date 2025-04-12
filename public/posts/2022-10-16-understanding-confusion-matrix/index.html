@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>
+  Understanding Confusion Matrix · Ndukwe Chidubem
+</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="Ndukwe Chidubem">
+<meta name="description" content="If you have ever made a classification model, you have probably found out the quality of your model by maybe checking the accuracy. Well that good but check this out.
+Imagine you have a model that predict cats when it is trained on 1000 features containing 990 cats and 10 dogs, if we are to calculate the accuracy it will be 99%. But here the model completely misclassifies all of the apples.">
+<meta name="keywords" content="blog,developer,personal">
+
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Understanding Confusion Matrix"/>
+<meta name="twitter:description" content="If you have ever made a classification model, you have probably found out the quality of your model by maybe checking the accuracy. Well that good but check this out.
+Imagine you have a model that predict cats when it is trained on 1000 features containing 990 cats and 10 dogs, if we are to calculate the accuracy it will be 99%. But here the model completely misclassifies all of the apples."/>
+
+<meta property="og:title" content="Understanding Confusion Matrix" />
+<meta property="og:description" content="If you have ever made a classification model, you have probably found out the quality of your model by maybe checking the accuracy. Well that good but check this out.
+Imagine you have a model that predict cats when it is trained on 1000 features containing 990 cats and 10 dogs, if we are to calculate the accuracy it will be 99%. But here the model completely misclassifies all of the apples." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://Duks31.github.io/posts/2022-10-16-understanding-confusion-matrix/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-10-16T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-10-16T00:00:00+00:00" />
+
+
+
+
+
+<link rel="canonical" href="https://Duks31.github.io/posts/2022-10-16-understanding-confusion-matrix/">
+
+
+<link rel="preload" href="/fonts/forkawesome-webfont.woff2?v=1.2.0" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/css/coder.min.135e22c97ff685fe983fc60048e309ced8f00d8d38f536aa67dba8a13a03dfa4.css" integrity="sha256-E14iyX/2hf6YP8YASOMJztjwDY049TaqZ9uooToD36Q=" crossorigin="anonymous" media="screen" />
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="/css/coder-dark.min.a00e6364bacbc8266ad1cc81230774a1397198f8cfb7bcba29b7d6fcb54ce57f.css" integrity="sha256-oA5jZLrLyCZq0cyBIwd0oTlxmPjPt7y6KbfW/LVM5X8=" crossorigin="anonymous" media="screen" />
+  
+
+
+
+ 
+
+
+
+
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg" sizes="any">
+<link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+	
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+
+
+
+
+
+
+
+</head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-dark">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="/">
+      Ndukwe Chidubem
+    </a>
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/about/">About</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/posts/">Blog</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/projects/">Projects</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/experience/">Experience</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/contact/">Contact me</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">
+            <a class="title-link" href="https://Duks31.github.io/posts/2022-10-16-understanding-confusion-matrix/">
+              Understanding Confusion Matrix
+            </a>
+          </h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa fa-calendar" aria-hidden="true"></i>
+              <time datetime="2022-10-16T00:00:00Z">
+                October 16, 2022
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fa fa-clock-o" aria-hidden="true"></i>
+              4-minute read
+            </span>
+          </div>
+          
+          
+          <div class="tags">
+  <i class="fa fa-tag" aria-hidden="true"></i>
+    <span class="tag">
+      <a href="/tags/artificial-intelligence/">Artificial Intelligence</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/data-science/">Data Science</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/machine-learning/">Machine Learning</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/confusion-matrix/">Confusion Matrix</a>
+    </span></div>
+
+        </div>
+      </header>
+
+      <div class="post-content">
+        
+        <p><img src="/images/confusionmatrix.jpg" alt="confusionmatrix"></p>
+<p>If you have ever made a classification model, you have probably found out the quality of your model by maybe checking the accuracy. Well that good but check this out.</p>
+<p>Imagine you have a model that predict cats when it is trained on 1000 features containing 990 cats and 10 dogs, if we are to calculate the accuracy it will be 99%. But here the model completely misclassifies all of the apples. So sometimes we need better metrics to evaluate the overall quality and performance of our model.</p>
+<p>WHAT IS CONFUSION MATRIX? 🤔</p>
+<p>Confusion Matrix also known as Error Matrix is a tool used to give the Best Interpretation of a classification algorithm, it shows vividly the kind of error the model is making and on what class it made the error.</p>
+<p>Fun Fact: It tells us where the model is getting confused 😂.</p>
+<p><img src="https://cdn-images-1.medium.com/max/2000/1*MH-PvfVPjgecqe14egeDOw.png" alt="image by author :)"></p>
+<p>Ok so, above is a typical 2 x 2 Confusion Matrix, on the right, we have the expected classes also known as the actual classes that the model is supposed to predict, on the top we have the predicted values that the model gave us, it is more like the models results.</p>
+<p>In reality you will be using libraries already made for getting the confusion matrix. Confusion matrix can be of any size it just depends on the number of classes (It is an N x N Matrix). But let&rsquo;s go through a simple 2 x 2 confusion Matrix in order to understand how to read it and know how it works.</p>
+<p>Imagine in a classification problem of predicting class A we have:</p>
+<p>100 samples | Class A has 62 | Class B has 38.</p>
+<p>Model predicts 53 correctly predicted as class A</p>
+<p>Model predicts 19 correctly predicted as class B.</p>
+<p>If we are to fill in the Data that was given to us in a confusion Matrix, it will look something like this 👇</p>
+<p><img src="https://cdn-images-1.medium.com/max/2000/1*fSl6VP_J0a0yH1eY7J8M2A.png" alt="image by author :)"></p>
+<p>Ok so how did i fill this up.</p>
+<p>First of all, the total Number in the Confusion Matrix (53 + 9 + 19 + 19) should give me the number of sample (100).</p>
+<p>Starting from the first cell — How many samples were predicted correctly as class A that were expected/actually class A? — 53</p>
+<p>Second cell — How many classes were incorrectly predicted as class B that were meant to be predicted as class A? — We already know that class A has 62 samples therefore it will be -&gt; 62–53 = 9</p>
+<p>Fourth cell — How many samples were predicted correctly as class that were expected/actually class B? — 19</p>
+<p>Third cell — How many classes were incorrectly predicted as class A that were meant to be predicted as class B? — We already know that class B has 38 samples therefore it will be -&gt; 38–19 = 19</p>
+<p>You may want to take your time on the whole process again for better understanding 🙂.</p>
+<p>Ok, so this is a binary classification problem, we basically want a single class from the 2 classes. So, we use the term **POSITIVE **to refer to the outcomes we want to detect and **NEGATIVE **to everything else.</p>
+<p>Going back to our Confusion Matrix -&gt;</p>
+<p><img src="https://cdn-images-1.medium.com/max/2000/1*6QwIVM4-P4fR3O2CNJeH4Q.png" alt="image by author :)"></p>
+<p>You can see what going on now,</p>
+<p><strong>53</strong> samples that we** EXPECTED** to be **POSITIVE <strong>were</strong> PREDICTED POSITIVE — **making them the <strong>TRUE POSITIVE (TP)</strong></p>
+<p><strong>9</strong> samples that we <strong>EXPECTED</strong> to be <strong>POSITIVE</strong> were **PREDICTED NEGATIVE **— making them the <strong>FALSE NEGATIVE (FN)</strong></p>
+<p><strong>19</strong> samples (on the left) that we <strong>EXPECTED</strong> to be <strong>NEGATIVE</strong> were <strong>PREDICTED POSITIVE</strong> — making the <strong>FALSE POSITIVE (FP)</strong></p>
+<p><strong>19</strong> samples (on the right) that we** EXPECTED** to be** NEGATIVE** were **PREDICTED NEGATIVE **— making them the <strong>TRUE NEGATIVE (TN)</strong></p>
+<p><img src="https://cdn-images-1.medium.com/max/2000/1*vwfDM6M_sUDeFNIdhtD0LQ.png" alt=""></p>
+<p>YAY!! 🤩…….. So now we have these values we can calculate the PRECISION and RECALL…. In short, Precision can be seen as QUALITY and Recall can be seen as a measure of QUANTITY.</p>
+<blockquote>
+<p><a href="https://en.wikipedia.org/wiki/Precision_and_recall"  class="external-link" target="_blank" rel="noopener"><strong>Precision</strong> (also called positive predictive value) is the fraction of relevant instances among the retrieved instances, while <strong>Recall</strong> (also known as sensitivity) is the fraction of relevant instances that were retrieved.</a></p>
+</blockquote>
+<p><img src="https://cdn-images-1.medium.com/max/2000/1*K2B6uACrv6tx2o1VHahb4g.png" alt=""></p>
+<p><img src="https://cdn-images-1.medium.com/max/2000/1*j11F-nzqXZadyUhO9LtRLQ.png" alt=""></p>
+<p>So with these formulars we can calculate the precision and recall of our model. But there is a Tradeoff between them☹️. <a href="https://datascience-george.medium.com/the-precision-recall-trade-off-aa295faba140"  class="external-link" target="_blank" rel="noopener">The Idea behind the precision-recall trade-off is that when a person changes the threshold for determining if a class is positive or negative it will tilt the scales. What I mean by that is that it will cause precision to increase and recall decreasing, or vice versa.</a></p>
+<p>Luckily, we can combine the both of them and that is called **F1-Score. **The F1-Score is the harmonic mean of the Precision and the recall.</p>
+<p><img src="https://cdn-images-1.medium.com/max/2000/1*aJXtrtjJi51Kfbr3TBbtVw.png" alt=""></p>
+<p>So far you should have all you need to be able to understand a confusion matrix. The main Job of the confusion matrix is to zoom into the model and point out the mistakes that the model is making. This gives us the best strategy we could use to improve the model.</p>
+<p>Thats pretty much it. THANKS for making it this far…. ✌</p>
+
+      </div>
+
+
+      <footer>
+        
+
+
+        
+        
+        
+        
+        
+      </footer>
+    </article>
+
+    
+  </section>
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+      2020 -
+    
+    2025
+     Ndukwe Chidubem 
+    ·
+    
+    Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/" target="_blank" rel="noopener">Coder</a>.
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/js/coder.min.6ae284be93d2d19dad1f02b0039508d9aab3180a12a06dcc71b0b0ef7825a317.js" integrity="sha256-auKEvpPS0Z2tHwKwA5UI2aqzGAoSoG3McbCw73gloxc="></script>
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+
+</html>

@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>
+  Comma.ai — Solving Self driving cars · Ndukwe Chidubem
+</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="Ndukwe Chidubem">
+<meta name="description" content="The bitter lesson in ML is that we must make methods that learn how to discover, not contain what we have discovered
+A couple of years ago, the idea of self-driving cars was primarily focused on the use of multiple sensors like LIDAR, radar, ultrasonic sensors, and cameras. These sensors were mounted on custom-made vehicles or heavily modified production cars to achieve full autonomous functionality. The combination of these sensors enabled the vehicles to detect obstacles, map their surroundings in real time, and make complex driving decisions.">
+<meta name="keywords" content="blog,developer,personal">
+
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Comma.ai — Solving Self driving cars"/>
+<meta name="twitter:description" content="The bitter lesson in ML is that we must make methods that learn how to discover, not contain what we have discovered
+A couple of years ago, the idea of self-driving cars was primarily focused on the use of multiple sensors like LIDAR, radar, ultrasonic sensors, and cameras. These sensors were mounted on custom-made vehicles or heavily modified production cars to achieve full autonomous functionality. The combination of these sensors enabled the vehicles to detect obstacles, map their surroundings in real time, and make complex driving decisions."/>
+
+<meta property="og:title" content="Comma.ai — Solving Self driving cars" />
+<meta property="og:description" content="The bitter lesson in ML is that we must make methods that learn how to discover, not contain what we have discovered
+A couple of years ago, the idea of self-driving cars was primarily focused on the use of multiple sensors like LIDAR, radar, ultrasonic sensors, and cameras. These sensors were mounted on custom-made vehicles or heavily modified production cars to achieve full autonomous functionality. The combination of these sensors enabled the vehicles to detect obstacles, map their surroundings in real time, and make complex driving decisions." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://Duks31.github.io/posts/2024-12-27-comma-ai-solving-self-driving-cars/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2024-12-27T00:00:00+00:00" />
+<meta property="article:modified_time" content="2024-12-27T00:00:00+00:00" />
+
+
+
+
+
+<link rel="canonical" href="https://Duks31.github.io/posts/2024-12-27-comma-ai-solving-self-driving-cars/">
+
+
+<link rel="preload" href="/fonts/forkawesome-webfont.woff2?v=1.2.0" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/css/coder.min.135e22c97ff685fe983fc60048e309ced8f00d8d38f536aa67dba8a13a03dfa4.css" integrity="sha256-E14iyX/2hf6YP8YASOMJztjwDY049TaqZ9uooToD36Q=" crossorigin="anonymous" media="screen" />
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="/css/coder-dark.min.a00e6364bacbc8266ad1cc81230774a1397198f8cfb7bcba29b7d6fcb54ce57f.css" integrity="sha256-oA5jZLrLyCZq0cyBIwd0oTlxmPjPt7y6KbfW/LVM5X8=" crossorigin="anonymous" media="screen" />
+  
+
+
+
+ 
+
+
+
+
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg" sizes="any">
+<link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+	
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+
+
+
+
+
+
+
+</head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-dark">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="/">
+      Ndukwe Chidubem
+    </a>
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/about/">About</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/posts/">Blog</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/projects/">Projects</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/experience/">Experience</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/contact/">Contact me</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">
+            <a class="title-link" href="https://Duks31.github.io/posts/2024-12-27-comma-ai-solving-self-driving-cars/">
+              Comma.ai — Solving Self driving cars
+            </a>
+          </h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa fa-calendar" aria-hidden="true"></i>
+              <time datetime="2024-12-27T00:00:00Z">
+                December 27, 2024
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fa fa-clock-o" aria-hidden="true"></i>
+              8-minute read
+            </span>
+          </div>
+          
+          
+          <div class="tags">
+  <i class="fa fa-tag" aria-hidden="true"></i>
+    <span class="tag">
+      <a href="/tags/artificial-intelligence/">Artificial Intelligence</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/self-driving-cars/">self driving cars</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/comma-ai/">comma ai</a>
+    </span></div>
+
+        </div>
+      </header>
+
+      <div class="post-content">
+        
+        <p><em>The bitter lesson in ML is that we must make methods that learn how to discover, not contain what we have discovered</em></p>
+<p><img src="https://cdn-images-1.medium.com/max/2000/0*v7SCZDNkIuoyS2i9.jpeg" alt="source: comma ai"></p>
+<p>A couple of years ago, the idea of self-driving cars was primarily focused on the use of multiple sensors like LIDAR, radar, ultrasonic sensors, and cameras. These sensors were mounted on custom-made vehicles or heavily modified production cars to achieve full autonomous functionality. The combination of these sensors enabled the vehicles to detect obstacles, map their surroundings in real time, and make complex driving decisions.</p>
+<p>However, recent advancements in the field have shifted towards refining sensor fusion technologies and optimizing AI algorithms to reduce reliance on expensive hardware like LIDAR. Companies like <a href="https://www.tesla.com/"  class="external-link" target="_blank" rel="noopener">Tesla</a>, for example, have been advocating for vision-based approaches that primarily rely on cameras and neural networks to achieve similar outcomes. <a href="https://comma.ai/"  class="external-link" target="_blank" rel="noopener">Comma.ai</a> on the other hand does something I find very interesting, using End-to-End Machine learning to solve self-driving cars.</p>
+<p>Comma.ai’s heavy reliance on machine learning means its systems are designed to learn and adapt from real-world driving behavior. By collecting data from users’ vehicles, the company continuously improves its models, allowing for:</p>
+<ul>
+<li>
+<p>Better edge-case handling (uncommon scenarios).</p>
+</li>
+<li>
+<p>Adaptive driving styles that match local norms.</p>
+</li>
+<li>
+<p>A gradual progression toward higher levels of autonomy.</p>
+</li>
+</ul>
+<p>The task itself is extremely difficult, and I like the bold step they are taking to solve it.</p>
+<p>The company was founded in 2017, by <a href="https://en.wikipedia.org/wiki/George_Hotz"  class="external-link" target="_blank" rel="noopener">George Hotz</a>, it is <a href="https://github.com/commaai"  class="external-link" target="_blank" rel="noopener">opensource</a>, the idea here was to <strong>Build a superhuman driving agent</strong> by using a very concise plan</p>
+<ul>
+<li>
+<p>Get the data</p>
+</li>
+<li>
+<p>Own the Network</p>
+</li>
+<li>
+<p>Win self-driving cars</p>
+</li>
+</ul>
+<p>While the vision of Comma.ai is bold and ambitious, it’s also grounded in practicality. The company’s <strong>three-step plan</strong> — “Get the data, Own the network, Win self-driving cars” — encapsulates their approach to solving one of the most challenging problems in AI and robotics, yes, the company is a robotics company self-driving is just one of the many problems they will solve.</p>
+<ol>
+<li><strong>Get the Data</strong></li>
+</ol>
+<ul>
+<li>
+<p>Comma.ai recognizes that high-quality data is the backbone of any machine learning-based system. By enabling everyday drivers to use their hardware kits and contribute driving data through platforms like openpilot, they’ve created a scalable and cost-effective way to train their neural networks.</p>
+</li>
+<li>
+<p>Unlike larger companies that rely on custom-built autonomous vehicles to collect data, Comma.ai leverages real-world driving scenarios from a wide array of vehicles and drivers, making their dataset diverse and adaptable.</p>
+</li>
+</ul>
+<p><strong>2. Own the Network</strong></p>
+<ul>
+<li>Directly quoting from their <a href="https://blog.comma.ai"  class="external-link" target="_blank" rel="noopener">blog</a>, “Ownership of the network, and being able to push code to real users, is how we are going to win. We are closing the reinforcement learning loop on a grand scale, and this is what will push our model to superhuman.”</li>
+</ul>
+<p><strong>3. Win Self-Driving Cars</strong></p>
+<ul>
+<li>
+<p>Comma.ai’s ultimate goal is to create a <strong>superhuman driving agent</strong> — a system that not only matches but surpasses human driving capabilities, probably level 5 autonomy.</p>
+</li>
+<li>
+<p>By focusing on end-to-end machine learning, where raw sensor inputs are directly mapped to driving actions, the company aims to bypass the complexities of traditional rule-based systems and unlock a more fluid, adaptable driving experience.</p>
+</li>
+</ul>
+<h2 id="challenges-along-the-way">
+  Challenges Along the Way
+  <a class="heading-link" href="#challenges-along-the-way">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>From my perspective, the challenges that comma.ai would face on the road to fully autonomous vehicles are:</p>
+<ul>
+<li>
+<p><strong>Edge Cases</strong>: Handling rare or extreme scenarios, such as unpredictable pedestrian behavior or harsh weather conditions, remains a major hurdle, although they claimed that the models can generalize by geolocation.</p>
+</li>
+<li>
+<p><strong>Regulation</strong>: Convincing regulators to approve autonomous systems is as important as building the technology itself, these seems not to be an issue, hopefully, when the model becomes close to perfect.</p>
+</li>
+<li>
+<p><strong>Market Competition</strong>: Larger companies like Tesla, Waymo, and Cruise have significantly more resources and funding, creating fierce competition.</p>
+</li>
+</ul>
+<p>Despite these challenges, Comma.ai’s lightweight, data-driven approach allow them to carve out a unique niche in the industry. By focusing on retrofitting existing cars rather than building fleets from scratch, they position themselves as a company democratizing access to advanced driver-assistance systems (ADAS).</p>
+<h2 id="broader-implications">
+  Broader Implications
+  <a class="heading-link" href="#broader-implications">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>The work Comma.ai is doing raises an important question: Could smaller, nimble companies like this ultimately outperform larger players in certain areas of autonomous driving? While companies like Tesla aim for full self-driving vehicles integrated with their hardware, Comma.ai takes a more modular approach that empowers users to bring autonomy to vehicles they already own, which for me is a better way to it — Directly from their blog, “Building a car is stupid. The current cars are perfectly good at what they do, they just need to, well, drive themselves.”</p>
+<h2 id="a-unique-space-in-the-self-driving-ecosystem">
+  A Unique Space in the Self-Driving Ecosystem
+  <a class="heading-link" href="#a-unique-space-in-the-self-driving-ecosystem">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>Comma.ai’s approach of retrofitting existing cars places it in a unique position within the self-driving car ecosystem. Unlike companies like Waymo or Cruise, which focus on purpose-built autonomous fleets, or Tesla, which integrates autonomy into its proprietary vehicles, Comma.ai empowers everyday car owners to experience advanced driver assistance at a fraction of the cost.</p>
+<p>This modular, adaptable strategy highlights the company’s philosophy: self-driving technology should be accessible, scalable, and affordable. By allowing users to convert their vehicles into semi-autonomous systems, Comma.ai effectively lowers the barrier to entry, democratizing innovation in an industry dominated by big-budget projects.</p>
+<h2 id="open-source-philosophy-a-game-changer">
+  Open-Source Philosophy: A Game-Changer
+  <a class="heading-link" href="#open-source-philosophy-a-game-changer">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>The open-source nature of Comma.ai’s flagship software, <strong>openpilot</strong>, has become a cornerstone of its success. This philosophy not only fosters transparency but also unlocks the potential for:</p>
+<ol>
+<li>
+<p><strong>Global Collaboration</strong>: Developers from around the world can contribute to refining the platform, addressing bugs, and building upon existing features.</p>
+</li>
+<li>
+<p><strong>Rapid Innovation</strong>: With a growing community, the pace of development accelerates, allowing the company to iterate and improve faster than closed-system competitors.</p>
+</li>
+<li>
+<p><strong>Customizability</strong>: Enthusiasts and developers can adapt openpilot to suit specific needs or integrate it into vehicles beyond those officially supported.</p>
+</li>
+</ol>
+<h2 id="vision-beyond-hardware">
+  Vision Beyond Hardware
+  <a class="heading-link" href="#vision-beyond-hardware">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>Comma.ai’s broader vision goes beyond simply selling hardware kits. By creating an ecosystem where data, software, and community-driven innovation converge, the company is positioning itself as a pioneer in <strong>self-driving intelligence</strong>.</p>
+<p>While hardware such as the <strong>Comma Three</strong> kit is critical for deployment, the company’s true strength lies in its ability to gather driving data at scale. Every user contributes to the refinement of their neural networks, making the system smarter over time.</p>
+<h2 id="the-importance-of-end-to-end-machine-learning">
+  The Importance of End-to-End Machine Learning
+  <a class="heading-link" href="#the-importance-of-end-to-end-machine-learning">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>End-to-end machine learning is one of Comma.ai’s most intriguing innovations. Unlike traditional self-driving systems that rely on modular pipelines (where perception, decision-making, and control are handled separately), end-to-end learning processes raw sensor inputs directly into driving actions.</p>
+<p>This approach has several advantages:</p>
+<ol>
+<li>
+<p><strong>Simplicity</strong>: Reducing the complexity of traditional modular systems makes the codebase leaner and easier to maintain.</p>
+</li>
+<li>
+<p><strong>Adaptability</strong>: End-to-end systems learn holistically, enabling them to handle complex, real-world driving scenarios that modular systems might struggle to address.</p>
+</li>
+<li>
+<p><strong>Scalability</strong>: As the system is exposed to more data, it continuously improves without requiring manual tuning of individual modules.</p>
+</li>
+</ol>
+<p>However, this approach is not without its challenges. Training an end-to-end system to reliably handle all driving scenarios is immensely complex and requires vast amounts of data and computational resources. Yet, this bold step shows Comma.ai’s ambition to push the boundaries of what machine learning can achieve in self-driving technology.</p>
+<h2 id="the-future-of-commaai">
+  The Future of Comma.ai
+  <a class="heading-link" href="#the-future-of-commaai">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>While Comma.ai’s primary focus has been self-driving cars, the principles and methodologies they employ — such as <strong>end-to-end machine learning</strong> and <strong>open-source collaboration</strong> — are not limited to autonomous vehicles. These strategies can be applied to tackle broader robotics challenges, enabling the company to expand into other areas of automation and artificial intelligence.</p>
+<h3 id="end-to-end-machine-learning-for-robotics">
+  End-to-End Machine Learning for Robotics
+  <a class="heading-link" href="#end-to-end-machine-learning-for-robotics">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>Comma.ai’s reliance on <strong>end-to-end machine learning</strong> has transformative potential across the robotics field. Many traditional robotics systems rely on modular pipelines, similar to the older approaches in self-driving cars, where perception, planning, and control are handled separately. By contrast, Comma.ai’s approach streamlines these processes into a unified learning system.</p>
+<p>This method could address key challenges in robotics, such as:</p>
+<ul>
+<li>
+<p><strong>Complex Manipulation</strong>: Teaching robotic arms to handle intricate tasks in manufacturing or surgery.</p>
+</li>
+<li>
+<p><strong>Dynamic Environments</strong>: Training robots to navigate and adapt to unpredictable environments, like warehouses, disaster zones, or even homes.</p>
+</li>
+<li>
+<p><strong>Generalization</strong>: Creating systems that can learn and adapt to entirely new tasks without extensive reprogramming.</p>
+</li>
+</ul>
+<h3 id="the-vision-robotics-as-a-learning-problem">
+  The Vision: Robotics as a Learning Problem
+  <a class="heading-link" href="#the-vision-robotics-as-a-learning-problem">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>George Hotz and the Comma.ai team view robotics not as a hardware problem, but as a <strong>learning problem</strong>. Their philosophy is that with the right data, network architecture, and optimization strategies, any robotic system can achieve superhuman performance. Just as they aim to build a superhuman driving agent, they believe the same principles can be applied to build superhuman robotic agents across industries.</p>
+<p>Key components of this approach include:</p>
+<ol>
+<li>
+<p><strong>Data Collection at Scale</strong>: Just as openpilot collects driving data from users, other robotics systems could be deployed in real-world environments to continuously gather data.</p>
+</li>
+<li>
+<p><strong>Iterative Improvement</strong>: Using community contributions and real-world feedback to train and refine models, similar to the open-source model of openpilot.</p>
+</li>
+<li>
+<p><strong>Hardware-Agnostic Solutions</strong>: Developing software that works across a variety of robotic platforms, allowing for modular and scalable deployment.</p>
+</li>
+</ol>
+<p>Comma.ai’s principles — <strong>data-driven improvement</strong>, <strong>end-to-end learning</strong>, and <strong>community collaboration</strong> — position it as a potential leader in not just autonomous driving, but the broader robotics revolution. By leveraging their open-source philosophy and scaling their machine learning expertise, they could create solutions that transcend industries, bringing intelligent, adaptable robots into our everyday lives.</p>
+<p>Their success in self-driving cars serves as a proof of concept: with the right approach, even the most complex problems in robotics can be tackled effectively, affordably, and at scale. The boldness of their vision — combined with their innovative strategies — suggests that the journey of Comma.ai is only just beginning.</p>
+<p>If you like blog post like this, consider subscribing to <a href="https://ncep.substack.com/"  class="external-link" target="_blank" rel="noopener">The Nerd Stack</a></p>
+
+      </div>
+
+
+      <footer>
+        
+
+
+        
+        
+        
+        
+        
+      </footer>
+    </article>
+
+    
+  </section>
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+      2020 -
+    
+    2025
+     Ndukwe Chidubem 
+    ·
+    
+    Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/" target="_blank" rel="noopener">Coder</a>.
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/js/coder.min.6ae284be93d2d19dad1f02b0039508d9aab3180a12a06dcc71b0b0ef7825a317.js" integrity="sha256-auKEvpPS0Z2tHwKwA5UI2aqzGAoSoG3McbCw73gloxc="></script>
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+
+</html>

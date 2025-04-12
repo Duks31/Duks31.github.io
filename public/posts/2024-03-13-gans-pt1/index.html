@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>
+  GANs pt1: Understanding GANs · Ndukwe Chidubem
+</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="Ndukwe Chidubem">
+<meta name="description" content="Understanding GANs
+Generative Adversarial Networks (GANs) are one of the exciting model architectures that gave rise to the increasing popularity of machine learning in the space recently. GANs are generative models, meaning that they create new data that resembles the training data, for example, by creating realistic images of human faces. The images below were created by GANs:
+quite realistic, right? In a GAN, there are two fundamental blocks (neural networks), the generator and the discriminator.">
+<meta name="keywords" content="blog,developer,personal">
+
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="GANs pt1: Understanding GANs"/>
+<meta name="twitter:description" content="Understanding GANs
+Generative Adversarial Networks (GANs) are one of the exciting model architectures that gave rise to the increasing popularity of machine learning in the space recently. GANs are generative models, meaning that they create new data that resembles the training data, for example, by creating realistic images of human faces. The images below were created by GANs:
+quite realistic, right? In a GAN, there are two fundamental blocks (neural networks), the generator and the discriminator."/>
+
+<meta property="og:title" content="GANs pt1: Understanding GANs" />
+<meta property="og:description" content="Understanding GANs
+Generative Adversarial Networks (GANs) are one of the exciting model architectures that gave rise to the increasing popularity of machine learning in the space recently. GANs are generative models, meaning that they create new data that resembles the training data, for example, by creating realistic images of human faces. The images below were created by GANs:
+quite realistic, right? In a GAN, there are two fundamental blocks (neural networks), the generator and the discriminator." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://Duks31.github.io/posts/2024-03-13-gans-pt1/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2024-03-13T00:00:00+00:00" />
+<meta property="article:modified_time" content="2024-03-13T00:00:00+00:00" />
+
+
+
+
+
+<link rel="canonical" href="https://Duks31.github.io/posts/2024-03-13-gans-pt1/">
+
+
+<link rel="preload" href="/fonts/forkawesome-webfont.woff2?v=1.2.0" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/css/coder.min.135e22c97ff685fe983fc60048e309ced8f00d8d38f536aa67dba8a13a03dfa4.css" integrity="sha256-E14iyX/2hf6YP8YASOMJztjwDY049TaqZ9uooToD36Q=" crossorigin="anonymous" media="screen" />
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="/css/coder-dark.min.a00e6364bacbc8266ad1cc81230774a1397198f8cfb7bcba29b7d6fcb54ce57f.css" integrity="sha256-oA5jZLrLyCZq0cyBIwd0oTlxmPjPt7y6KbfW/LVM5X8=" crossorigin="anonymous" media="screen" />
+  
+
+
+
+ 
+
+
+
+
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg" sizes="any">
+<link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+	
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+
+
+
+
+
+
+
+</head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-dark">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="/">
+      Ndukwe Chidubem
+    </a>
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/about/">About</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/posts/">Blog</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/projects/">Projects</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/experience/">Experience</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/contact/">Contact me</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">
+            <a class="title-link" href="https://Duks31.github.io/posts/2024-03-13-gans-pt1/">
+              GANs pt1: Understanding GANs
+            </a>
+          </h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa fa-calendar" aria-hidden="true"></i>
+              <time datetime="2024-03-13T00:00:00Z">
+                March 13, 2024
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fa fa-clock-o" aria-hidden="true"></i>
+              6-minute read
+            </span>
+          </div>
+          
+          
+          <div class="tags">
+  <i class="fa fa-tag" aria-hidden="true"></i>
+    <span class="tag">
+      <a href="/tags/artificial-intelligence/">Artificial Intelligence</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/machine-learning/">Machine Learning</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/generative-ai/">Generative AI</a>
+    </span></div>
+
+        </div>
+      </header>
+
+      <div class="post-content">
+        
+        <p><strong>Understanding GANs</strong></p>
+<p>Generative Adversarial Networks (GANs) are one of the exciting model architectures that gave rise to the increasing popularity of machine learning in the space recently. GANs are generative models, meaning that they create new data that resembles the training data, for example, by creating realistic images of human faces. The images below were created by GANs:</p>
+<p><img src="https://cdn-images-1.medium.com/max/2000/0*8FOT6T_Zw9z1lv8f.png" alt="source: Nvidia (karras2018iclr-paper.pdf) (nvidia.com)"></p>
+<p>quite realistic, right? In a GAN, there are two fundamental blocks (neural networks), the generator and the discriminator.</p>
+<ul>
+<li>
+<p>Generator: The generator takes in random input as noise and generates data samples that are similar (in the latent space) to the input data.</p>
+</li>
+<li>
+<p>Discriminator: The discriminator is just a binary classifier that outputs whether the sample image is real or fake. The input used by the discriminator comes from both the generator and the input dataset.</p>
+</li>
+</ul>
+<p><img src="https://cdn-images-1.medium.com/max/2912/0*D3FNyutSIK8hxGjj.png" alt="Image by Author"></p>
+<p><strong>Generative and Discriminative models</strong></p>
+<p>A generative model focuses on the latent distribution of a dataset and returns an example, basically generating what is most likely to be a part of a dataset, while a discriminative model makes predictions on unseen data based on conditional probability and can be used for classification and regression tasks.</p>
+<p>The goal of a generator model is to produce samples that are indistinguishable from the real data, while that of the discriminator is to correctly distinguish between the real and the generated samples.</p>
+<p><strong>The Training Process</strong></p>
+<p>The discriminator is trained like a deep network classifier; for example, if the input is real, it will return a standardized output of 1, and if the input is fake, it will return an output of 0. This process allows the discriminator to understand the features that contribute to real images.</p>
+<p><img src="https://cdn-images-1.medium.com/max/2912/0*6cXMQahQ0T4rZMYp.png" alt="Image by Author"></p>
+<p>In the figure above, the two sample boxes represent the data sources feeding into the discriminator. During the discriminator training, the generator does not train (i.e., its weights are frozen) while it generates data for the discriminator to train on. The discriminator connects to two loss functions; the generator loss is neglected during the discriminator training, and only the discriminator loss is used. When the discriminator classifies the input data from the data source samples, the discriminator loss penalizes it for any misclassification it makes, and then its weights are updated through backpropagation from the discriminator loss through the discriminator network.</p>
+<p>Simultaneously, the generator generates images that should return a standardized output of 1 (this is so that it can match the real images), so we then train the generator by backpropagating the target values all the way back to the generator, i.e., training the generator to generate images that the discriminator will think are real.</p>
+<p><img src="https://cdn-images-1.medium.com/max/2912/0*ZZRhEGpz5t-dzom_.png" alt="Image by Author"></p>
+<p>Neural networks require some form of input; in its most basic form, a GAN takes noise as input (uniform distribution). The generator then transforms the noise into a meaningful output. By introducing noise, we get the GAN to produce a wide variety of data (within its latent space), sampling from different places in its target distribution. In training a simple neural network, we know that we alter weights and add biases to reduce the error (loss) of its output, but in our case, the generator is not directly connected to its loss; rather, it feeds into the discriminator network, which then produces the output we are trying to affect. The generator loss penalizes the generator for producing a sample that the discriminator network classifies as fake (remember, the goal here is for the generator to produce images as good as the sample of the real images).</p>
+<p>Using backpropagation to adjust the weights in the right direction by calculating the weights impact on the output (i.e., how the output would change if you changed the weight). In our scenario, the final output is affected by the weight impact of both the discriminator and the generator, so the backprop starts at the output and flows through the discriminator and the generator.</p>
+<p>At the same time, we do not want the weights of the discriminator to change as we train the generator. Trying to hit a moving target makes the problem a lot harder (no convergence). So, when we use backprop to obtain the gradient, we will then use the gradients to only change the generator weights.</p>
+<p>The training goes on in alternating steps, i.e., the generator is constant while the discriminator trains for one or more epoch, and the discriminator is constant while the generator trains for one or more epoch, which puts the models into a competition to improve themselves. Eventually, the generator creates images that the discriminator cannot tell the difference between, and the discriminator is not that good at identifying the tiny difference between real and generated. The GAN converges to produce real and authentic images because the more the generator model improves, the more the discriminator model also improves.</p>
+<p><strong>Example</strong></p>
+<p>Imagine you have a GAN trained to generate realistic images of handwritten digits, such as digits 0–9. The generator would take random noise as input and generate images that look like handwritten digits. The discriminator would then evaluate whether a given image is a real handwritten digit or a generated one.</p>
+<p>During training, the generator gets better at creating more realistic digits, while the discriminator improves its ability to distinguish between real and generated digits. This process continues until the generator generates images that are so realistic that the discriminator can no longer reliably differentiate between real and generated samples.</p>
+<p><strong>Convergence</strong></p>
+<p>As the generator improves with training, the discriminator gets “worse” in the sense that it can’t tell the difference between real and fake, so successful generator training will get the discriminator to 50% accuracy. This poses a problem for GAN convergence because the discriminator’s feedback gets useless over time. If the GAN continues to train past that time, the generator will eventually start to train on useless feedback.</p>
+<p><strong>Loss</strong></p>
+<p>In GANs, the loss function is a crucial component that guides the training process by quantifying the performance of both the generator and discriminator. The primary objective of GANs is to find a Nash equilibrium where the generator produces realistic data, and the discriminator is unable to differentiate between real and generated samples.</p>
+<ol>
+<li>
+<p>Generator loss: The generator’s loss function evaluates how well the generator is performing in generating realistic samples.</p>
+</li>
+<li>
+<p>One common choice for generator loss is binary cross-entropy. The generator aims to maximize the probability that the discriminator classifies its generated samples as real.</p>
+</li>
+<li>
+<p>Discriminator loss: The generator’s loss function evaluates how well the generator is performing in generating realistic samples.</p>
+</li>
+<li>
+<p>One common choice for generator loss is binary cross-entropy. The generator aims to maximize the probability that the discriminator classifies its generated samples as real.</p>
+</li>
+</ol>
+<p>Thanks for reading this article, if you are interested in more things like this, you can subscribe to my substack <a href="https://ncep.substack.com/"  class="external-link" target="_blank" rel="noopener">here</a>.</p>
+
+      </div>
+
+
+      <footer>
+        
+
+
+        
+        
+        
+        
+        
+      </footer>
+    </article>
+
+    
+  </section>
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+      2020 -
+    
+    2025
+     Ndukwe Chidubem 
+    ·
+    
+    Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/" target="_blank" rel="noopener">Coder</a>.
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/js/coder.min.6ae284be93d2d19dad1f02b0039508d9aab3180a12a06dcc71b0b0ef7825a317.js" integrity="sha256-auKEvpPS0Z2tHwKwA5UI2aqzGAoSoG3McbCw73gloxc="></script>
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+
+</html>

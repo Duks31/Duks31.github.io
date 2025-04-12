@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>
+  Car Price Prediction · Ndukwe Chidubem
+</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="Ndukwe Chidubem">
+<meta name="description" content="ML: From Data scraping to DeploymentLink to headingBuilding a Car Prediction ModelLink to headingMachine learning systems are not built from Jupyter notebooks, for the most part of it they are much complex systems.
+In my self-learning journey, I wanted to learn about putting different systems and technologies together. So, I used a simple, not to complicated problem — car price prediction- to understand how it done in a small scale.">
+<meta name="keywords" content="blog,developer,personal">
+
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Car Price Prediction"/>
+<meta name="twitter:description" content="ML: From Data scraping to DeploymentLink to headingBuilding a Car Prediction ModelLink to headingMachine learning systems are not built from Jupyter notebooks, for the most part of it they are much complex systems.
+In my self-learning journey, I wanted to learn about putting different systems and technologies together. So, I used a simple, not to complicated problem — car price prediction- to understand how it done in a small scale."/>
+
+<meta property="og:title" content="Car Price Prediction" />
+<meta property="og:description" content="ML: From Data scraping to DeploymentLink to headingBuilding a Car Prediction ModelLink to headingMachine learning systems are not built from Jupyter notebooks, for the most part of it they are much complex systems.
+In my self-learning journey, I wanted to learn about putting different systems and technologies together. So, I used a simple, not to complicated problem — car price prediction- to understand how it done in a small scale." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://Duks31.github.io/projects/car_price_prediction/" /><meta property="article:section" content="projects" />
+<meta property="article:published_time" content="2024-08-01T00:00:00+00:00" />
+<meta property="article:modified_time" content="2024-08-01T00:00:00+00:00" />
+
+
+
+
+
+<link rel="canonical" href="https://Duks31.github.io/projects/car_price_prediction/">
+
+
+<link rel="preload" href="/fonts/forkawesome-webfont.woff2?v=1.2.0" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/css/coder.min.135e22c97ff685fe983fc60048e309ced8f00d8d38f536aa67dba8a13a03dfa4.css" integrity="sha256-E14iyX/2hf6YP8YASOMJztjwDY049TaqZ9uooToD36Q=" crossorigin="anonymous" media="screen" />
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="/css/coder-dark.min.a00e6364bacbc8266ad1cc81230774a1397198f8cfb7bcba29b7d6fcb54ce57f.css" integrity="sha256-oA5jZLrLyCZq0cyBIwd0oTlxmPjPt7y6KbfW/LVM5X8=" crossorigin="anonymous" media="screen" />
+  
+
+
+
+ 
+
+
+
+
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg" sizes="any">
+<link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+	
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+
+
+
+
+
+
+
+</head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-dark">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="/">
+      Ndukwe Chidubem
+    </a>
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/about/">About</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/posts/">Blog</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/projects/">Projects</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/experience/">Experience</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/contact/">Contact me</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container page">
+  <article>
+    <header>
+      <h1 class="title">
+        <a class="title-link" href="https://Duks31.github.io/projects/car_price_prediction/">
+          Car Price Prediction
+        </a>
+      </h1>
+    </header>
+
+    <h2 id="ml-from-data-scraping-to-deployment">
+  ML: From Data scraping to Deployment
+  <a class="heading-link" href="#ml-from-data-scraping-to-deployment">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<h2 id="building-a-car-prediction-model">
+  Building a Car Prediction Model
+  <a class="heading-link" href="#building-a-car-prediction-model">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>Machine learning systems are not built from Jupyter notebooks, for the most part of it they are much complex systems.</p>
+<p>In my self-learning journey, I wanted to learn about putting different systems and technologies together. So, I used a simple, not to complicated problem — car price prediction- to understand how it done in a small scale. I would be explaining the whole process below</p>
+<p>So, we would be going through the workflow below.</p>
+<p>Project code: <a href="https://github.com/Duks31/car_price-prediction"  class="external-link" target="_blank" rel="noopener">https://github.com/Duks31/car_price-prediction</a></p>
+<p><img src="https://cdn-images-1.medium.com/max/7622/1*jVYjxaXZtEQFJfJJROVJcg.png" alt="Project workflow (image by author)"></p>
+<h2 id="data-scarping">
+  <strong>Data Scarping</strong>
+  <a class="heading-link" href="#data-scarping">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p><img src="https://cdn-images-1.medium.com/max/2000/1*MvNxg9J1ygsVPrDYcFcYFg.png" alt="Data Scraping workflow (image by author)"></p>
+<p>First, I scraped the data from a car website (<a href="https://www.cars45.com/"  class="external-link" target="_blank" rel="noopener">car45</a>) using scrapy. In scrapy there have what they call spiders, which is used to extract data from websites by specifying the URLs to crawl, the data to collect, and how to process and store the extracted information. You can definitely have more than one scrapy spider.</p>
+<p>The whole scrapy code can be found here: <a href="https://github.com/Duks31/car-scraper"  class="external-link" target="_blank" rel="noopener">Duks31/car-scraper: car scraper repo (github.com)</a></p>
+<p>Let&rsquo;s start with the spider.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl">    <span class="kn">import</span> <span class="nn">scrapy</span>
+</span></span><span class="line"><span class="cl">    <span class="kn">from</span> <span class="nn">car_scraper.items</span> <span class="kn">import</span> <span class="n">CarScraperItem</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="k">class</span> <span class="nc">CarscraperSpider</span><span class="p">(</span><span class="n">scrapy</span><span class="o">.</span><span class="n">Spider</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="n">name</span> <span class="o">=</span> <span class="s2">&#34;carScraper&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">allowed_domains</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&#34;www.cars45.com&#34;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">        <span class="n">start_urls</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&#34;https://www.cars45.com/listing&#34;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">        <span class="k">def</span> <span class="nf">parse</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">response</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">            <span class="n">cars</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">css</span><span class="p">(</span><span class="s2">&#34;section.cars-grid.grid a.car-feature--wide-mobile&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="k">for</span> <span class="n">car</span> <span class="ow">in</span> <span class="n">cars</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="n">car_url</span> <span class="o">=</span> <span class="n">car</span><span class="o">.</span><span class="n">css</span><span class="p">(</span><span class="s2">&#34;::attr(href)&#34;</span><span class="p">)</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">                <span class="k">yield</span> <span class="n">response</span><span class="o">.</span><span class="n">follow</span><span class="p">(</span><span class="n">car_url</span><span class="p">,</span> <span class="n">callback</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">parse_car_page</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">            <span class="c1"># next page</span>
+</span></span><span class="line"><span class="cl">            <span class="n">next_page</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">css</span><span class="p">(</span><span class="s1">&#39;a.pagination__next::attr(href)&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="n">next_page</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="k">yield</span> <span class="n">response</span><span class="o">.</span><span class="n">follow</span><span class="p">(</span><span class="n">next_page</span><span class="p">,</span> <span class="n">callback</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">parse</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">        <span class="k">def</span> <span class="nf">parse_car_page</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">response</span><span class="p">):</span> 
+</span></span><span class="line"><span class="cl">            <span class="n">general_info</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span><span class="s1">&#39;//div[@class=&#34;general-info grid&#34;]/div&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="n">tags</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">css</span><span class="p">(</span><span class="s2">&#34;div.main-details__tags span::text&#34;</span><span class="p">)</span><span class="o">.</span><span class="n">getall</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">            <span class="n">svg_info</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">css</span><span class="p">(</span><span class="s2">&#34;div.svg.flex &gt; div&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">            <span class="n">car_item</span> <span class="o">=</span> <span class="n">CarScraperItem</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">            <span class="n">car_item</span><span class="p">[</span><span class="s2">&#34;car_id&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">url</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&#34;/&#34;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">            <span class="n">car_item</span><span class="p">[</span><span class="s2">&#34;city&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">css</span><span class="p">(</span><span class="s2">&#34;p.main-details__region::text&#34;</span><span class="p">)</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">            <span class="n">car_item</span><span class="p">[</span><span class="s2">&#34;price&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">css</span><span class="p">(</span><span class="s2">&#34;h5.main-details__name__price::text&#34;</span><span class="p">)</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">            <span class="n">car_item</span><span class="p">[</span><span class="s2">&#34;condition&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="n">tags</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">tags</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="kc">None</span>
+</span></span><span class="line"><span class="cl">            <span class="n">car_item</span><span class="p">[</span><span class="s2">&#34;transmission&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="n">tags</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">tags</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="k">else</span> <span class="kc">None</span>
+</span></span><span class="line"><span class="cl">            <span class="n">car_item</span><span class="p">[</span><span class="s2">&#34;mileage&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="n">tags</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">tags</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">2</span> <span class="k">else</span> <span class="kc">None</span>
+</span></span><span class="line"><span class="cl">            <span class="k">for</span> <span class="n">svg</span> <span class="ow">in</span> <span class="n">svg_info</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="n">alt_text</span> <span class="o">=</span> <span class="n">svg</span><span class="o">.</span><span class="n">css</span><span class="p">(</span><span class="s2">&#34;img::attr(alt)&#34;</span><span class="p">)</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">                <span class="n">value</span> <span class="o">=</span> <span class="n">svg</span><span class="o">.</span><span class="n">css</span><span class="p">(</span><span class="s2">&#34;span.tab-content__svg__title::text&#34;</span><span class="p">)</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">                <span class="k">if</span> <span class="n">alt_text</span> <span class="o">==</span> <span class="s2">&#34;Body&#34;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">car_item</span><span class="p">[</span><span class="s2">&#34;body_type&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+</span></span><span class="line"><span class="cl">                <span class="k">elif</span> <span class="n">alt_text</span> <span class="o">==</span> <span class="s2">&#34;Fuel&#34;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">car_item</span><span class="p">[</span><span class="s2">&#34;fuel_type&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+</span></span><span class="line"><span class="cl">                <span class="k">elif</span> <span class="n">alt_text</span> <span class="o">==</span> <span class="s2">&#34;Transmission&#34;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">car_item</span><span class="p">[</span><span class="s2">&#34;transmission&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">            <span class="k">for</span> <span class="n">info</span> <span class="ow">in</span> <span class="n">general_info</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="n">name</span> <span class="o">=</span> <span class="n">info</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span><span class="s1">&#39;.//span[@class=&#34;general-info__value&#34;]/text()&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">                <span class="n">value</span> <span class="o">=</span> <span class="n">info</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span><span class="s1">&#39;.//p[@class=&#34;general-info__name&#34;]/text()&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">                <span class="k">if</span> <span class="n">name</span> <span class="ow">and</span> <span class="n">value</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">name</span> <span class="o">=</span> <span class="n">name</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">value</span> <span class="o">=</span> <span class="n">value</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">                    <span class="k">if</span> <span class="n">name</span> <span class="o">==</span> <span class="s2">&#34;Make&#34;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                        <span class="n">car_item</span><span class="p">[</span><span class="s2">&#34;make&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+</span></span><span class="line"><span class="cl">                    <span class="k">elif</span> <span class="n">name</span> <span class="o">==</span> <span class="s2">&#34;Model&#34;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                        <span class="n">car_item</span><span class="p">[</span><span class="s2">&#34;model&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+</span></span><span class="line"><span class="cl">                    <span class="k">elif</span> <span class="n">name</span> <span class="o">==</span> <span class="s2">&#34;Year of manufacture&#34;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                        <span class="n">car_item</span><span class="p">[</span><span class="s2">&#34;year_of_manufacture&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+</span></span><span class="line"><span class="cl">                    <span class="k">elif</span> <span class="n">name</span> <span class="o">==</span> <span class="s2">&#34;Colour&#34;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                        <span class="n">car_item</span><span class="p">[</span><span class="s2">&#34;color&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+</span></span><span class="line"><span class="cl">                    <span class="k">elif</span> <span class="n">name</span> <span class="o">==</span> <span class="s2">&#34;Engine Size&#34;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                        <span class="n">car_item</span><span class="p">[</span><span class="s2">&#34;engine_size&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+</span></span><span class="line"><span class="cl">                    <span class="k">elif</span> <span class="n">name</span> <span class="o">==</span> <span class="s2">&#34;Registered city&#34;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                        <span class="n">car_item</span><span class="p">[</span><span class="s2">&#34;registered_city&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+</span></span><span class="line"><span class="cl">                    <span class="k">elif</span> <span class="n">name</span> <span class="o">==</span> <span class="s2">&#34;Selling Condition&#34;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                        <span class="n">car_item</span><span class="p">[</span><span class="s2">&#34;selling_condition&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+</span></span><span class="line"><span class="cl">                    <span class="k">elif</span> <span class="n">name</span> <span class="o">==</span> <span class="s2">&#34;Bought Condition&#34;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                        <span class="n">car_item</span><span class="p">[</span><span class="s2">&#34;bought_condition&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">            <span class="k">yield</span> <span class="n">car_item</span>
+</span></span></code></pre></div><p>The spider can be found in carScraper.py The script goes to the listing page and then each car’s page and for each car it gets the make, model, year of manufacture, colour, engine size, registered city, selling condition, bought condition, body type, fuel type, transmission.</p>
+<p>So, when the data is scraped, it passes through what is called a pipeline in scrapy, this can be found in pipeline.py</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl">    <span class="kn">import</span> <span class="nn">psycopg2</span>
+</span></span><span class="line"><span class="cl">    <span class="kn">from</span> <span class="nn">itemadapter</span> <span class="kn">import</span> <span class="n">ItemAdapter</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="k">class</span> <span class="nc">CarScraperPipeline</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">def</span> <span class="nf">process_item</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">,</span> <span class="n">spider</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">            
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="n">item</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&#34;price&#34;</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="n">item</span><span class="p">[</span><span class="s2">&#34;price&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">item</span><span class="p">[</span><span class="s2">&#34;price&#34;</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&#34;₦&#34;</span><span class="p">,</span> <span class="s2">&#34;&#34;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&#34;,&#34;</span><span class="p">,</span> 
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="n">item</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&#34;mileage&#34;</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="n">item</span><span class="p">[</span><span class="s2">&#34;mileage&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">item</span><span class="p">[</span><span class="s2">&#34;mileage&#34;</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&#34; &#34;</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="n">item</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&#34;city&#34;</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="n">item</span><span class="p">[</span><span class="s2">&#34;city&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="n">item</span><span class="p">[</span><span class="s2">&#34;city&#34;</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&#34;,&#34;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="n">item</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&#34;engine_size&#34;</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="n">item</span><span class="p">[</span><span class="s2">&#34;engine_size&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">item</span><span class="p">[</span><span class="s2">&#34;engine_size&#34;</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="n">item</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="k">class</span> <span class="nc">PostgresNoDuplicatesPipeline</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">            <span class="bp">self</span><span class="o">.</span><span class="n">create_connection</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">        <span class="k">def</span> <span class="nf">create_connection</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">            <span class="bp">self</span><span class="o">.</span><span class="n">connection</span> <span class="o">=</span> <span class="n">psycopg2</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">                <span class="n">host</span><span class="o">=</span><span class="n">DB_HOST_NAME</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                <span class="n">database</span><span class="o">=</span><span class="n">DB_NAME</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                <span class="n">user</span><span class="o">=</span><span class="n">DB_USER</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                <span class="n">password</span><span class="o">=</span><span class="n">DB_PASSWORD</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="bp">self</span><span class="o">.</span><span class="n">cur</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">connection</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">            <span class="bp">self</span><span class="o">.</span><span class="n">cur</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">                <span class="s2">&#34;&#34;&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s2">                CREATE TABLE IF NOT EXISTS cars (
+</span></span></span><span class="line"><span class="cl"><span class="s2">                    id serial PRIMARY KEY,
+</span></span></span><span class="line"><span class="cl"><span class="s2">                    car_id VARCHAR(50) UNIQUE,
+</span></span></span><span class="line"><span class="cl"><span class="s2">                    make VARCHAR(50),
+</span></span></span><span class="line"><span class="cl"><span class="s2">                    model VARCHAR(50),
+</span></span></span><span class="line"><span class="cl"><span class="s2">                    year_of_manufacture TEXT,
+</span></span></span><span class="line"><span class="cl"><span class="s2">                    color TEXT,
+</span></span></span><span class="line"><span class="cl"><span class="s2">                    condition TEXT,
+</span></span></span><span class="line"><span class="cl"><span class="s2">                    mileage INT,
+</span></span></span><span class="line"><span class="cl"><span class="s2">                    engine_size INT,
+</span></span></span><span class="line"><span class="cl"><span class="s2">                    registered_city TEXT,
+</span></span></span><span class="line"><span class="cl"><span class="s2">                    selling_condition TEXT,
+</span></span></span><span class="line"><span class="cl"><span class="s2">                    bought_condition TEXT,
+</span></span></span><span class="line"><span class="cl"><span class="s2">                    city TEXT,
+</span></span></span><span class="line"><span class="cl"><span class="s2">                    price INT,
+</span></span></span><span class="line"><span class="cl"><span class="s2">                    body_type TEXT,
+</span></span></span><span class="line"><span class="cl"><span class="s2">                    fuel_type TEXT,
+</span></span></span><span class="line"><span class="cl"><span class="s2">                    transmission TEXT
+</span></span></span><span class="line"><span class="cl"><span class="s2">                                )
+</span></span></span><span class="line"><span class="cl"><span class="s2">                &#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="bp">self</span><span class="o">.</span><span class="n">connection</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">        <span class="k">def</span> <span class="nf">process_item</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">,</span> <span class="n">spider</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">            <span class="k">try</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="bp">self</span><span class="o">.</span><span class="n">store_db</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">spider</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="k">except</span> <span class="n">psycopg2</span><span class="o">.</span><span class="n">Error</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="n">spider</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;Error inserting data into database: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="n">item</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">        <span class="k">def</span> <span class="nf">store_db</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">,</span> <span class="n">spider</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">            <span class="k">try</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="n">car_id</span> <span class="o">=</span> <span class="n">item</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&#34;car_id&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">car_id</span><span class="p">,</span> <span class="nb">str</span><span class="p">),</span> <span class="sa">f</span><span class="s2">&#34;car_id is not a string: </span><span class="si">{</span><span class="n">car_id</span><span class="si">}</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">                <span class="bp">self</span><span class="o">.</span><span class="n">cur</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">                    <span class="s2">&#34;&#34;&#34; 
+</span></span></span><span class="line"><span class="cl"><span class="s2">                INSERT INTO cars (car_id, make, model, year_of_manufacture, color, condition,
+</span></span></span><span class="line"><span class="cl"><span class="s2">                                      mileage, engine_size, registered_city, selling_condition, 
+</span></span></span><span class="line"><span class="cl"><span class="s2">                                      bought_condition, city, price, body_type, fuel_type, transmission)
+</span></span></span><span class="line"><span class="cl"><span class="s2">                    VALUES (</span><span class="si">%s</span><span class="s2">, </span><span class="si">%s</span><span class="s2">, </span><span class="si">%s</span><span class="s2">, </span><span class="si">%s</span><span class="s2">, </span><span class="si">%s</span><span class="s2">, </span><span class="si">%s</span><span class="s2">, </span><span class="si">%s</span><span class="s2">, </span><span class="si">%s</span><span class="s2">, </span><span class="si">%s</span><span class="s2">, </span><span class="si">%s</span><span class="s2">, </span><span class="si">%s</span><span class="s2">, </span><span class="si">%s</span><span class="s2">, </span><span class="si">%s</span><span class="s2">, </span><span class="si">%s</span><span class="s2">, </span><span class="si">%s</span><span class="s2">, </span><span class="si">%s</span><span class="s2">)
+</span></span></span><span class="line"><span class="cl"><span class="s2">                    ON CONFLICT (car_id) DO NOTHING
+</span></span></span><span class="line"><span class="cl"><span class="s2">                    &#34;&#34;&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                    <span class="p">(</span>
+</span></span><span class="line"><span class="cl">                        <span class="nb">str</span><span class="p">(</span><span class="n">item</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&#34;car_id&#34;</span><span class="p">)),</span>
+</span></span><span class="line"><span class="cl">                        <span class="n">item</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&#34;make&#34;</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">                        <span class="n">item</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&#34;model&#34;</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">                        <span class="n">item</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&#34;year_of_manufacture&#34;</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">                        <span class="n">item</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&#34;color&#34;</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">                        <span class="n">item</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&#34;condition&#34;</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">                        <span class="n">item</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&#34;mileage&#34;</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">                        <span class="n">item</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&#34;engine_size&#34;</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">                        <span class="n">item</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&#34;registered_city&#34;</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">                        <span class="n">item</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&#34;selling_condition&#34;</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">                        <span class="n">item</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&#34;bought_condition&#34;</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">                        <span class="n">item</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&#34;city&#34;</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">                        <span class="n">item</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&#34;price&#34;</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">                        <span class="n">item</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&#34;body_type&#34;</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">                        <span class="n">item</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&#34;fuel_type&#34;</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">                        <span class="n">item</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&#34;transmission&#34;</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">                    <span class="p">),</span>
+</span></span><span class="line"><span class="cl">                <span class="p">)</span>
+</span></span><span class="line"><span class="cl">                <span class="bp">self</span><span class="o">.</span><span class="n">connection</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">                <span class="k">return</span> <span class="n">item</span>
+</span></span><span class="line"><span class="cl">            <span class="k">except</span> <span class="n">psycopg2</span><span class="o">.</span><span class="n">Error</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="bp">self</span><span class="o">.</span><span class="n">connection</span><span class="o">.</span><span class="n">rollback</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">                <span class="n">spider</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;Error inserting data into database: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">        <span class="k">def</span> <span class="nf">close_spider</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">spider</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">            <span class="bp">self</span><span class="o">.</span><span class="n">cur</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">            <span class="bp">self</span><span class="o">.</span><span class="n">connection</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</span></span></code></pre></div><p>The pipeline script does some formatting processes to the items being scrapped, then it creates a connection to a PostgreSQL and saves the items there.</p>
+<p>A single scrape gets like 1900+ items, so I needed a bunch just to use for the machine learning. So, I had to take the whole process to the cloud.</p>
+<p>Scrapy has a nice services <a href="https://scrapeops.io/"  class="external-link" target="_blank" rel="noopener">Scrapeops</a>, is a cloud-based scraping service allowing to run and scale web scraping jobs in the cloud. So, I hosted a scraper-instance on a GCP VM and connected it to scrapeops. The dashboard is below.</p>
+<p><img src="https://cdn-images-1.medium.com/max/3214/1*nA5yDMCvgVBc7phCIHcJrA.png" alt="scrapeops dashboard (image by author)"></p>
+<p>It was running for a couple of days and was shutdown. I just needed a few data items.</p>
+<h2 id="machine-learning">
+  Machine Learning
+  <a class="heading-link" href="#machine-learning">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p><img src="https://cdn-images-1.medium.com/max/2000/1*yi6DWJF54NKQv4K1sepNUQ.png" alt="machine learning workflow (image by author)"></p>
+<p>The machine learning was pretty straight forward, and I didn’t want to over-engineer anything.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl">    <span class="c1">## Importing </span>
+</span></span><span class="line"><span class="cl">    <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</span></span><span class="line"><span class="cl">    <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</span></span><span class="line"><span class="cl">    <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</span></span><span class="line"><span class="cl">    <span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/car_data.csv&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">data</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="n">data</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;car_id&#39;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">data</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="n">car_data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="c1">## Preprocessing</span>
+</span></span><span class="line"><span class="cl">    <span class="kn">from</span> <span class="nn">sklearn.compose</span> <span class="kn">import</span> <span class="n">ColumnTransformer</span>
+</span></span><span class="line"><span class="cl">    <span class="kn">from</span> <span class="nn">sklearn.pipeline</span> <span class="kn">import</span> <span class="n">Pipeline</span>
+</span></span><span class="line"><span class="cl">    <span class="kn">from</span> <span class="nn">sklearn.impute</span> <span class="kn">import</span> <span class="n">SimpleImputer</span>
+</span></span><span class="line"><span class="cl">    <span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">StandardScaler</span><span class="p">,</span> <span class="n">OneHotEncoder</span><span class="p">,</span> <span class="n">LabelEncoder</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># feature and target variables</span>
+</span></span><span class="line"><span class="cl">    <span class="n">X</span> <span class="o">=</span> <span class="n">car_data</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&#34;price&#34;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">y</span> <span class="o">=</span> <span class="n">car_data</span><span class="p">[</span><span class="s2">&#34;price&#34;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># preprocessing numerical features</span>
+</span></span><span class="line"><span class="cl">    <span class="n">numerical_features</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&#34;mileage&#34;</span><span class="p">,</span> <span class="s2">&#34;engine_size&#34;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="n">numerical_transformer</span> <span class="o">=</span> <span class="n">Pipeline</span><span class="p">(</span><span class="n">steps</span><span class="o">=</span><span class="p">[</span>
+</span></span><span class="line"><span class="cl">        <span class="p">(</span><span class="s1">&#39;imputer&#39;</span><span class="p">,</span> <span class="n">SimpleImputer</span><span class="p">(</span><span class="n">strategy</span><span class="o">=</span><span class="s1">&#39;mean&#39;</span><span class="p">)),</span>
+</span></span><span class="line"><span class="cl">        <span class="p">(</span><span class="s1">&#39;scaler&#39;</span><span class="p">,</span> <span class="n">StandardScaler</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl">    <span class="p">])</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="c1"># preprocessing categorical features</span>
+</span></span><span class="line"><span class="cl">    <span class="n">categorical_features</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&#34;make&#34;</span><span class="p">,</span> <span class="s2">&#34;model&#34;</span><span class="p">,</span> <span class="s2">&#34;color&#34;</span><span class="p">,</span> <span class="s2">&#34;condition&#34;</span><span class="p">,</span> <span class="s2">&#34;registered_city&#34;</span><span class="p">,</span> <span class="s2">&#34;selling_condition&#34;</span><span class="p">,</span> <span class="s2">&#34;bought_condition&#34;</span><span class="p">,</span> <span class="s2">&#34;city&#34;</span><span class="p">,</span> <span class="s2">&#34;body_type&#34;</span><span class="p">,</span> <span class="s2">&#34;fuel_type&#34;</span><span class="p">,</span> <span class="s2">&#34;transmission&#34;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="n">categorical_transformer</span> <span class="o">=</span> <span class="n">Pipeline</span><span class="p">(</span><span class="n">steps</span><span class="o">=</span><span class="p">[(</span><span class="s1">&#39;imputer&#39;</span><span class="p">,</span> <span class="n">SimpleImputer</span><span class="p">(</span><span class="n">strategy</span><span class="o">=</span><span class="s1">&#39;most_frequent&#39;</span><span class="p">)),</span>
+</span></span><span class="line"><span class="cl">    <span class="p">(</span><span class="s1">&#39;onehot&#39;</span><span class="p">,</span> <span class="n">OneHotEncoder</span><span class="p">(</span><span class="n">handle_unknown</span><span class="o">=</span><span class="s1">&#39;ignore&#39;</span><span class="p">))])</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># combining steps</span>
+</span></span><span class="line"><span class="cl">    <span class="n">preprocessor</span> <span class="o">=</span> <span class="n">ColumnTransformer</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">        <span class="n">transformers</span><span class="o">=</span><span class="p">[</span>
+</span></span><span class="line"><span class="cl">            <span class="p">(</span><span class="s1">&#39;num&#39;</span><span class="p">,</span> <span class="n">numerical_transformer</span><span class="p">,</span> <span class="n">numerical_features</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">            <span class="p">(</span><span class="s1">&#39;cat&#39;</span><span class="p">,</span> <span class="n">categorical_transformer</span><span class="p">,</span> <span class="n">categorical_features</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">])</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="c1">## Model</span>
+</span></span><span class="line"><span class="cl">    <span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+</span></span><span class="line"><span class="cl">    <span class="kn">import</span> <span class="nn">xgboost</span> <span class="k">as</span> <span class="nn">xgb</span>
+</span></span><span class="line"><span class="cl">    <span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">RandomForestRegressor</span>
+</span></span><span class="line"><span class="cl">    <span class="n">model</span> <span class="o">=</span> <span class="n">Pipeline</span><span class="p">(</span><span class="n">steps</span><span class="o">=</span><span class="p">[(</span><span class="s1">&#39;preprocessor&#39;</span><span class="p">,</span> <span class="n">preprocessor</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">                            <span class="p">(</span><span class="s1">&#39;regressor&#39;</span><span class="p">,</span> <span class="n">RandomForestRegressor</span><span class="p">(</span><span class="n">random_state</span> <span class="o">=</span> <span class="mi">42</span><span class="p">))])</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">y_pred_1</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="c1">## Evaluation</span>
+</span></span><span class="line"><span class="cl">    <span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">mean_squared_error</span><span class="p">,</span> <span class="n">r2_score</span><span class="p">,</span> <span class="n">mean_absolute_error</span>
+</span></span><span class="line"><span class="cl">    <span class="n">mae</span> <span class="o">=</span> <span class="n">mean_absolute_error</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred_1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">mse</span> <span class="o">=</span> <span class="n">mean_squared_error</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred_1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">rmse</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">mse</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">r2</span> <span class="o">=</span> <span class="n">r2_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred_1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Mean Absolute Error: &#34;</span><span class="p">,</span> <span class="n">mae</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Mean Squared Error: &#34;</span><span class="p">,</span> <span class="n">mse</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Root Mean Squared Error: &#34;</span><span class="p">,</span> <span class="n">rmse</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;R2 Score: &#34;</span><span class="p">,</span> <span class="n">r2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="c1">## Tuning</span>
+</span></span><span class="line"><span class="cl">    <span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">GridSearchCV</span>
+</span></span><span class="line"><span class="cl">    <span class="n">param_grid</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="s1">&#39;regressor__n_estimators&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">300</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">        <span class="s1">&#39;regressor__max_depth&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="n">grid_search</span> <span class="o">=</span> <span class="n">GridSearchCV</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">param_grid</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="s2">&#34;neg_mean_absolute_error&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">grid_search</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">best_params</span> <span class="o">=</span> <span class="n">grid_search</span><span class="o">.</span><span class="n">best_params_</span>
+</span></span><span class="line"><span class="cl">    <span class="n">best_params</span>
+</span></span><span class="line"><span class="cl">    <span class="n">y_pred_2</span> <span class="o">=</span> <span class="n">grid_search</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="n">mae</span> <span class="o">=</span> <span class="n">mean_absolute_error</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred_2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">mse</span> <span class="o">=</span> <span class="n">mean_squared_error</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred_2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">rmse</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">mse</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">r2</span> <span class="o">=</span> <span class="n">r2_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred_2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Mean Absolute Error: &#34;</span><span class="p">,</span> <span class="n">mae</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Mean Squared Error: &#34;</span><span class="p">,</span> <span class="n">mse</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Root Mean Squared Error: &#34;</span><span class="p">,</span> <span class="n">rmse</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;R2 Score: &#34;</span><span class="p">,</span> <span class="n">r2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="c1">## Saving model</span>
+</span></span><span class="line"><span class="cl">    <span class="kn">import</span> <span class="nn">joblib</span>
+</span></span><span class="line"><span class="cl">    <span class="n">joblib</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">grid_search</span><span class="p">,</span> <span class="s2">&#34;model/car_prediction_model.pickle&#34;</span><span class="p">)</span> 
+</span></span></code></pre></div><p>I loaded the data from the PostgreSQL server into a csv, can be found in import.ipynb , preprocess the data by using sklearn column transformer and simple imputer and pass through sklearn pipeline. After some preprocessing, I used Random Forest Regressor to train the model and also did some parameter tuning and finally saved the best model in a pickle file. All these can be found in main.ipynb</p>
+<h2 id="deployment">
+  Deployment
+  <a class="heading-link" href="#deployment">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>With the model’s pickle file, I decided to make both an API and a UI differently using Fast API and gradio respectively.</p>
+<p>For the Fast API, I created a <code>model.py</code></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl">    <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</span></span><span class="line"><span class="cl">    <span class="kn">import</span> <span class="nn">joblib</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="kn">from</span> <span class="nn">pydantic</span> <span class="kn">import</span> <span class="n">BaseModel</span>
+</span></span><span class="line"><span class="cl">    <span class="kn">from</span> <span class="nn">sklearn.compose</span> <span class="kn">import</span> <span class="n">ColumnTransformer</span>
+</span></span><span class="line"><span class="cl">    <span class="kn">from</span> <span class="nn">sklearn.pipeline</span> <span class="kn">import</span> <span class="n">Pipeline</span>
+</span></span><span class="line"><span class="cl">    <span class="kn">from</span> <span class="nn">sklearn.impute</span> <span class="kn">import</span> <span class="n">SimpleImputer</span>
+</span></span><span class="line"><span class="cl">    <span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">StandardScaler</span><span class="p">,</span> <span class="n">OneHotEncoder</span>
+</span></span><span class="line"><span class="cl">    <span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">RandomForestRegressor</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="k">class</span> <span class="nc">CarPrices</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="n">make</span><span class="p">:</span> <span class="nb">str</span>
+</span></span><span class="line"><span class="cl">        <span class="n">model</span><span class="p">:</span> <span class="nb">str</span>
+</span></span><span class="line"><span class="cl">        <span class="n">year_of_manufacture</span><span class="p">:</span> <span class="nb">int</span>
+</span></span><span class="line"><span class="cl">        <span class="n">color</span><span class="p">:</span> <span class="nb">str</span>
+</span></span><span class="line"><span class="cl">        <span class="n">condition</span><span class="p">:</span> <span class="nb">str</span>
+</span></span><span class="line"><span class="cl">        <span class="n">mileage</span><span class="p">:</span> <span class="nb">float</span>
+</span></span><span class="line"><span class="cl">        <span class="n">engine_size</span><span class="p">:</span> <span class="nb">float</span>
+</span></span><span class="line"><span class="cl">        <span class="n">registered_city</span><span class="p">:</span> <span class="nb">str</span>
+</span></span><span class="line"><span class="cl">        <span class="n">selling_condition</span><span class="p">:</span> <span class="nb">str</span>
+</span></span><span class="line"><span class="cl">        <span class="n">bought_condition</span><span class="p">:</span> <span class="nb">str</span>
+</span></span><span class="line"><span class="cl">        <span class="n">city</span><span class="p">:</span> <span class="nb">str</span>
+</span></span><span class="line"><span class="cl">        <span class="n">body_type</span><span class="p">:</span> <span class="nb">str</span>
+</span></span><span class="line"><span class="cl">        <span class="n">fuel_type</span><span class="p">:</span> <span class="nb">str</span>  
+</span></span><span class="line"><span class="cl">        <span class="n">transmission</span><span class="p">:</span> <span class="nb">str</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="k">class</span> <span class="nc">CarPriceModel</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;&#34;&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s2">        model to predict the prices of cars from car45.com
+</span></span></span><span class="line"><span class="cl"><span class="s2">        &#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">        <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">            <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&#34;data/car_data.csv&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="bp">self</span><span class="o">.</span><span class="n">model_fpath_</span> <span class="o">=</span> <span class="s2">&#34;model/car_prediction_model.pickle&#34;</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">            <span class="k">try</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="n">joblib</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">model_fpath_</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">train_model</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">                <span class="n">joblib</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">model_fpath_</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">        <span class="k">def</span> <span class="nf">preprocessor</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">            <span class="n">numerical_features</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&#34;mileage&#34;</span><span class="p">,</span> <span class="s2">&#34;engine_size&#34;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">            <span class="n">categorical_features</span> <span class="o">=</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">                <span class="s2">&#34;make&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                <span class="s2">&#34;model&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                <span class="s2">&#34;color&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                <span class="s2">&#34;condition&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                <span class="s2">&#34;registered_city&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                <span class="s2">&#34;selling_condition&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                <span class="s2">&#34;bought_condition&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                <span class="s2">&#34;city&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                <span class="s2">&#34;body_type&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                <span class="s2">&#34;fuel_type&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                <span class="s2">&#34;transmission&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="p">]</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">            <span class="n">numerical_transformer</span> <span class="o">=</span> <span class="n">Pipeline</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">                <span class="n">steps</span><span class="o">=</span><span class="p">[</span>
+</span></span><span class="line"><span class="cl">                    <span class="p">(</span><span class="s2">&#34;imputer&#34;</span><span class="p">,</span> <span class="n">SimpleImputer</span><span class="p">(</span><span class="n">strategy</span><span class="o">=</span><span class="s2">&#34;mean&#34;</span><span class="p">)),</span>
+</span></span><span class="line"><span class="cl">                    <span class="p">(</span><span class="s2">&#34;scaler&#34;</span><span class="p">,</span> <span class="n">StandardScaler</span><span class="p">()),</span>
+</span></span><span class="line"><span class="cl">                <span class="p">]</span>
+</span></span><span class="line"><span class="cl">            <span class="p">)</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">            <span class="n">categorical_transformer</span> <span class="o">=</span> <span class="n">Pipeline</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">                <span class="n">steps</span><span class="o">=</span><span class="p">[</span>
+</span></span><span class="line"><span class="cl">                    <span class="p">(</span><span class="s2">&#34;imputer&#34;</span><span class="p">,</span> <span class="n">SimpleImputer</span><span class="p">(</span><span class="n">strategy</span><span class="o">=</span><span class="s2">&#34;most_frequent&#34;</span><span class="p">)),</span>
+</span></span><span class="line"><span class="cl">                    <span class="p">(</span><span class="s2">&#34;onehot&#34;</span><span class="p">,</span> <span class="n">OneHotEncoder</span><span class="p">(</span><span class="n">handle_unknown</span><span class="o">=</span><span class="s2">&#34;ignore&#34;</span><span class="p">)),</span>
+</span></span><span class="line"><span class="cl">                <span class="p">]</span>
+</span></span><span class="line"><span class="cl">            <span class="p">)</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">            <span class="n">preprocessor</span> <span class="o">=</span> <span class="n">ColumnTransformer</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">                <span class="n">transformers</span><span class="o">=</span><span class="p">[</span>
+</span></span><span class="line"><span class="cl">                    <span class="p">(</span><span class="s2">&#34;num&#34;</span><span class="p">,</span> <span class="n">numerical_transformer</span><span class="p">,</span> <span class="n">numerical_features</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">                    <span class="p">(</span><span class="s2">&#34;cat&#34;</span><span class="p">,</span> <span class="n">categorical_transformer</span><span class="p">,</span> <span class="n">categorical_features</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">                <span class="p">]</span>
+</span></span><span class="line"><span class="cl">            <span class="p">)</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="n">preprocessor</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">        <span class="k">def</span> <span class="nf">train_model</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">            <span class="n">preprocessor</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">preprocessor</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">            <span class="n">X</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s2">&#34;price&#34;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="n">y</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&#34;price&#34;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">            <span class="n">model</span> <span class="o">=</span> <span class="n">Pipeline</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">                <span class="n">steps</span><span class="o">=</span><span class="p">[</span>
+</span></span><span class="line"><span class="cl">                    <span class="p">(</span><span class="s2">&#34;preprocessor&#34;</span><span class="p">,</span> <span class="n">preprocessor</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">                    <span class="p">(</span><span class="s2">&#34;model&#34;</span><span class="p">,</span> <span class="n">RandomForestRegressor</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)),</span>
+</span></span><span class="line"><span class="cl">                <span class="p">]</span>
+</span></span><span class="line"><span class="cl">            <span class="p">)</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">            <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="n">model</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">        <span class="k">def</span> <span class="nf">predict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">            <span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([</span><span class="n">data</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">            <span class="n">preprocessor</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">named_steps</span><span class="p">[</span><span class="s1">&#39;preprocessor&#39;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">            <span class="n">X_processed</span> <span class="o">=</span> <span class="n">preprocessor</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="n">prediction</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">named_steps</span><span class="p">[</span><span class="s1">&#39;model&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_processed</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="n">prediction</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</span></span></code></pre></div><p>In the script it loads up the csv file using pandas, uses the same preprocessing methods that was used to train the model and a predict method. and the main.py` file to run the API.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl">    <span class="kn">import</span> <span class="nn">uvicorn</span>
+</span></span><span class="line"><span class="cl">    <span class="kn">from</span> <span class="nn">fastapi</span> <span class="kn">import</span> <span class="n">FastAPI</span>
+</span></span><span class="line"><span class="cl">    <span class="kn">from</span> <span class="nn">model</span> <span class="kn">import</span> <span class="n">CarPrices</span><span class="p">,</span> <span class="n">CarPriceModel</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="n">app</span> <span class="o">=</span> <span class="n">FastAPI</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="n">model</span> <span class="o">=</span> <span class="n">CarPriceModel</span><span class="p">()</span> 
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="nd">@app.get</span><span class="p">(</span><span class="s2">&#34;/&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">home</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="p">{</span> <span class="s1">&#39;Message&#39;</span> <span class="p">:</span> <span class="s1">&#39;Welcome to the Car Price Prediction API&#39;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="nd">@app.post</span><span class="p">(</span><span class="s2">&#34;/predict&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">async</span> <span class="k">def</span> <span class="nf">predict_price</span><span class="p">(</span><span class="n">car</span><span class="p">:</span> <span class="n">CarPrices</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="n">data</span> <span class="o">=</span> <span class="n">car</span><span class="o">.</span><span class="n">model_dump</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="n">prediction</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="p">{</span><span class="s2">&#34;price&#34;</span><span class="p">:</span> <span class="n">prediction</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&#34;__main__&#34;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">uvicorn</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">app</span><span class="p">,</span> <span class="n">host</span><span class="o">=</span><span class="s2">&#34;127.0.0.1&#34;</span><span class="p">,</span> <span class="n">port</span> <span class="o">=</span> <span class="mi">8000</span><span class="p">)</span>
+</span></span></code></pre></div><p>For the gradio, first of all, gradio is one of the fastest way to demo machine learning models with a beautiful user interface. Not to bore you with the detail explanation of the way it works, but the code for it is below, which can be found in gradio_app.py`</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl">    <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</span></span><span class="line"><span class="cl">    <span class="kn">import</span> <span class="nn">gradio</span> <span class="k">as</span> <span class="nn">gr</span>
+</span></span><span class="line"><span class="cl">    <span class="kn">import</span> <span class="nn">warnings</span>
+</span></span><span class="line"><span class="cl">    <span class="kn">from</span> <span class="nn">model</span> <span class="kn">import</span> <span class="n">CarPriceModel</span><span class="p">,</span> <span class="n">CarPrices</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&#34;ignore&#34;</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="ne">UserWarning</span><span class="p">,</span> <span class="n">module</span><span class="o">=</span><span class="s2">&#34;sklearn&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&#34;data/car_data.csv&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="n">unique_values</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;make&#34;</span><span class="p">:</span> <span class="nb">list</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">&#34;make&#34;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()),</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;model&#34;</span><span class="p">:</span> <span class="nb">list</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">&#34;model&#34;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()),</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;color&#34;</span><span class="p">:</span> <span class="nb">list</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">&#34;color&#34;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()),</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;condition&#34;</span><span class="p">:</span> <span class="nb">list</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">&#34;condition&#34;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()),</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;registered_city&#34;</span><span class="p">:</span> <span class="nb">list</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">&#34;registered_city&#34;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()),</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;selling_condition&#34;</span><span class="p">:</span> <span class="nb">list</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">&#34;selling_condition&#34;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()),</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;bought_condition&#34;</span><span class="p">:</span> <span class="nb">list</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">&#34;bought_condition&#34;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()),</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;city&#34;</span><span class="p">:</span> <span class="nb">list</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">&#34;city&#34;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()),</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;body_type&#34;</span><span class="p">:</span> <span class="nb">list</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">&#34;body_type&#34;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()),</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;fuel_type&#34;</span><span class="p">:</span> <span class="nb">list</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">&#34;fuel_type&#34;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()),</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;transmission&#34;</span><span class="p">:</span> <span class="nb">list</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">&#34;transmission&#34;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()),</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">predict_car_price</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">        <span class="n">make</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="n">model</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="n">year_of_manufacture</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="n">color</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="n">condition</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="n">mileage</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="n">engine_size</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="n">registered_city</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="n">selling_condition</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="n">bought_condition</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="n">city</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="n">body_type</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="n">fuel_type</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="n">transmission</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="n">car</span> <span class="o">=</span> <span class="n">CarPrices</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">            <span class="n">make</span><span class="o">=</span><span class="n">make</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="n">model</span><span class="o">=</span><span class="n">model</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="n">year_of_manufacture</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">year_of_manufacture</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">            <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="n">condition</span><span class="o">=</span><span class="n">condition</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="n">mileage</span><span class="o">=</span><span class="nb">float</span><span class="p">(</span><span class="n">mileage</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">            <span class="n">engine_size</span><span class="o">=</span><span class="nb">float</span><span class="p">(</span><span class="n">engine_size</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">            <span class="n">registered_city</span><span class="o">=</span><span class="n">registered_city</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="n">selling_condition</span><span class="o">=</span><span class="n">selling_condition</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="n">bought_condition</span><span class="o">=</span><span class="n">bought_condition</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="n">city</span><span class="o">=</span><span class="n">city</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="n">body_type</span><span class="o">=</span><span class="n">body_type</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="n">fuel_type</span><span class="o">=</span><span class="n">fuel_type</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="n">transmission</span><span class="o">=</span><span class="n">transmission</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="p">)</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">        <span class="n">car_model</span> <span class="o">=</span> <span class="n">CarPriceModel</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">        <span class="n">prediction</span> <span class="o">=</span> <span class="n">car_model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">car</span><span class="o">.</span><span class="n">model_dump</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl">        <span class="n">formatted_prediction</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&#34;₦</span><span class="si">{</span><span class="n">prediction</span><span class="si">:</span><span class="s2">,.2f</span><span class="si">}</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">formatted_prediction</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="k">with</span> <span class="n">gr</span><span class="o">.</span><span class="n">Blocks</span><span class="p">()</span> <span class="k">as</span> <span class="n">interface</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">gr</span><span class="o">.</span><span class="n">Markdown</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">            <span class="s2">&#34;# Car Price Prediction</span><span class="se">\n</span><span class="s2">Predict the price of a car based on its features.&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">)</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">        <span class="k">with</span> <span class="n">gr</span><span class="o">.</span><span class="n">Tab</span><span class="p">(</span><span class="s2">&#34;Basic Information&#34;</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">            <span class="n">make</span> <span class="o">=</span> <span class="n">gr</span><span class="o">.</span><span class="n">Dropdown</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">&#34;Make&#34;</span><span class="p">,</span> <span class="n">choices</span><span class="o">=</span><span class="n">unique_values</span><span class="p">[</span><span class="s2">&#34;make&#34;</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">            <span class="n">model</span> <span class="o">=</span> <span class="n">gr</span><span class="o">.</span><span class="n">Dropdown</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">&#34;Model&#34;</span><span class="p">,</span> <span class="n">choices</span><span class="o">=</span><span class="n">unique_values</span><span class="p">[</span><span class="s2">&#34;model&#34;</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">            <span class="n">year_of_manufacture</span> <span class="o">=</span> <span class="n">gr</span><span class="o">.</span><span class="n">Number</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">&#34;Year of Manufacture&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="n">color</span> <span class="o">=</span> <span class="n">gr</span><span class="o">.</span><span class="n">Dropdown</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">&#34;Color&#34;</span><span class="p">,</span> <span class="n">choices</span><span class="o">=</span><span class="n">unique_values</span><span class="p">[</span><span class="s2">&#34;color&#34;</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">            <span class="n">condition</span> <span class="o">=</span> <span class="n">gr</span><span class="o">.</span><span class="n">Dropdown</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">&#34;Condition&#34;</span><span class="p">,</span> <span class="n">choices</span><span class="o">=</span><span class="n">unique_values</span><span class="p">[</span><span class="s2">&#34;condition&#34;</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">        <span class="k">with</span> <span class="n">gr</span><span class="o">.</span><span class="n">Tab</span><span class="p">(</span><span class="s2">&#34;Sepcifications&#34;</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">            <span class="n">mileage</span> <span class="o">=</span> <span class="n">gr</span><span class="o">.</span><span class="n">Number</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">&#34;Mileage&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="n">engine_size</span> <span class="o">=</span> <span class="n">gr</span><span class="o">.</span><span class="n">Number</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">&#34;Engine Size&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">        <span class="k">with</span> <span class="n">gr</span><span class="o">.</span><span class="n">Tab</span><span class="p">(</span><span class="s2">&#34;Location Information&#34;</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">            <span class="n">registered_city</span> <span class="o">=</span> <span class="n">gr</span><span class="o">.</span><span class="n">Dropdown</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">                <span class="n">label</span><span class="o">=</span><span class="s2">&#34;Registered City&#34;</span><span class="p">,</span> <span class="n">choices</span><span class="o">=</span><span class="n">unique_values</span><span class="p">[</span><span class="s2">&#34;registered_city&#34;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">            <span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="n">city</span> <span class="o">=</span> <span class="n">gr</span><span class="o">.</span><span class="n">Dropdown</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">&#34;City&#34;</span><span class="p">,</span> <span class="n">choices</span><span class="o">=</span><span class="n">unique_values</span><span class="p">[</span><span class="s2">&#34;city&#34;</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">        <span class="k">with</span> <span class="n">gr</span><span class="o">.</span><span class="n">Tab</span><span class="p">(</span><span class="s2">&#34;Condition and Type&#34;</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">            <span class="n">selling_condition</span> <span class="o">=</span> <span class="n">gr</span><span class="o">.</span><span class="n">Dropdown</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">                <span class="n">label</span><span class="o">=</span><span class="s2">&#34;Selling Condition&#34;</span><span class="p">,</span> <span class="n">choices</span><span class="o">=</span><span class="n">unique_values</span><span class="p">[</span><span class="s2">&#34;selling_condition&#34;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">            <span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="n">bought_condition</span> <span class="o">=</span> <span class="n">gr</span><span class="o">.</span><span class="n">Dropdown</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">                <span class="n">label</span><span class="o">=</span><span class="s2">&#34;Bought Condition&#34;</span><span class="p">,</span> <span class="n">choices</span><span class="o">=</span><span class="n">unique_values</span><span class="p">[</span><span class="s2">&#34;bought_condition&#34;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">            <span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="n">body_type</span> <span class="o">=</span> <span class="n">gr</span><span class="o">.</span><span class="n">Dropdown</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">&#34;Body Type&#34;</span><span class="p">,</span> <span class="n">choices</span><span class="o">=</span><span class="n">unique_values</span><span class="p">[</span><span class="s2">&#34;body_type&#34;</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">            <span class="n">fuel_type</span> <span class="o">=</span> <span class="n">gr</span><span class="o">.</span><span class="n">Dropdown</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">&#34;Fuel Type&#34;</span><span class="p">,</span> <span class="n">choices</span><span class="o">=</span><span class="n">unique_values</span><span class="p">[</span><span class="s2">&#34;fuel_type&#34;</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">            <span class="n">transmission</span> <span class="o">=</span> <span class="n">gr</span><span class="o">.</span><span class="n">Dropdown</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">                <span class="n">label</span><span class="o">=</span><span class="s2">&#34;Transmission&#34;</span><span class="p">,</span> <span class="n">choices</span><span class="o">=</span><span class="n">unique_values</span><span class="p">[</span><span class="s2">&#34;transmission&#34;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">            <span class="p">)</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">        <span class="n">predict_button</span> <span class="o">=</span> <span class="n">gr</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="s2">&#34;Predict Price&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">predicted_price</span> <span class="o">=</span> <span class="n">gr</span><span class="o">.</span><span class="n">Textbox</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">&#34;Predicted Price&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">        <span class="n">predict_button</span><span class="o">.</span><span class="n">click</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">            <span class="n">fn</span><span class="o">=</span><span class="n">predict_car_price</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="n">inputs</span><span class="o">=</span><span class="p">[</span>
+</span></span><span class="line"><span class="cl">                <span class="n">make</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                <span class="n">model</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                <span class="n">year_of_manufacture</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                <span class="n">color</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                <span class="n">condition</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                <span class="n">mileage</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                <span class="n">engine_size</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                <span class="n">registered_city</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                <span class="n">selling_condition</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                <span class="n">bought_condition</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                <span class="n">city</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                <span class="n">body_type</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                <span class="n">fuel_type</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                <span class="n">transmission</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="p">],</span>
+</span></span><span class="line"><span class="cl">            <span class="n">outputs</span><span class="o">=</span><span class="n">predicted_price</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="p">)</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="n">interface</span><span class="o">.</span><span class="n">launch</span><span class="p">(</span><span class="n">server_name</span><span class="o">=</span><span class="s2">&#34;0.0.0.0&#34;</span><span class="p">,</span> <span class="n">server_port</span><span class="o">=</span><span class="mi">7860</span><span class="p">)</span>
+</span></span></code></pre></div><p>The demo for the gradio UI is in the GitHub readme: <a href="https://github.com/Duks31/car_price-prediction"  class="external-link" target="_blank" rel="noopener">https://github.com/Duks31/car_price-prediction</a></p>
+<p>Then after testing the API and the UI, I dockerised it to make it available regardless of the dev environment that you are run it from. The tricky thing that I had to do here is to run the fast API and the gradio UI from the same image running on 2 different ports.</p>
+<p>So, I learnt about this software <a href="http://supervisord.org/"  class="external-link" target="_blank" rel="noopener">supervisord</a>. Supervisor is a client/server system that allows its users to monitor and control a number of processes on UNIX-like operating systems.</p>
+<p>my supervisord.conf`file looked like this</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-toml" data-lang="toml"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="p">[</span><span class="nx">supervisord</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">nodaemon</span><span class="p">=</span><span class="kc">true</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="p">[</span><span class="nx">program</span><span class="err">:</span><span class="nx">fastapi</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">command</span><span class="p">=</span><span class="nx">uvicorn</span> <span class="nx">main</span><span class="err">:</span><span class="nx">app</span> <span class="nx">--host</span> <span class="mf">0.0</span><span class="p">.</span><span class="mf">0.0</span> <span class="nx">--port</span> <span class="mi">8000</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">autostart</span><span class="p">=</span><span class="kc">true</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">autorestart</span><span class="p">=</span><span class="kc">true</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">stderr_logfile</span><span class="p">=</span><span class="err">/</span><span class="nx">var</span><span class="err">/</span><span class="nx">log</span><span class="err">/</span><span class="nx">fastapi</span><span class="p">.</span><span class="nx">err</span><span class="p">.</span><span class="nx">log</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">stdout_logfile</span><span class="p">=</span><span class="err">/</span><span class="nx">var</span><span class="err">/</span><span class="nx">log</span><span class="err">/</span><span class="nx">fastapi</span><span class="p">.</span><span class="nx">out</span><span class="p">.</span><span class="nx">log</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="p">[</span><span class="nx">program</span><span class="err">:</span><span class="nx">gradio</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">command</span><span class="p">=</span><span class="nx">python</span> <span class="nx">gradio_app</span><span class="p">.</span><span class="nx">py</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">autostart</span><span class="p">=</span><span class="kc">true</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">autorestart</span><span class="p">=</span><span class="kc">true</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">stderr_logfile</span><span class="p">=</span><span class="err">/</span><span class="nx">var</span><span class="err">/</span><span class="nx">log</span><span class="err">/</span><span class="nx">gradio</span><span class="p">.</span><span class="nx">err</span><span class="p">.</span><span class="nx">log</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">stdout_logfile</span><span class="p">=</span><span class="err">/</span><span class="nx">var</span><span class="err">/</span><span class="nx">log</span><span class="err">/</span><span class="nx">gradio</span><span class="p">.</span><span class="nx">out</span><span class="p">.</span><span class="nx">log</span>
+</span></span></code></pre></div><p>This configuration file sets up two programs to be managed by supervisord: a FastAPI application and a Gradio application. Both applications are configured to start automatically when supervisord starts and to restart if they crash. Log files are specified for each application&rsquo;s standard output and error, allowing you to monitor their activity and troubleshoot issues.</p>
+<p>So, with that setup I the created the Dockerfile :</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">    <span class="c1"># syntax=docker/dockerfile:1</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    ARG <span class="nv">PYTHON_VERSION</span><span class="o">=</span>3.11.9
+</span></span><span class="line"><span class="cl">    FROM python:<span class="si">${</span><span class="nv">PYTHON_VERSION</span><span class="si">}</span> as base
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    ENV <span class="nv">PYTHONDONTWRITEBYTECODE</span><span class="o">=</span><span class="m">1</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    ENV <span class="nv">PYTHONUNBUFFERED</span><span class="o">=</span><span class="m">1</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    WORKDIR /app
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    COPY requirements.txt .
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    RUN pip install --no-cache-dir -r requirements.txt
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    RUN apt-get update <span class="o">&amp;&amp;</span> apt-get install -y supervisor <span class="o">&amp;&amp;</span> rm -rf /var/lib/apt/lists/*
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    COPY supervisord.conf /etc/supervisor/supervisord.conf
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    COPY . .
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    EXPOSE <span class="m">8000</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    EXPOSE <span class="m">7860</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    CMD <span class="o">[</span><span class="s2">&#34;/usr/bin/supervisord&#34;</span>, <span class="s2">&#34;-c&#34;</span>, <span class="s2">&#34;/etc/supervisor/supervisord.conf&#34;</span><span class="o">]</span>
+</span></span></code></pre></div><p>This Dockerfile builds a Docker image with a Python environment, installs the necessary Python dependencies, sets up supervisor to manage the FastAPI and Gradio applications, and prepares the container to expose the necessary ports for these applications. The use of supervisord ensures that both applications are started and monitored within the container, facilitating efficient process management.</p>
+<p>Finally, I built the image using docker compose and pushed it to Docker hub: <a href="https://hub.docker.com/repository/docker/chidubem/car_pred-app/general"  class="external-link" target="_blank" rel="noopener">chidubem/car_pred-app general (docker.com)</a></p>
+<p><strong>CI/CD (<em>somewhat)</em></strong></p>
+<p>Thereafter, I needed to automate the process, making it such that when there is a PR (pull-request) to the main branch in my repo, the PR may be an update to the model to improve its accuracy. code below:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Build and Push Docker Image</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">on</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="c"># push:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="c">#   branches:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="c">#     - main</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">pull_request</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">types</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="l">closed]</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">branches</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span>- <span class="l">main</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">jobs</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">build-and-push</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">if</span><span class="p">:</span><span class="w"> </span><span class="l">github.event.pull_request.merged == true</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">runs-on</span><span class="p">:</span><span class="w"> </span><span class="l">ubuntu-latest</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">steps</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Checkout repository</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l">actions/checkout@v4</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Set up Docker Buildx</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l">docker/setup-buildx-action@v2</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Log in to Docker Hub</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l">docker/login-action@v2</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">with</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">username</span><span class="p">:</span><span class="w"> </span><span class="l">${{ secrets.DOCKER_USERNAME }}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">password</span><span class="p">:</span><span class="w"> </span><span class="l">${{ secrets.DOCKER_PASSWORD }}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Set up tag for the Docker image</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l">vars</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l">echo &#34;TAG=$(date +%s)&#34; &gt;&gt; $GITHUB_ENV</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Build the Docker image</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l">docker build . --file Dockerfile --tag chidubem/car_pred-app:${{ env.TAG }}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Push the Docker image</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l">docker push chidubem/car_pred-app:${{ env.TAG }}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Log out from Docker Hub</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l">docker logout</span><span class="w">
+</span></span></span></code></pre></div><p>I think it is more of a CD (continuous deployment) process, this GitHub Actions workflow automates the process of building and pushing a Docker image to Docker Hub as part of a Continuous Deployment (CD) pipeline. It is triggered when a pull request to the main branch is closed and successfully merged. The workflow runs on an Ubuntu environment and performs several steps: checking out the repository, setting up Docker Buildx for advanced build capabilities, and logging into Docker Hub using credentials stored in GitHub Secrets. It assigns a unique tag to the Docker image based on the current Unix timestamp, builds the Docker image using the Dockerfile in the repository, and pushes the tagged image to Docker Hub. Finally, it logs out from Docker Hub to maintain security. This setup ensures that every change merged into the main branch results in a new version of the Docker image being deployed to Docker Hub, facilitating continuous deployment.</p>
+
+  </article>
+</section>
+
+  
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+      2020 -
+    
+    2025
+     Ndukwe Chidubem 
+    ·
+    
+    Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/" target="_blank" rel="noopener">Coder</a>.
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/js/coder.min.6ae284be93d2d19dad1f02b0039508d9aab3180a12a06dcc71b0b0ef7825a317.js" integrity="sha256-auKEvpPS0Z2tHwKwA5UI2aqzGAoSoG3McbCw73gloxc="></script>
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+
+</html>

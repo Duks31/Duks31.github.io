@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ndukwe Chidubem</title>
+    <link>https://Duks31.github.io/</link>
+    <description>Recent content on Ndukwe Chidubem</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 19 Feb 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://Duks31.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Monolith By TikTok (ByteDance)</title>
+      <link>https://Duks31.github.io/posts/2025-02-19-monolith-by-tiktok-bytedance/</link>
+      <pubDate>Wed, 19 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>https://Duks31.github.io/posts/2025-02-19-monolith-by-tiktok-bytedance/</guid>
+      <description>Social media timelines are so captivating because they’re powered by incredibly sophisticated recommendation systems that seem almost magical in how well they understand user preferences. TikTok is a master of this, delivering a personalized feed that keeps users hooked for hours. The secret behind this is ByteDance’s cutting-edge recommendation engine, Monolith — a scalable, real-time system designed to optimize engagement like never before.&#xA;Recommendation systems can be built using production-scale deep learning frameworks like Pytorch and Tensorflow but they fall short of reaching the main business demands.</description>
+    </item>
+    <item>
+      <title>Experience</title>
+      <link>https://Duks31.github.io/experience/</link>
+      <pubDate>Sat, 15 Feb 2025 13:46:46 +0100</pubDate>
+      <guid>https://Duks31.github.io/experience/</guid>
+      <description>Engineering Intern (Information Technology)&#xD;Link to heading&#xD;Seplat Energy Plc | Aug 2024 – Sep 2024 (2 months)&#xA;Location: Lagos State, Nigeria&#xA;Gained hands-on experience in networking, system deployment, and system configuration. Skills: Networking, System Deployment, System Configuration&#xA;Full-stack Developer Intern&#xD;Link to heading&#xD;Synecoo | Apr 2024 – May 2024 (2 months)&#xA;Location: Madhya Pradesh, India (Remote)&#xA;Developed DishDash, a food delivery software using Flutter and Firebase during individual stages of the internship.</description>
+    </item>
+    <item>
+      <title>Comma.ai — Solving Self driving cars</title>
+      <link>https://Duks31.github.io/posts/2024-12-27-comma-ai-solving-self-driving-cars/</link>
+      <pubDate>Fri, 27 Dec 2024 00:00:00 +0000</pubDate>
+      <guid>https://Duks31.github.io/posts/2024-12-27-comma-ai-solving-self-driving-cars/</guid>
+      <description>The bitter lesson in ML is that we must make methods that learn how to discover, not contain what we have discovered&#xA;A couple of years ago, the idea of self-driving cars was primarily focused on the use of multiple sensors like LIDAR, radar, ultrasonic sensors, and cameras. These sensors were mounted on custom-made vehicles or heavily modified production cars to achieve full autonomous functionality. The combination of these sensors enabled the vehicles to detect obstacles, map their surroundings in real time, and make complex driving decisions.</description>
+    </item>
+    <item>
+      <title>Air Quality Prediction</title>
+      <link>https://Duks31.github.io/projects/air_quality_predictor/</link>
+      <pubDate>Sat, 05 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>https://Duks31.github.io/projects/air_quality_predictor/</guid>
+      <description>Project Overview&#xD;Link to heading&#xD;The project aims to develop an air quality predictor using machine learning techniques. It utilizes a workflow depicted in the image &amp;ldquo;aqp_workflow.png&amp;rdquo; located in the &amp;ldquo;images&amp;rdquo; directory. The repository contains various documents and scripts that are essential for the project.&#xA;The project overview includes the following key components:&#xA;Data Collection: The project involves gathering air quality data from multiple sources, such as sensors, weather stations, and government databases.</description>
+    </item>
+    <item>
+      <title>Car Price Prediction</title>
+      <link>https://Duks31.github.io/projects/car_price_prediction/</link>
+      <pubDate>Thu, 01 Aug 2024 00:00:00 +0000</pubDate>
+      <guid>https://Duks31.github.io/projects/car_price_prediction/</guid>
+      <description>ML: From Data scraping to Deployment&#xD;Link to heading&#xD;Building a Car Prediction Model&#xD;Link to heading&#xD;Machine learning systems are not built from Jupyter notebooks, for the most part of it they are much complex systems.&#xA;In my self-learning journey, I wanted to learn about putting different systems and technologies together. So, I used a simple, not to complicated problem — car price prediction- to understand how it done in a small scale.</description>
+    </item>
+    <item>
+      <title>Churn Prediction</title>
+      <link>https://Duks31.github.io/projects/churn_prediction/</link>
+      <pubDate>Mon, 15 Jul 2024 00:00:00 +0000</pubDate>
+      <guid>https://Duks31.github.io/projects/churn_prediction/</guid>
+      <description>Check out the project on github&#xA;Churn Prediction&#xD;Link to heading&#xD;Churn prediction is the process of identifying customers who are likely to stop using a company&amp;rsquo;s products or services. It is particularly important in subscription-based businesses, telecommunications, banking, and other industries where retaining customers is crucial for long-term success.&#xA;Project Overview&#xD;Link to heading&#xD;In this project, I built a machine learning model to predict customer churn using customer data.</description>
+    </item>
+    <item>
+      <title>RAG pt1: Brief Introduction to Retrieval Augumented Generation</title>
+      <link>https://Duks31.github.io/posts/2024-04-29-intro-to-rag/</link>
+      <pubDate>Mon, 29 Apr 2024 00:00:00 +0000</pubDate>
+      <guid>https://Duks31.github.io/posts/2024-04-29-intro-to-rag/</guid>
+      <description>Brief Introduction to RAG (Retrieval Augmented Generation)&#xA;Imagine this, you are the owner of a company, and your company has a customer service department, the customer service department is responsible for all customer request and complaint about the product the company has to offer and it even goes beyond that, the customer service department ensures that customers have a seamless experience with the company’s products or services from the moment they inquire about them to after-sales support.</description>
+    </item>
+    <item>
+      <title>DishDash</title>
+      <link>https://Duks31.github.io/projects/dishdash/</link>
+      <pubDate>Tue, 23 Apr 2024 00:00:00 +0000</pubDate>
+      <guid>https://Duks31.github.io/projects/dishdash/</guid>
+      <description>Check out the project on github&#xA;Demo&#xD;Link to heading&#xD;Demo 1 Demo 2 Demo 3 Demo 4 Demo 5 Demo 6 Demo 7 Demo 8 Demo 9 Demo 10 Check out the video demo on my linkedIn post&#xA;Features&#xD;Link to heading&#xD;User Authentication Food Menu Food Cart Order User Profile Self Vendor Description&#xD;Link to heading&#xD;DishDash is a food delivery application that allows you to order food from different vendors and also gives you the ability to add food items to the market, making being a vendor seamless.</description>
+    </item>
+    <item>
+      <title>GANs pt2: Building GANs</title>
+      <link>https://Duks31.github.io/posts/2024-03-31-ganspt2/</link>
+      <pubDate>Sun, 31 Mar 2024 00:00:00 +0000</pubDate>
+      <guid>https://Duks31.github.io/posts/2024-03-31-ganspt2/</guid>
+      <description>This is the second part of the GANs episodes, if you missed the first you can check that out here. In the first part, I talked about the why of GANs and a couple of other things, do check it out.&#xA;In this part we will be looking at what it takes to build a very simple GAN architecture. Link to Code here.&#xA;The above code is a very simple implementation of GAN, I will use this to expand on the concept talked about in part 1.</description>
+    </item>
+    <item>
+      <title>Capp</title>
+      <link>https://Duks31.github.io/projects/capp/</link>
+      <pubDate>Fri, 15 Mar 2024 00:00:00 +0000</pubDate>
+      <guid>https://Duks31.github.io/projects/capp/</guid>
+      <description>Check out the project on github&#xA;Demo&amp;rsquo;s&#xD;Link to heading&#xD;Demo 1 Demo 2 Demo 3 Demo 4 Description&#xD;Link to heading&#xD;The Chat App is a user-friendly messaging application that allows you to connect and communicate with friends and family. It is a simple and easy-to-use app that allows you to send and receive messages. The Chat App is a great way to stay connected with the people you care about, no matter where they are in the world.</description>
+    </item>
+    <item>
+      <title>GANs pt1: Understanding GANs</title>
+      <link>https://Duks31.github.io/posts/2024-03-13-gans-pt1/</link>
+      <pubDate>Wed, 13 Mar 2024 00:00:00 +0000</pubDate>
+      <guid>https://Duks31.github.io/posts/2024-03-13-gans-pt1/</guid>
+      <description>Understanding GANs&#xA;Generative Adversarial Networks (GANs) are one of the exciting model architectures that gave rise to the increasing popularity of machine learning in the space recently. GANs are generative models, meaning that they create new data that resembles the training data, for example, by creating realistic images of human faces. The images below were created by GANs:&#xA;quite realistic, right? In a GAN, there are two fundamental blocks (neural networks), the generator and the discriminator.</description>
+    </item>
+    <item>
+      <title>LLMs: Generative AI at the moment</title>
+      <link>https://Duks31.github.io/posts/2024-03-12-llms/</link>
+      <pubDate>Tue, 12 Mar 2024 00:00:00 +0000</pubDate>
+      <guid>https://Duks31.github.io/posts/2024-03-12-llms/</guid>
+      <description>Generative AI at the moment&#xD;Link to heading&#xD;Generative AI, particularly propagated by large language models (LLMs), is a rapidly advancing field with numerous exciting developments. LLMs, like GPT-4, exhibit remarkable proficiency in generating coherent and contextually relevant text. Capable of producing grammatically correct and semantically meaningful content, these models have found applications in diverse domains, such as generating articles, stories, chatbot responses, and even entire books. The key strength of LLMs lies in their capacity to learn complex language patterns from vast datasets, enabling them to generate text with a level of complexity and nuance that manual programming would struggle to achieve.</description>
+    </item>
+    <item>
+      <title>News Harbor</title>
+      <link>https://Duks31.github.io/projects/news_harbor/</link>
+      <pubDate>Sat, 23 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>https://Duks31.github.io/projects/news_harbor/</guid>
+      <description>Check out the project on github&#xA;Overview&#xD;Link to heading&#xD;News Harbor is a news platform that detects the sentiment of News articles. check out this demo&#xA;Sentiment analysis in NLP is the process of determining the emotion or tone behind a piece of text, classifying it as positive, negative, or neutral. It&amp;rsquo;s used to gauge public opinion, feedback, or reactions. Techniques include lexicon-based methods using sentiment dictionaries and machine learning models trained on labeled data.</description>
+    </item>
+    <item>
+      <title>Contact</title>
+      <link>https://Duks31.github.io/contact/</link>
+      <pubDate>Sat, 02 Sep 2023 13:34:46 +0100</pubDate>
+      <guid>https://Duks31.github.io/contact/</guid>
+      <description>I am willing to collaborate and work on project that solve problems.&#xA;Contact me: chidubemjan31@gmail.com</description>
+    </item>
+    <item>
+      <title>About</title>
+      <link>https://Duks31.github.io/about/</link>
+      <pubDate>Sat, 02 Sep 2023 13:34:36 +0100</pubDate>
+      <guid>https://Duks31.github.io/about/</guid>
+      <description>Hello! I&amp;rsquo;m Chidubem Ndukwe, a Mechatronics undergraduate and Artificial Intelligence enthusiast based in Nigeria. My passion lies in exploring the depths of AI and its applications, particularly in the realms of robotics and machine learning.&#xA;I am deeply fascinated by the convergence of AI and robotics, striving to develop innovative solutions that address real-world challenges. My work encompasses a range of projects in AI, machine learning, and robotics, reflecting my commitment to advancing technology.</description>
+    </item>
+    <item>
+      <title>Understanding Gradient Descent</title>
+      <link>https://Duks31.github.io/posts/2023-08-11-understanding-gradient-descent/</link>
+      <pubDate>Fri, 11 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>https://Duks31.github.io/posts/2023-08-11-understanding-gradient-descent/</guid>
+      <description>Introduction&#xA;Gradient Descent (GD) is a first order optimization algorithms that is used to find the minimum of a given function, it is commonly used in training machine learning and deep learning algorithms.&#xA;In machine learning after you train a model you would like to check how the model performed either by checking the accuracy or any other measure that suites the problem, let’s say you generate a **cost function **which is a measure of how wrong the model is finding a relationship between the input and the output, this is where Gradient Descent comes in, the gradient descent algorithm will optimize the cost function, it will give the minimum value of possible error of your model.</description>
+    </item>
+    <item>
+      <title>9 Different levels of Measuring Distance</title>
+      <link>https://Duks31.github.io/posts/2023-07-25-9-levels-of-measuring-distance/</link>
+      <pubDate>Tue, 25 Jul 2023 00:00:00 +0000</pubDate>
+      <guid>https://Duks31.github.io/posts/2023-07-25-9-levels-of-measuring-distance/</guid>
+      <description>In our daily lives, we encounter the concept of distance in various forms and contexts. Whether we’re navigating through a busy city, exploring the vastness of the universe, or even contemplating the emotional space between ourselves and others, distance plays a fundamental role in shaping our experiences and understanding of the world. But did you know that distance can be perceived and measured in numerous ways, each offering unique insights into the relationships between objects, ideas, and individuals?</description>
+    </item>
+    <item>
+      <title>Mnist App</title>
+      <link>https://Duks31.github.io/projects/mnist/</link>
+      <pubDate>Sun, 12 Mar 2023 00:00:00 +0000</pubDate>
+      <guid>https://Duks31.github.io/projects/mnist/</guid>
+      <description>Check out the project on github or read about it here&#xA;MNIST is a classic machine learning dataset that is often referred to as the &amp;ldquo;Hello World&amp;rdquo; of machine learning. It consists of a large set of handwritten digits, which are labeled with their corresponding numerical values.&#xA;The goal of machine learning models trained on the MNIST dataset is to correctly classify each digit image into its corresponding numerical value (0-9).</description>
+    </item>
+    <item>
+      <title>Understanding Confusion Matrix</title>
+      <link>https://Duks31.github.io/posts/2022-10-16-understanding-confusion-matrix/</link>
+      <pubDate>Sun, 16 Oct 2022 00:00:00 +0000</pubDate>
+      <guid>https://Duks31.github.io/posts/2022-10-16-understanding-confusion-matrix/</guid>
+      <description>If you have ever made a classification model, you have probably found out the quality of your model by maybe checking the accuracy. Well that good but check this out.&#xA;Imagine you have a model that predict cats when it is trained on 1000 features containing 990 cats and 10 dogs, if we are to calculate the accuracy it will be 99%. But here the model completely misclassifies all of the apples.</description>
+    </item>
+    <item>
+      <title>Why Deep Learning?</title>
+      <link>https://Duks31.github.io/posts/2022-10-12-why-deep-learning/</link>
+      <pubDate>Wed, 12 Oct 2022 00:00:00 +0000</pubDate>
+      <guid>https://Duks31.github.io/posts/2022-10-12-why-deep-learning/</guid>
+      <description>In the Recent Trends in the Field of Artificial Intelligence (AI), DeepLearning has gained more popularity in Reasearch over the years compared to Traditional Machine Learning.&#xA;The Question is Why? If you would like to know continue Reading 🙂&#xA;Firstly, Deep learning is a subset of machine learning which provides the ability to machine to perform human-like tasks without human involvement. It provides the ability to an AI agent to mimic the human brain.</description>
+    </item>
+    <item>
+      <title>An Honest AI /Machine Learning Journey</title>
+      <link>https://Duks31.github.io/posts/2020-08-20-an-honest-ml-journey/</link>
+      <pubDate>Thu, 20 Aug 2020 00:00:00 +0000</pubDate>
+      <guid>https://Duks31.github.io/posts/2020-08-20-an-honest-ml-journey/</guid>
+      <description>In this article I would like to share my journey in the field of Machine Learning and Artificial Intelligence, it will be useful for you if you want to start a career in Machine Learning / AI; the Do’s and Don’ts 🙂 at least from my experience.&#xA;I will be kinda brief 🤞…&#xA;I learnt Python in 2020, as a geek i get fascinated with anything tech and I always loved programming.</description>
+    </item>
+  </channel>
+</rss>

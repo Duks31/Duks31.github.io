@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>comma ai on Ndukwe Chidubem</title>
+    <link>https://Duks31.github.io/tags/comma-ai/</link>
+    <description>Recent content in comma ai on Ndukwe Chidubem</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 27 Dec 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://Duks31.github.io/tags/comma-ai/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Comma.ai — Solving Self driving cars</title>
+      <link>https://Duks31.github.io/posts/2024-12-27-comma-ai-solving-self-driving-cars/</link>
+      <pubDate>Fri, 27 Dec 2024 00:00:00 +0000</pubDate>
+      <guid>https://Duks31.github.io/posts/2024-12-27-comma-ai-solving-self-driving-cars/</guid>
+      <description>The bitter lesson in ML is that we must make methods that learn how to discover, not contain what we have discovered&#xA;A couple of years ago, the idea of self-driving cars was primarily focused on the use of multiple sensors like LIDAR, radar, ultrasonic sensors, and cameras. These sensors were mounted on custom-made vehicles or heavily modified production cars to achieve full autonomous functionality. The combination of these sensors enabled the vehicles to detect obstacles, map their surroundings in real time, and make complex driving decisions.</description>
+    </item>
+  </channel>
+</rss>

@@ -16,8 +16,6 @@ I actively share my insights and findings through various platforms:
 
 My **GitHub** profile showcases a variety of projects that highlight my skills in AI and robotics. I am always eager to collaborate on innovative projects that push the boundaries of technology.
 
-On **_Kaggle_**, I engage with a community of data enthusiasts, contributing to discussions and exploring data-driven solutions.
-
 I'm always open to connecting with like-minded individuals and exploring new opportunities. Feel free to reach out through my personal website or connect with me on GitHub, Kaggle, Medium, and The Nerd's Stack.
 
 Personal website: [here](https://duks31.github.io/)  

@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>
+  Monolith By TikTok (ByteDance) · Ndukwe Chidubem
+</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="Ndukwe Chidubem">
+<meta name="description" content="Social media timelines are so captivating because they’re powered by incredibly sophisticated recommendation systems that seem almost magical in how well they understand user preferences. TikTok is a master of this, delivering a personalized feed that keeps users hooked for hours. The secret behind this is ByteDance’s cutting-edge recommendation engine, Monolith — a scalable, real-time system designed to optimize engagement like never before.
+Recommendation systems can be built using production-scale deep learning frameworks like Pytorch and Tensorflow but they fall short of reaching the main business demands.">
+<meta name="keywords" content="blog,developer,personal">
+
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Monolith By TikTok (ByteDance)"/>
+<meta name="twitter:description" content="Social media timelines are so captivating because they’re powered by incredibly sophisticated recommendation systems that seem almost magical in how well they understand user preferences. TikTok is a master of this, delivering a personalized feed that keeps users hooked for hours. The secret behind this is ByteDance’s cutting-edge recommendation engine, Monolith — a scalable, real-time system designed to optimize engagement like never before.
+Recommendation systems can be built using production-scale deep learning frameworks like Pytorch and Tensorflow but they fall short of reaching the main business demands."/>
+
+<meta property="og:title" content="Monolith By TikTok (ByteDance)" />
+<meta property="og:description" content="Social media timelines are so captivating because they’re powered by incredibly sophisticated recommendation systems that seem almost magical in how well they understand user preferences. TikTok is a master of this, delivering a personalized feed that keeps users hooked for hours. The secret behind this is ByteDance’s cutting-edge recommendation engine, Monolith — a scalable, real-time system designed to optimize engagement like never before.
+Recommendation systems can be built using production-scale deep learning frameworks like Pytorch and Tensorflow but they fall short of reaching the main business demands." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://Duks31.github.io/posts/2025-02-19-monolith-by-tiktok-bytedance/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2025-02-19T00:00:00+00:00" />
+<meta property="article:modified_time" content="2025-02-19T00:00:00+00:00" />
+
+
+
+
+
+<link rel="canonical" href="https://Duks31.github.io/posts/2025-02-19-monolith-by-tiktok-bytedance/">
+
+
+<link rel="preload" href="/fonts/forkawesome-webfont.woff2?v=1.2.0" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/css/coder.min.135e22c97ff685fe983fc60048e309ced8f00d8d38f536aa67dba8a13a03dfa4.css" integrity="sha256-E14iyX/2hf6YP8YASOMJztjwDY049TaqZ9uooToD36Q=" crossorigin="anonymous" media="screen" />
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="/css/coder-dark.min.a00e6364bacbc8266ad1cc81230774a1397198f8cfb7bcba29b7d6fcb54ce57f.css" integrity="sha256-oA5jZLrLyCZq0cyBIwd0oTlxmPjPt7y6KbfW/LVM5X8=" crossorigin="anonymous" media="screen" />
+  
+
+
+
+ 
+
+
+
+
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg" sizes="any">
+<link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+	
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+
+
+
+
+
+
+
+</head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-dark">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="/">
+      Ndukwe Chidubem
+    </a>
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/about/">About</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/posts/">Blog</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/projects/">Projects</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/experience/">Experience</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/contact/">Contact me</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">
+            <a class="title-link" href="https://Duks31.github.io/posts/2025-02-19-monolith-by-tiktok-bytedance/">
+              Monolith By TikTok (ByteDance)
+            </a>
+          </h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa fa-calendar" aria-hidden="true"></i>
+              <time datetime="2025-02-19T00:00:00Z">
+                February 19, 2025
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fa fa-clock-o" aria-hidden="true"></i>
+              10-minute read
+            </span>
+          </div>
+          
+          
+          <div class="tags">
+  <i class="fa fa-tag" aria-hidden="true"></i>
+    <span class="tag">
+      <a href="/tags/artificial-intelligence/">Artificial Intelligence</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/data-science/">Data Science</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/machine-learning/">Machine Learning</a>
+    </span></div>
+
+        </div>
+      </header>
+
+      <div class="post-content">
+        
+        <p>Social media timelines are so captivating because they’re powered by incredibly sophisticated recommendation systems that seem almost magical in how well they understand user preferences. TikTok is a master of this, delivering a personalized feed that keeps users hooked for hours. The secret behind this is ByteDance’s cutting-edge recommendation engine, <a href="https://arxiv.org/pdf/2209.07663"  class="external-link" target="_blank" rel="noopener">Monolith</a> — a scalable, real-time system designed to optimize engagement like never before.</p>
+<p>Recommendation systems can be built using production-scale deep learning frameworks like Pytorch and Tensorflow but they fall short of reaching the main business demands. In making Monolith, they came up with a <strong>collision-less embedding</strong> table with clever optimizations like expiring embeddings and frequency filtering and also <strong>production-ready online training</strong> architecture with high fault-tolerance, then finally they also proved that <strong>system reliability could be a trade-off</strong> for real-time learning.</p>
+<p>The common goal of a business is to deliver personalized content for each individual user in real time and key challenges arise when building recommendation systems</p>
+<ul>
+<li>
+<p>The features are mostly sparse, categorical and dynamically changing causing collision</p>
+</li>
+<li>
+<p>The distribution of training data is non-stationary, i.e. the user may have change of content preferences overtime</p>
+</li>
+<li>
+<p>The system should be scalable i.e. memory efficiency and fault-tolerant designs</p>
+</li>
+</ul>
+<p>This is where monolith comes in. It was designed to address the above challenges:</p>
+<ul>
+<li>
+<p>A collision-less embedding using Cuckoo HashMap to prevent data collisions.</p>
+</li>
+<li>
+<p>Real-time Online Training, allowing the system to learn from user interactions instantly.</p>
+</li>
+<li>
+<p>Efficient synchronization to ensure that the model does not have any quality loss or computation overhead.</p>
+</li>
+</ul>
+<h3 id="collision-less-embedding">
+  Collision-less Embedding
+  <a class="heading-link" href="#collision-less-embedding">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>In recommendation systems, an <strong>embedding</strong> is a way to represent things (like users, videos, or hashtags) as numbers so that computers can understand and compare them. Think of it like converting words into points on a map, where similar things are closer together.</p>
+<p>Imagine you have two different users, but they accidentally get placed on the exact same spot on the map. In a recommender system, this means the system thinks they are the same person with identical tastes — bad news for personalized recommendations! This happens because of <strong>collisions</strong> when two different IDs (e.g., user IDs or video IDs) are mapped to the same embedding by accident.</p>
+<p><img src="https://cdn-images-1.medium.com/max/2000/0*TPDjc6YQuxd1CILN.png" alt="Cuckoo HashMap"></p>
+<p>Cuckoo HashMap</p>
+<p>Monolith’s solution to this is using the <strong>Cuckoo HashMap</strong>, it is like having two maps for each ID. If an ID doesn’t fit on the first map, it gets moved to its spot on the second map — just like a cuckoo bird kicks out eggs from a nest to make space for its own.</p>
+<p>How it works:</p>
+<p><strong>Two Hash Functions:</strong></p>
+<ul>
+<li>
+<p>Monolith uses two different hash functions (h0 and h1) to calculate two possible spots for each ID.</p>
+</li>
+<li>
+<p>This gives each ID two chances to find a spot, reducing the chance of a collision.</p>
+</li>
+</ul>
+<p><strong>Placing Feature Embeddings:</strong></p>
+<ul>
+<li>
+<p>When storing an embedding, Monolith first checks the spot given by h0.</p>
+</li>
+<li>
+<p>If that spot is taken, the existing item is <strong>kicked out</strong> and moved to its other spot, calculated by h1.</p>
+</li>
+<li>
+<p>This process repeats until all items find a home.</p>
+</li>
+</ul>
+<p><strong>Collision Avoidance:</strong></p>
+<ul>
+<li>
+<p>By allowing each ID to have two potential spots, Monolith drastically reduces the chances of collisions.</p>
+</li>
+<li>
+<p>This ensures each feature ID gets its own unique embedding, preserving the integrity of the data.</p>
+</li>
+</ul>
+<p>To explain it better look at this scenario:</p>
+<p>Imagine you have two lockers at school. You always check the first one (h0) to store your backpack. If someone else’s bag is already there, you move it to their second locker (h1) and take the first one. If that locker is also full, the shuffling continues until all bags have a place. This system ensures no two bags end up in the same locker, just like Monolith ensures no two IDs share the same embedding.</p>
+<p><img src="https://cdn-images-1.medium.com/max/2556/0*gItQNzJTaVAbBnoH.png" alt="Monolith Online Training Architecture"></p>
+<p>Monolith Online Training Architecture</p>
+<h3 id="online-training">
+  Online Training
+  <a class="heading-link" href="#online-training">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>The Monolith training is divided into two stages Batch Training stage and Online Training stage</p>
+<p>The <strong>batch training</strong> is similar to traditional training processes it involves:</p>
+<p><strong>Data Preparation</strong>: Historical batch data is collected and stored in a system like HDFS (Hadoop Distributed File System). This data typically includes user interactions (e.g., clicks, views) and associated features (e.g., user IDs, item IDs).</p>
+<p><strong>Training Worker</strong>: A training worker reads a mini-batch of this historical data. The worker then performs the following steps:</p>
+<ul>
+<li>
+<p><strong>Embedding Table Lookup</strong>: The worker looks up the embeddings for the feature IDs (e.g., user IDs, item IDs) in the embedding table stored on the <strong>Training Parameter Server (PS)</strong>. These embeddings are dense vector representations of the sparse categorical features.</p>
+</li>
+<li>
+<p><strong>Model Forward and Backward Pass</strong>: The worker performs a forward pass to make predictions using the model (e.g., a DeepFM model) and a backward pass to compute gradients based on the prediction errors.</p>
+</li>
+<li>
+<p><strong>Gradient Updates</strong>: The worker sends the computed gradients back to the Training PS, which updates the model parameters (both dense weights and sparse embeddings).</p>
+</li>
+</ul>
+<p><strong>Parameter Server (PS)</strong>: The Training PS stores the model parameters, including the embedding table. During batch training, it receives gradient updates from the training worker and applies them to the model parameters. This process is repeated for multiple epochs until the model converges.</p>
+<p>The batch training stage is essential for training the model on a large volume of historical data, ensuring that it learns general patterns and user preferences. However, since this stage relies on static data, it cannot adapt to real-time user feedback.</p>
+<p>Once the model is deployed for online serving, the <strong>online training stage</strong> takes over. This stage is designed to adapt the model in real-time based on the latest user interactions. Here’s how it works:</p>
+<p><strong>Real-Time Data Streaming</strong>: Instead of using historical data, the system now consumes real-time data streams. These streams include user actions (e.g., clicks, likes) and associated features, which are logged in real-time using a system like Kafka.</p>
+<p><strong>Training Worker</strong>: Similar to batch training, the training worker processes the real-time data:</p>
+<ul>
+<li>
+<p><strong>Embedding Table Lookup</strong>: The worker looks up the embeddings for the feature IDs in the embedding table stored on the Training PS.</p>
+</li>
+<li>
+<p><strong>Model Forward and Backward Pass</strong>: The worker performs a forward pass to make predictions and a backward pass to compute gradients based on the latest user feedback.</p>
+</li>
+<li>
+<p><strong>Gradient Updates</strong>: The worker sends the gradients to the Training PS, which updates the model parameters.</p>
+</li>
+</ul>
+<p><strong>Parameter Synchronization</strong>: One of the key features of Monolith is its ability to synchronize parameters between the <strong>Training PS</strong> and the <strong>Serving PS</strong> in near real-time. This is done at regular intervals (e.g., every minute) to ensure that the online serving model reflects the latest updates. Only the parameters that have changed (e.g., embeddings for recently active users or items) are synchronized, reducing the computational and network overhead.</p>
+<p><strong>Serving PS and Model Server</strong>: The Serving PS stores the latest version of the model parameters, which are used by the <strong>Model Server</strong> to serve real-time recommendations to users. When a user makes a request (e.g., loading a feed), the Model Server performs a forward pass using the latest parameters to generate personalized recommendations.</p>
+<p><strong>User Actions</strong>: The user interacts with the recommendations (e.g., clicking on an item), and these actions are logged and fed back into the system as real-time data, creating a continuous feedback loop.</p>
+<p><img src="https://cdn-images-1.medium.com/max/2912/0*OP278VF08Szx0ALS.png" alt="Streaming Engine"></p>
+<p>The <strong>streaming engine</strong> is the core infrastructure that enables Monolith to handle both batch and online training seamlessly. It acts as the bridge between historical data (used in batch training) and real-time data (used in online training). Here’s how it fits into the overall process:</p>
+<p><strong>Data Ingestion</strong>: The streaming engine uses <strong>Kafka queues</strong> to log two types of data:</p>
+<ul>
+<li>
+<p><strong>User Actions</strong>: Real-time logs of user interactions (e.g., clicks, likes).</p>
+</li>
+<li>
+<p><strong>Features</strong>: Metadata associated with users and items (e.g., user IDs, item IDs, categories).</p>
+</li>
+</ul>
+<p><strong>Data Processing</strong>: A <strong>Flink streaming job</strong> processes these logs in real-time. It performs the following tasks:</p>
+<ul>
+<li>
+<p><strong>Joining Data</strong>: The streaming engine combines user actions with their corresponding features to create training examples. This is where the <strong>online joiner</strong> comes into play (more on this below).</p>
+</li>
+<li>
+<p><strong>Writing to Queues</strong>: The joined training examples are written to a Kafka queue, which serves as the input for both batch and online training.</p>
+</li>
+</ul>
+<p><strong>Flexibility</strong>: The streaming engine allows Monolith to switch between batch and online training modes. For batch training, the data is dumped to HDFS and processed in large chunks. For online training, the data is consumed directly from the Kafka queue in real-time.</p>
+<p><img src="https://cdn-images-1.medium.com/max/2912/0*rz_aF1dY4BLmRIxx.png" alt="Online Joiner"></p>
+<p>The <strong>online joiner</strong> is a critical component of the streaming engine, responsible for pairing user actions with their corresponding features in real-time. This is especially important because user actions and features may arrive out of order or with delays. Here’s how it works:</p>
+<p><strong>Unique Key Matching</strong>: Each user action and feature is assigned a unique key (e.g., a request ID). The online joiner uses these keys to correctly pair actions with their corresponding features.</p>
+<p><strong>Handling Delays</strong>: In real-world scenarios, there can be delays between when a user sees an item and when they interact with it (e.g., a user might click on an item days after seeing it). To handle this:</p>
+<ul>
+<li>
+<p><strong>In-Memory Cache</strong>: The online joiner first checks an in-memory cache for features that match the user action.</p>
+</li>
+<li>
+<p><strong>On-Disk Storage</strong>: If the feature is not found in the cache, the joiner looks it up in an on-disk key-value storage. This ensures that even delayed actions can be paired with their features.</p>
+</li>
+</ul>
+<p><strong>Output</strong>: The joined data (user actions + features) is written to a Kafka queue, which is then consumed by the training workers for online training.</p>
+<p>Once the model is updated during online training, the latest parameters need to be synchronized with the serving system to ensure real-time recommendations. This is where <strong>parameter synchronization</strong> comes into play:</p>
+<p><strong>Incremental Updates</strong>: Instead of transferring the entire model (which can be several terabytes in size), Monolith only synchronizes the subset of parameters that have been updated since the last synchronization. This is done by maintaining a <strong>hash set of touched keys</strong> (IDs whose embeddings have been updated).</p>
+<p><strong>Frequency of Updates</strong>:</p>
+<ul>
+<li>
+<p><strong>Sparse Parameters</strong>: These are updated frequently (e.g., every minute) because they represent user and item embeddings, which change rapidly based on real-time interactions.</p>
+</li>
+<li>
+<p><strong>Dense Parameters</strong>: These are updated less frequently (e.g., daily) because they represent slower-changing weights in the neural network.</p>
+</li>
+</ul>
+<p><strong>Efficiency</strong>: By synchronizing only the updated parameters, Monolith minimizes network bandwidth and memory usage, ensuring that the system can scale to handle large-scale production workloads.</p>
+<p><strong>Fault Tolerance</strong>: To handle potential failures in the Parameter Servers (PS), Monolith periodically snapshots the state of the training PS. In case of a failure, the system can recover from the latest snapshot, ensuring minimal disruption to the training process.</p>
+<h3 id="fault-tolerance">
+  Fault Tolerance
+  <a class="heading-link" href="#fault-tolerance">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>Monolith ensures system reliability through <strong>snapshotting</strong>, which periodically saves the state of the model parameters stored on the <strong>Parameter Servers (PS)</strong>. Here’s how it works:</p>
+<p><strong>Daily Snapshots</strong>:</p>
+<ul>
+<li>
+<p>Monolith takes snapshots of the training PS once a day, storing the current state of all model parameters (dense weights and sparse embeddings).</p>
+</li>
+<li>
+<p>If a PS fails, the system recovers from the latest snapshot, losing at most one day’s worth of updates.</p>
+</li>
+</ul>
+<p><strong>Trade-offs</strong>:</p>
+<ul>
+<li>
+<p><strong>Model Quality</strong>: Daily snapshots minimize the impact of failures, as only a small subset of embeddings (sparse parameters) is updated in a short time window. Dense parameters change slowly, so losing a day’s updates has little effect.</p>
+</li>
+<li>
+<p><strong>Computation Overhead</strong>: Daily snapshots reduce the strain on the system compared to more frequent snapshots, which would require more memory and disk I/O.</p>
+</li>
+</ul>
+<p><strong>Why It Works</strong>:</p>
+<ul>
+<li>
+<p><strong>Sparse Updates</strong>: Only a small fraction of embeddings are updated daily, so losing a day’s updates affects very few users.</p>
+</li>
+<li>
+<p><strong>User Distribution</strong>: With user IDs evenly distributed across PS machines, a failure impacts only a tiny fraction of daily active users (e.g., 0.01%).</p>
+</li>
+</ul>
+<p><strong>In Practice</strong>:</p>
+<ul>
+<li>
+<p>Monolith’s fault tolerance has been tested in production, handling PS failures (e.g., 0.01% failure rate) with minimal impact on model quality or user experience.</p>
+</li>
+<li>
+<p>The system recovers quickly, ensuring high availability and reliability.</p>
+</li>
+</ul>
+<p>And that’s about it, machine learning real world use cases are always fun to encounter and understand. You can read the full paper <a href="https://arxiv.org/pdf/2209.07663"  class="external-link" target="_blank" rel="noopener">here</a>.</p>
+<p><em>Images are from the <a href="https://arxiv.org/pdf/2209.07663"  class="external-link" target="_blank" rel="noopener">paper</a>.</em></p>
+<p>Stay Nerdy…</p>
+<p>If you liked this, you would like more <a href="https://ncep.substack.com/"  class="external-link" target="_blank" rel="noopener">here</a></p>
+
+      </div>
+
+
+      <footer>
+        
+
+
+        
+        
+        
+        
+        
+      </footer>
+    </article>
+
+    
+  </section>
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+      2020 -
+    
+    2025
+     Ndukwe Chidubem 
+    ·
+    
+    Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/" target="_blank" rel="noopener">Coder</a>.
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/js/coder.min.6ae284be93d2d19dad1f02b0039508d9aab3180a12a06dcc71b0b0ef7825a317.js" integrity="sha256-auKEvpPS0Z2tHwKwA5UI2aqzGAoSoG3McbCw73gloxc="></script>
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+
+</html>

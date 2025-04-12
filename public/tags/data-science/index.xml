@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Data Science on Ndukwe Chidubem</title>
+    <link>https://Duks31.github.io/tags/data-science/</link>
+    <description>Recent content in Data Science on Ndukwe Chidubem</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 19 Feb 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://Duks31.github.io/tags/data-science/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Monolith By TikTok (ByteDance)</title>
+      <link>https://Duks31.github.io/posts/2025-02-19-monolith-by-tiktok-bytedance/</link>
+      <pubDate>Wed, 19 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>https://Duks31.github.io/posts/2025-02-19-monolith-by-tiktok-bytedance/</guid>
+      <description>Social media timelines are so captivating because they’re powered by incredibly sophisticated recommendation systems that seem almost magical in how well they understand user preferences. TikTok is a master of this, delivering a personalized feed that keeps users hooked for hours. The secret behind this is ByteDance’s cutting-edge recommendation engine, Monolith — a scalable, real-time system designed to optimize engagement like never before.&#xA;Recommendation systems can be built using production-scale deep learning frameworks like Pytorch and Tensorflow but they fall short of reaching the main business demands.</description>
+    </item>
+    <item>
+      <title>Understanding Gradient Descent</title>
+      <link>https://Duks31.github.io/posts/2023-08-11-understanding-gradient-descent/</link>
+      <pubDate>Fri, 11 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>https://Duks31.github.io/posts/2023-08-11-understanding-gradient-descent/</guid>
+      <description>Introduction&#xA;Gradient Descent (GD) is a first order optimization algorithms that is used to find the minimum of a given function, it is commonly used in training machine learning and deep learning algorithms.&#xA;In machine learning after you train a model you would like to check how the model performed either by checking the accuracy or any other measure that suites the problem, let’s say you generate a **cost function **which is a measure of how wrong the model is finding a relationship between the input and the output, this is where Gradient Descent comes in, the gradient descent algorithm will optimize the cost function, it will give the minimum value of possible error of your model.</description>
+    </item>
+    <item>
+      <title>9 Different levels of Measuring Distance</title>
+      <link>https://Duks31.github.io/posts/2023-07-25-9-levels-of-measuring-distance/</link>
+      <pubDate>Tue, 25 Jul 2023 00:00:00 +0000</pubDate>
+      <guid>https://Duks31.github.io/posts/2023-07-25-9-levels-of-measuring-distance/</guid>
+      <description>In our daily lives, we encounter the concept of distance in various forms and contexts. Whether we’re navigating through a busy city, exploring the vastness of the universe, or even contemplating the emotional space between ourselves and others, distance plays a fundamental role in shaping our experiences and understanding of the world. But did you know that distance can be perceived and measured in numerous ways, each offering unique insights into the relationships between objects, ideas, and individuals?</description>
+    </item>
+    <item>
+      <title>Understanding Confusion Matrix</title>
+      <link>https://Duks31.github.io/posts/2022-10-16-understanding-confusion-matrix/</link>
+      <pubDate>Sun, 16 Oct 2022 00:00:00 +0000</pubDate>
+      <guid>https://Duks31.github.io/posts/2022-10-16-understanding-confusion-matrix/</guid>
+      <description>If you have ever made a classification model, you have probably found out the quality of your model by maybe checking the accuracy. Well that good but check this out.&#xA;Imagine you have a model that predict cats when it is trained on 1000 features containing 990 cats and 10 dogs, if we are to calculate the accuracy it will be 99%. But here the model completely misclassifies all of the apples.</description>
+    </item>
+  </channel>
+</rss>

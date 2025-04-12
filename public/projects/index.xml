@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Projects on Ndukwe Chidubem</title>
+    <link>https://Duks31.github.io/projects/</link>
+    <description>Recent content in Projects on Ndukwe Chidubem</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 05 Oct 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://Duks31.github.io/projects/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Air Quality Prediction</title>
+      <link>https://Duks31.github.io/projects/air_quality_predictor/</link>
+      <pubDate>Sat, 05 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>https://Duks31.github.io/projects/air_quality_predictor/</guid>
+      <description>Project Overview&#xD;Link to heading&#xD;The project aims to develop an air quality predictor using machine learning techniques. It utilizes a workflow depicted in the image &amp;ldquo;aqp_workflow.png&amp;rdquo; located in the &amp;ldquo;images&amp;rdquo; directory. The repository contains various documents and scripts that are essential for the project.&#xA;The project overview includes the following key components:&#xA;Data Collection: The project involves gathering air quality data from multiple sources, such as sensors, weather stations, and government databases.</description>
+    </item>
+    <item>
+      <title>Car Price Prediction</title>
+      <link>https://Duks31.github.io/projects/car_price_prediction/</link>
+      <pubDate>Thu, 01 Aug 2024 00:00:00 +0000</pubDate>
+      <guid>https://Duks31.github.io/projects/car_price_prediction/</guid>
+      <description>ML: From Data scraping to Deployment&#xD;Link to heading&#xD;Building a Car Prediction Model&#xD;Link to heading&#xD;Machine learning systems are not built from Jupyter notebooks, for the most part of it they are much complex systems.&#xA;In my self-learning journey, I wanted to learn about putting different systems and technologies together. So, I used a simple, not to complicated problem — car price prediction- to understand how it done in a small scale.</description>
+    </item>
+    <item>
+      <title>Churn Prediction</title>
+      <link>https://Duks31.github.io/projects/churn_prediction/</link>
+      <pubDate>Mon, 15 Jul 2024 00:00:00 +0000</pubDate>
+      <guid>https://Duks31.github.io/projects/churn_prediction/</guid>
+      <description>Check out the project on github&#xA;Churn Prediction&#xD;Link to heading&#xD;Churn prediction is the process of identifying customers who are likely to stop using a company&amp;rsquo;s products or services. It is particularly important in subscription-based businesses, telecommunications, banking, and other industries where retaining customers is crucial for long-term success.&#xA;Project Overview&#xD;Link to heading&#xD;In this project, I built a machine learning model to predict customer churn using customer data.</description>
+    </item>
+    <item>
+      <title>DishDash</title>
+      <link>https://Duks31.github.io/projects/dishdash/</link>
+      <pubDate>Tue, 23 Apr 2024 00:00:00 +0000</pubDate>
+      <guid>https://Duks31.github.io/projects/dishdash/</guid>
+      <description>Check out the project on github&#xA;Demo&#xD;Link to heading&#xD;Demo 1 Demo 2 Demo 3 Demo 4 Demo 5 Demo 6 Demo 7 Demo 8 Demo 9 Demo 10 Check out the video demo on my linkedIn post&#xA;Features&#xD;Link to heading&#xD;User Authentication Food Menu Food Cart Order User Profile Self Vendor Description&#xD;Link to heading&#xD;DishDash is a food delivery application that allows you to order food from different vendors and also gives you the ability to add food items to the market, making being a vendor seamless.</description>
+    </item>
+    <item>
+      <title>Capp</title>
+      <link>https://Duks31.github.io/projects/capp/</link>
+      <pubDate>Fri, 15 Mar 2024 00:00:00 +0000</pubDate>
+      <guid>https://Duks31.github.io/projects/capp/</guid>
+      <description>Check out the project on github&#xA;Demo&amp;rsquo;s&#xD;Link to heading&#xD;Demo 1 Demo 2 Demo 3 Demo 4 Description&#xD;Link to heading&#xD;The Chat App is a user-friendly messaging application that allows you to connect and communicate with friends and family. It is a simple and easy-to-use app that allows you to send and receive messages. The Chat App is a great way to stay connected with the people you care about, no matter where they are in the world.</description>
+    </item>
+    <item>
+      <title>News Harbor</title>
+      <link>https://Duks31.github.io/projects/news_harbor/</link>
+      <pubDate>Sat, 23 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>https://Duks31.github.io/projects/news_harbor/</guid>
+      <description>Check out the project on github&#xA;Overview&#xD;Link to heading&#xD;News Harbor is a news platform that detects the sentiment of News articles. check out this demo&#xA;Sentiment analysis in NLP is the process of determining the emotion or tone behind a piece of text, classifying it as positive, negative, or neutral. It&amp;rsquo;s used to gauge public opinion, feedback, or reactions. Techniques include lexicon-based methods using sentiment dictionaries and machine learning models trained on labeled data.</description>
+    </item>
+    <item>
+      <title>Mnist App</title>
+      <link>https://Duks31.github.io/projects/mnist/</link>
+      <pubDate>Sun, 12 Mar 2023 00:00:00 +0000</pubDate>
+      <guid>https://Duks31.github.io/projects/mnist/</guid>
+      <description>Check out the project on github or read about it here&#xA;MNIST is a classic machine learning dataset that is often referred to as the &amp;ldquo;Hello World&amp;rdquo; of machine learning. It consists of a large set of handwritten digits, which are labeled with their corresponding numerical values.&#xA;The goal of machine learning models trained on the MNIST dataset is to correctly classify each digit image into its corresponding numerical value (0-9).</description>
+    </item>
+  </channel>
+</rss>

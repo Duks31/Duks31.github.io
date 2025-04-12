@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>
+  Understanding Gradient Descent · Ndukwe Chidubem
+</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="Ndukwe Chidubem">
+<meta name="description" content="Introduction
+Gradient Descent (GD) is a first order optimization algorithms that is used to find the minimum of a given function, it is commonly used in training machine learning and deep learning algorithms.
+In machine learning after you train a model you would like to check how the model performed either by checking the accuracy or any other measure that suites the problem, let’s say you generate a **cost function **which is a measure of how wrong the model is finding a relationship between the input and the output, this is where Gradient Descent comes in, the gradient descent algorithm will optimize the cost function, it will give the minimum value of possible error of your model.">
+<meta name="keywords" content="blog,developer,personal">
+
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Understanding Gradient Descent"/>
+<meta name="twitter:description" content="Introduction
+Gradient Descent (GD) is a first order optimization algorithms that is used to find the minimum of a given function, it is commonly used in training machine learning and deep learning algorithms.
+In machine learning after you train a model you would like to check how the model performed either by checking the accuracy or any other measure that suites the problem, let’s say you generate a **cost function **which is a measure of how wrong the model is finding a relationship between the input and the output, this is where Gradient Descent comes in, the gradient descent algorithm will optimize the cost function, it will give the minimum value of possible error of your model."/>
+
+<meta property="og:title" content="Understanding Gradient Descent" />
+<meta property="og:description" content="Introduction
+Gradient Descent (GD) is a first order optimization algorithms that is used to find the minimum of a given function, it is commonly used in training machine learning and deep learning algorithms.
+In machine learning after you train a model you would like to check how the model performed either by checking the accuracy or any other measure that suites the problem, let’s say you generate a **cost function **which is a measure of how wrong the model is finding a relationship between the input and the output, this is where Gradient Descent comes in, the gradient descent algorithm will optimize the cost function, it will give the minimum value of possible error of your model." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://Duks31.github.io/posts/2023-08-11-understanding-gradient-descent/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-08-11T00:00:00+00:00" />
+<meta property="article:modified_time" content="2023-08-11T00:00:00+00:00" />
+
+
+
+
+
+<link rel="canonical" href="https://Duks31.github.io/posts/2023-08-11-understanding-gradient-descent/">
+
+
+<link rel="preload" href="/fonts/forkawesome-webfont.woff2?v=1.2.0" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/css/coder.min.135e22c97ff685fe983fc60048e309ced8f00d8d38f536aa67dba8a13a03dfa4.css" integrity="sha256-E14iyX/2hf6YP8YASOMJztjwDY049TaqZ9uooToD36Q=" crossorigin="anonymous" media="screen" />
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="/css/coder-dark.min.a00e6364bacbc8266ad1cc81230774a1397198f8cfb7bcba29b7d6fcb54ce57f.css" integrity="sha256-oA5jZLrLyCZq0cyBIwd0oTlxmPjPt7y6KbfW/LVM5X8=" crossorigin="anonymous" media="screen" />
+  
+
+
+
+ 
+
+
+
+
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg" sizes="any">
+<link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+	
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+
+
+
+
+
+
+
+</head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-dark">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="/">
+      Ndukwe Chidubem
+    </a>
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/about/">About</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/posts/">Blog</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/projects/">Projects</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/experience/">Experience</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/contact/">Contact me</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">
+            <a class="title-link" href="https://Duks31.github.io/posts/2023-08-11-understanding-gradient-descent/">
+              Understanding Gradient Descent
+            </a>
+          </h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa fa-calendar" aria-hidden="true"></i>
+              <time datetime="2023-08-11T00:00:00Z">
+                August 11, 2023
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fa fa-clock-o" aria-hidden="true"></i>
+              4-minute read
+            </span>
+          </div>
+          
+          
+          <div class="tags">
+  <i class="fa fa-tag" aria-hidden="true"></i>
+    <span class="tag">
+      <a href="/tags/artificial-intelligence/">Artificial Intelligence</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/data-science/">Data Science</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/machine-learning/">Machine Learning</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/gradient-descent/">Gradient Descent</a>
+    </span></div>
+
+        </div>
+      </header>
+
+      <div class="post-content">
+        
+        <p><img src="https://cdn-images-1.medium.com/max/2000/1*RCdeL2GnRkuqKRIg7LzaJA.gif" alt="Gradient Descent. image by author"></p>
+<p><strong>Introduction</strong></p>
+<p><strong>Gradient Descent</strong> (GD) is a first order optimization algorithms that is used to find the minimum of a given function, it is commonly used in training machine learning and deep learning algorithms.</p>
+<p>In <strong>machine learning</strong> after you train a model you would like to check how the model performed either by checking the accuracy or any other measure that suites the problem, let’s say you generate a **cost function **which is a measure of how wrong the model is finding a relationship between the input and the output, this is where Gradient Descent comes in, the gradient descent algorithm will optimize the cost function, it will give the minimum value of possible error of your model.</p>
+<p>Gradient descent works for functions that are <strong>differentiable</strong> and <strong>convex.</strong></p>
+<p>Firstly, from calculus, derivative of a function is:</p>
+<p><img src="https://cdn-images-1.medium.com/max/2000/1*BCWPqbFBPPqr9DMhCMsXcw.png" alt=""></p>
+<p>or some may know it as:</p>
+<p><img src="https://cdn-images-1.medium.com/max/2000/1*8n4idXjaFvklbfHZOCqCFg.png" alt=""></p>
+<p>Secondly, A convex function is a <strong>continuous function</strong> whose value at the midpoint of every interval in its domain does not exceed the arithmetic mean of its values at the ends of the interval, or easier said, a convex function is like a bowl, curving upwards. This means that any line segment connecting two points on the curve lies above the curve itself. In other words, if you pick two points on a convex curve and draw a straight line between them, the curve will always be below or touching that line.</p>
+<p>Mathematically:</p>
+<p>A function <em>f</em>(<em>x</em>) is convex if, for any two points <em>x</em>1​ and <em>x</em>2​ in its domain and any <em>λ</em> in the interval [0,1], the following inequality holds:</p>
+<p><img src="https://cdn-images-1.medium.com/max/2000/1*HpXDNUohM7UXulAX6BtlCA.png" alt=""></p>
+<p>This inequality essentially states that the function lies below the straight line connecting the two points (<em>x</em>1​, f(<em>x</em>1​)) and (<em>x</em>2​, f(<em>x</em>2​)) for any choice of <em>λ</em> between 0 and 1. If this condition holds for all pairs of points and all <em>λ</em>, then the function is convex. You can learn more <a href="https://www.youtube.com/watch?v=nOFXLCCvtm0&amp;t=56s"  class="external-link" target="_blank" rel="noopener">here</a></p>
+<p>a simpler way to know whether it is convex is to check whether the second derivative of the function is greater than 0.</p>
+<p><img src="https://cdn-images-1.medium.com/max/2000/1*Eq46UykLg2ivzRHXIB4ncw.png" alt=""></p>
+<p><strong>The Gradient Descent algorithm</strong></p>
+<p>The whole idea of the gradient algorithm is to calculate the next point to converge using the gradient of the function at the current position, this is then multiplied by the learning rate and then subtracts obtained value from the current position, the reason is simply to minimize the function, maximizing will be adding.</p>
+<p><strong>Learning rate</strong> is a parameter in gradient descent algorithm also referred to as step size is the size of the steps that are taken to reach the minimum. It is typically a small value, and it is evaluated and updated based on the behavior of the cost function. High learning rate may result to overshooting or diverging completely, conversely low learning rate can result to more time to reach the minimum.</p>
+<p><img src="https://cdn-images-1.medium.com/max/2000/1*gSwq1zO2wGOGHHSe4jMwEg.png" alt="gradient descent"></p>
+<p>In this formula:</p>
+<ul>
+<li>
+<p><em>θi+1</em>​ represents the updated parameter values in the next iteration.</p>
+</li>
+<li>
+<p><em>θi</em>​ represents the current parameter values.</p>
+</li>
+<li>
+<p><em>α</em> is the <strong>learning rate</strong>, a positive scalar that determines the step size.</p>
+</li>
+<li>
+<p>∇<em>J</em>(<em>θi</em>​) represents the gradient of the cost (or loss) function <em>J</em> with respect to the parameters <em>θi</em>​.</p>
+</li>
+</ul>
+<p>The formula represents how the parameters are updated in each iteration of the gradient descent algorithm to minimize the cost function.</p>
+<p><strong>Implementation</strong></p>
+<p>GD implementation steps are:</p>
+<ul>
+<li>
+<p>Initialization: choose a starting point on the function</p>
+</li>
+<li>
+<p>Gradient: calculate the gradient at that point</p>
+</li>
+<li>
+<p>Descend: make a step to the new position using the gradient descent formula</p>
+</li>
+<li>
+<p>Repeat: the process goes on until the minimum of the function or the maximum number of iterations is reached.</p>
+</li>
+</ul>
+<p>Let’s say we have a function:</p>
+<p><img src="https://cdn-images-1.medium.com/max/2000/1*OHtMKI7O_-hSPOvJtkJYdQ.png" alt=""></p>
+<p>the derivative becomes:</p>
+<p><img src="https://cdn-images-1.medium.com/max/2000/1*8-M6TtnHNPEUa3kj0U14lQ.png" alt=""></p>
+<p>In python:</p>
+<!-- raw HTML omitted -->
+<p>Then we have our gradient descent implementation:</p>
+<!-- raw HTML omitted -->
+<p>calling the function:</p>
+<!-- raw HTML omitted -->
+<p><img src="https://cdn-images-1.medium.com/max/2000/1*tgVaVK3daNm-UietjAzbDg.gif" alt=""></p>
+<p>The animation above shows how to Gradient descent algorithm when the <strong>learning rate is 0.01</strong>, when the learning rate is increased to something like <strong>0.9</strong>.</p>
+<p><img src="https://cdn-images-1.medium.com/max/2000/1*7dlTvfKAmnaexPH-P93bIw.gif" alt=""></p>
+<p>Let’s check out <strong>learning rate 1.0!</strong></p>
+<p><img src="https://cdn-images-1.medium.com/max/2000/1*2Meka14HoCjEdusEMlbM6A.gif" alt=""></p>
+<p>You can see that for bigger learning rate it starts to jump from side to side, so as we increase the learning rate it may eventually diverge.</p>
+<p><strong>Challenges with Gradient Descent</strong></p>
+<ul>
+<li>
+<p><strong>Vanishing Gradient</strong>: This mostly occurs when the gradient is too small, mostly in neural networks, during backpropagation, the gradient becomes smaller (vanishes) this causes the earlier layers of the network to learn slowly as this happens the weight update of the later part of the network become insignificant. You can check out more <a href="https://towardsdatascience.com/the-vanishing-gradient-problem-69bf08b15484"  class="external-link" target="_blank" rel="noopener">here</a> or <a href="https://machinelearningmastery.com/visualizing-the-vanishing-gradient-problem/"  class="external-link" target="_blank" rel="noopener">here</a></p>
+</li>
+<li>
+<p><strong>Exploding Gradient</strong>: This is more like the inverse of vanishing gradient problem, here the gradient is too large, and it creates a very unstable model you can check out more <a href="https://machinelearningmastery.com/exploding-gradients-in-neural-networks/"  class="external-link" target="_blank" rel="noopener">here</a></p>
+</li>
+</ul>
+<p>You can get the code for the visualization <a href="https://github.com/Duks31/gradeint-descent"  class="external-link" target="_blank" rel="noopener">here</a></p>
+<p>If you made it to the end, here is a cool visualization for you :)</p>
+<p><img src="https://cdn-images-1.medium.com/max/2000/1*AvKCFHskJnGhRIWAZqPToA.gif" alt=""></p>
+
+      </div>
+
+
+      <footer>
+        
+
+
+        
+        
+        
+        
+        
+      </footer>
+    </article>
+
+    
+  </section>
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+      2020 -
+    
+    2025
+     Ndukwe Chidubem 
+    ·
+    
+    Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/" target="_blank" rel="noopener">Coder</a>.
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/js/coder.min.6ae284be93d2d19dad1f02b0039508d9aab3180a12a06dcc71b0b0ef7825a317.js" integrity="sha256-auKEvpPS0Z2tHwKwA5UI2aqzGAoSoG3McbCw73gloxc="></script>
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+
+</html>

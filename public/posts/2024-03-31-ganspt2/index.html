@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>
+  GANs pt2: Building GANs · Ndukwe Chidubem
+</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="Ndukwe Chidubem">
+<meta name="description" content="This is the second part of the GANs episodes, if you missed the first you can check that out here. In the first part, I talked about the why of GANs and a couple of other things, do check it out.
+In this part we will be looking at what it takes to build a very simple GAN architecture. Link to Code here.
+The above code is a very simple implementation of GAN, I will use this to expand on the concept talked about in part 1.">
+<meta name="keywords" content="blog,developer,personal">
+
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="GANs pt2: Building GANs"/>
+<meta name="twitter:description" content="This is the second part of the GANs episodes, if you missed the first you can check that out here. In the first part, I talked about the why of GANs and a couple of other things, do check it out.
+In this part we will be looking at what it takes to build a very simple GAN architecture. Link to Code here.
+The above code is a very simple implementation of GAN, I will use this to expand on the concept talked about in part 1."/>
+
+<meta property="og:title" content="GANs pt2: Building GANs" />
+<meta property="og:description" content="This is the second part of the GANs episodes, if you missed the first you can check that out here. In the first part, I talked about the why of GANs and a couple of other things, do check it out.
+In this part we will be looking at what it takes to build a very simple GAN architecture. Link to Code here.
+The above code is a very simple implementation of GAN, I will use this to expand on the concept talked about in part 1." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://Duks31.github.io/posts/2024-03-31-ganspt2/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2024-03-31T00:00:00+00:00" />
+<meta property="article:modified_time" content="2024-03-31T00:00:00+00:00" />
+
+
+
+
+
+<link rel="canonical" href="https://Duks31.github.io/posts/2024-03-31-ganspt2/">
+
+
+<link rel="preload" href="/fonts/forkawesome-webfont.woff2?v=1.2.0" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/css/coder.min.135e22c97ff685fe983fc60048e309ced8f00d8d38f536aa67dba8a13a03dfa4.css" integrity="sha256-E14iyX/2hf6YP8YASOMJztjwDY049TaqZ9uooToD36Q=" crossorigin="anonymous" media="screen" />
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="/css/coder-dark.min.a00e6364bacbc8266ad1cc81230774a1397198f8cfb7bcba29b7d6fcb54ce57f.css" integrity="sha256-oA5jZLrLyCZq0cyBIwd0oTlxmPjPt7y6KbfW/LVM5X8=" crossorigin="anonymous" media="screen" />
+  
+
+
+
+ 
+
+
+
+
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg" sizes="any">
+<link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+	
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+
+
+
+
+
+
+
+</head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-dark">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="/">
+      Ndukwe Chidubem
+    </a>
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/about/">About</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/posts/">Blog</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/projects/">Projects</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/experience/">Experience</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/contact/">Contact me</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">
+            <a class="title-link" href="https://Duks31.github.io/posts/2024-03-31-ganspt2/">
+              GANs pt2: Building GANs
+            </a>
+          </h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa fa-calendar" aria-hidden="true"></i>
+              <time datetime="2024-03-31T00:00:00Z">
+                March 31, 2024
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fa fa-clock-o" aria-hidden="true"></i>
+              3-minute read
+            </span>
+          </div>
+          
+          
+          <div class="tags">
+  <i class="fa fa-tag" aria-hidden="true"></i>
+    <span class="tag">
+      <a href="/tags/artificial-intelligence/">Artificial Intelligence</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/machine-learning/">Machine Learning</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/generative-ai/">Generative AI</a>
+    </span></div>
+
+        </div>
+      </header>
+
+      <div class="post-content">
+        
+        <p>This is the second part of the GANs episodes, if you missed the first you can check that out <a href="https://medium.com/@chidubemndukwe/gans-pt1-d49bfd7e9b12"  class="external-link" target="_blank" rel="noopener">here</a>. In the first part, I talked about the why of GANs and a couple of other things, do check it out.</p>
+<p>In this part we will be looking at what it takes to build a very simple GAN architecture. Link to Code <a href="https://github.com/Duks31/GAN"  class="external-link" target="_blank" rel="noopener">here</a>.</p>
+<p><img src="https://cdn-images-1.medium.com/max/2912/0*pAvnxa8VbYHG-_46.png" alt=""></p>
+<p>The above code is a very simple implementation of GAN, I will use this to expand on the concept talked about in part 1.</p>
+<p><img src="https://cdn-images-1.medium.com/max/2232/0*eWcwExmqaDbaRCJW.png" alt=""></p>
+<p>These lines import the necessary libraries for implementing a Generative Adversarial Network (GAN) using PyTorch. This includes modules for defining neural network architectures (torch.nn), optimization algorithms (torch.optim), datasets (torchvision.datasets), data loaders (torch.utils.data.DataLoader), image transformations (torchvision.transforms), and TensorBoard for visualization (torch.utils.tensorboard.SummaryWriter).</p>
+<p><img src="https://cdn-images-1.medium.com/max/2000/0*lSEBThaw4vVxoT7I.png" alt=""></p>
+<p><img src="https://cdn-images-1.medium.com/max/2000/0*nuQw8XYdHQZ9yHnh.png" alt=""></p>
+<p>These classes define the architecture of the discriminator and generator neural networks, respectively. The discriminator takes an input of size in_features and outputs a single value indicating the probability that the input is real. The generator takes a random noise vector of size z_dim and outputs an image of size img_dim.</p>
+<p><img src="https://cdn-images-1.medium.com/max/2756/0*mAxINs07bq4Ob94r.png" alt=""></p>
+<p>These lines set hyperparameters such as learning rate (lr), latent space dimension (z_dim), image dimension (img_dim), batch size (batch_size), and number of epochs (num_epochs). The device is set to GPU (&ldquo;cuda&rdquo;) if available, otherwise to CPU.</p>
+<p>Also, instances of the discriminator and generator classes are created and moved to the specified device (CPU or GPU). fixed_noise is a fixed random noise vector used for generating fake images during training.</p>
+<p><img src="https://cdn-images-1.medium.com/max/2912/0*Qeczg3PHjt7ngD9p.png" alt=""></p>
+<p>The MNIST dataset is then loaded using these transformations into a DataLoader, which will provide batches of data during training.</p>
+<p>The Adam optimizers are defined for both the discriminator (opt_disc) and the generator (opt_gen). The learning rate (lr) is specified for both optimizers. Additionally, the Binary Cross Entropy (BCE) loss function (criterion) is defined, which will be used to calculate the loss during training.</p>
+<p>Two SummaryWriter objects are created for logging fake and real images during training. These will be used to visualize the generated and real images using TensorBoard.</p>
+<p><img src="https://cdn-images-1.medium.com/max/2236/0*U81IbXg1_UrgW7x7.png" alt=""></p>
+<p>This loop iterates over each epoch and each batch of the dataset. It extracts real images (real) and their labels from the DataLoader. The real images are reshaped to a vector format (view (-1, 784)) and moved to the specified device (device).</p>
+<p><img src="https://cdn-images-1.medium.com/max/2660/0*lwBG3OZkKzsx-41V.png" alt=""></p>
+<p>This part of the code trains the discriminator. First, random noise (noise) is generated and passed through the generator to produce fake images (fake). The discriminator evaluates both real and fake images and calculates the losses (lossD_real and lossD_fake) using the BCE loss function. Then, the total discriminator loss (lossD) is calculated as the average of the losses on real and fake images. Gradients are cleared (disc.zero_grad()), and backpropagation is performed (lossD.backward()), followed by an optimization step (opt_disc.step()).</p>
+<p><img src="https://cdn-images-1.medium.com/max/2236/0*uvavxvDK0J9PoeZQ.png" alt=""></p>
+<p>This section trains the generator. It evaluates the fake images produced by the generator using the discriminator and calculates the generator loss (lossG) based on the discriminator&rsquo;s output. Gradients of the generator are cleared (gen.zero_grad()), backpropagation is performed (lossG.backward()), and an optimization step is taken (opt_gen.step()).</p>
+<p><img src="https://cdn-images-1.medium.com/max/2912/0*w6K-eDPJoGUFZJkO.png" alt=""></p>
+<p>This part of the code is executed at the beginning of each epoch (when batch_idx == 0). It generates fake images using the generator (fake), creates image grids for fake and real images, and adds them to TensorBoard for visualization.</p>
+<p>Thanks for reading this article, if you are interested in more things like this, you can subscribe to my substack <a href="https://ncep.substack.com/"  class="external-link" target="_blank" rel="noopener">here</a>.</p>
+
+      </div>
+
+
+      <footer>
+        
+
+
+        
+        
+        
+        
+        
+      </footer>
+    </article>
+
+    
+  </section>
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+      2020 -
+    
+    2025
+     Ndukwe Chidubem 
+    ·
+    
+    Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/" target="_blank" rel="noopener">Coder</a>.
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/js/coder.min.6ae284be93d2d19dad1f02b0039508d9aab3180a12a06dcc71b0b0ef7825a317.js" integrity="sha256-auKEvpPS0Z2tHwKwA5UI2aqzGAoSoG3McbCw73gloxc="></script>
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+
+</html>

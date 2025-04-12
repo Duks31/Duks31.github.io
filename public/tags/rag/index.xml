@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>RAG on Ndukwe Chidubem</title>
+    <link>https://Duks31.github.io/tags/rag/</link>
+    <description>Recent content in RAG on Ndukwe Chidubem</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 29 Apr 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://Duks31.github.io/tags/rag/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>RAG pt1: Brief Introduction to Retrieval Augumented Generation</title>
+      <link>https://Duks31.github.io/posts/2024-04-29-intro-to-rag/</link>
+      <pubDate>Mon, 29 Apr 2024 00:00:00 +0000</pubDate>
+      <guid>https://Duks31.github.io/posts/2024-04-29-intro-to-rag/</guid>
+      <description>Brief Introduction to RAG (Retrieval Augmented Generation)&#xA;Imagine this, you are the owner of a company, and your company has a customer service department, the customer service department is responsible for all customer request and complaint about the product the company has to offer and it even goes beyond that, the customer service department ensures that customers have a seamless experience with the company’s products or services from the moment they inquire about them to after-sales support.</description>
+    </item>
+  </channel>
+</rss>
