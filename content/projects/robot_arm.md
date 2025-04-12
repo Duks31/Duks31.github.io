@@ -4,7 +4,6 @@ excerpt: "Robot Arm using ROS2 and Fusion360"
 collection: portfolio
 date: 2025-01-24
 ---
-# ROS2 Robotic Arm Project
 
 ![RobotArm](/images/robot_arm.png)
 
