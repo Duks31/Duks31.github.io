@@ -1,7 +1,7 @@
 ---
 title: 'Why Deep Learning?'
 date: 2022-10-12
-permalink: /posts/2012/08/Why Deep-Learning/
+permalink: /posts/2022/10/Why Deep-Learning/
 tags:
   - Artificial Intelligence
   - Deep Learning

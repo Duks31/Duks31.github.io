@@ -1,7 +1,7 @@
 ---
 title: 'Understanding Confusion Matrix'
 date: 2022-10-16
-permalink: /posts/2012/08/Understanding Confusion Matrix/
+permalink: /posts/2022/10/Understanding Confusion Matrix/
 tags:
   - Artificial Intelligence
   - Data Science

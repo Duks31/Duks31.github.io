@@ -1,7 +1,7 @@
 ---
 title: '9 Different levels of Measuring Distance'
 date: 2023-07-25
-permalink: /posts/2012/08/9 Different levels of Measuring Distance/
+permalink: /posts/2023/07/9 Different levels of Measuring Distance/
 tags:
   - Artificial Intelligence
   - Data Science

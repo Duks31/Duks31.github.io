@@ -1,7 +1,7 @@
 ---
 title: 'Attention in Transformers'
 date: 2025-07-26
-permalink: /posts/2012/08/Attention in Transformers/
+permalink: /posts/2025/07/Attention in Transformers/
 tags:
   - Artificial Intelligence
   - Machine Learning

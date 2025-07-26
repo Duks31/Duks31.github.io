@@ -1,7 +1,7 @@
 ---
 title: 'Understanding Gradient Descent'
 date: 2023-08-11
-permalink: /posts/2012/08/Understanding Gradient Descent/
+permalink: /posts/2023/08/Understanding Gradient Descent/
 tags:
   - Artificial Intelligence
   - Data Science

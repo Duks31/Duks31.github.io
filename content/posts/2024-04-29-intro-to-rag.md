@@ -1,7 +1,7 @@
 ---
 title: 'RAG pt1: Brief Introduction to Retrieval Augumented Generation'
 date: 2024-04-29
-permalink: /posts/2024/03/rag/
+permalink: /posts/2024/04/rag/
 tags:
   - Artificial Intelligence
   - RAG

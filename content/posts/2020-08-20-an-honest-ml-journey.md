@@ -1,7 +1,7 @@
 ---
 title: 'An Honest AI /Machine Learning Journey'
 date: 2020-08-20
-permalink: /posts/2012/08/An Honest AI /Machine Learning Journey/
+permalink: /posts/2020/08/An Honest AI /Machine Learning Journey/
 tags:
   - Artificial Intelligence
   - Machine Learning
