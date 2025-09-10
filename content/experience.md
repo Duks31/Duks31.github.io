@@ -25,7 +25,11 @@ draft: False
 **Seplat Energy Plc** | _Aug 2024 – Sep 2024 (2 months)_  
 **Location:** Lagos State, Nigeria
 
-- Gained hands-on experience in networking, system deployment, and system configuration.
+- Assisted in deploying and configuring IT systems to support enterprise operations across multiple departments.
+- Gained practical experience in networking fundamentals, including setup, monitoring, and troubleshooting.
+- Supported system maintenance activities, ensuring smooth performance and minimal downtime.
+- Developed foundational skills in Networking, System Deployment, and System Configuration within an enterprise
+  environment.
 
 **Skills:** Networking, System Deployment, System Configuration
 
