@@ -9,7 +9,7 @@ draft: False
 **SLB** | _Mar 2025 – Sep 2025 (7 months)_  
 **Location:** Port-Harcourt, Nigeria
 
-- Conducted functional testing of Nitrogen Pump systems to ensure safe and reliable performance in field operations.
+- Data Acquisition for Nitrogen pumps to ensure fit for offshore pumping operation.
 - Collaborated with Mechanical and Electrical Technicians on the maintenance and troubleshooting of Coiled Tubing and
   High-Pressure Pumping Units.
 - Supported day-to-day administrative and operational activities within the Reservoir Performance division.
