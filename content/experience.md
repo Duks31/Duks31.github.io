@@ -16,7 +16,7 @@ draft: False
 - Gained hands-on exposure to oilfield service equipment, enhancing practical understanding of reservoir performance
   operations.
 
-**Skills:** Teamwork, Communication, Problem-Solving, Time Management
+**Skills:** Teamwork, Communication, Problem-Solving, Time Management, Mechanical, Electrical/Electronics
 
 ---
 
