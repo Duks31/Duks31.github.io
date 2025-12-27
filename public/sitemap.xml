@@ -2,29 +2,47 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://Duks31.github.io/tags/artificial-intelligence/</loc>
-    <lastmod>2025-02-19T00:00:00+00:00</lastmod>
+    <loc>https://Duks31.github.io/projects/control_drive/</loc>
+    <lastmod>2025-08-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://Duks31.github.io/tags/data-science/</loc>
-    <lastmod>2025-02-19T00:00:00+00:00</lastmod>
+    <loc>https://Duks31.github.io/</loc>
+    <lastmod>2025-08-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://Duks31.github.io/projects/</loc>
+    <lastmod>2025-08-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://Duks31.github.io/tags/artificial-intelligence/</loc>
+    <lastmod>2025-07-26T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://Duks31.github.io/posts/2025-07-26-attention-in-transformers/</loc>
+    <lastmod>2025-07-26T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://Duks31.github.io/tags/machine-learning/</loc>
+    <lastmod>2025-07-26T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://Duks31.github.io/posts/</loc>
+    <lastmod>2025-07-26T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://Duks31.github.io/tags/</loc>
+    <lastmod>2025-07-26T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://Duks31.github.io/tags/transformers/</loc>
+    <lastmod>2025-07-26T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://Duks31.github.io/projects/django_rag/</loc>
+    <lastmod>2025-05-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://Duks31.github.io/tags/data-science/</loc>
     <lastmod>2025-02-19T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://Duks31.github.io/posts/2025-02-19-monolith-by-tiktok-bytedance/</loc>
     <lastmod>2025-02-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://Duks31.github.io/</loc>
-    <lastmod>2025-02-19T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://Duks31.github.io/posts/</loc>
-    <lastmod>2025-02-19T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://Duks31.github.io/tags/</loc>
-    <lastmod>2025-02-19T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://Duks31.github.io/experience/</loc>
     <lastmod>2025-02-15T13:46:46+01:00</lastmod>
+  </url><url>
+    <loc>https://Duks31.github.io/projects/robot_arm/</loc>
+    <lastmod>2025-01-24T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://Duks31.github.io/tags/comma-ai/</loc>
     <lastmod>2024-12-27T00:00:00+00:00</lastmod>
@@ -35,10 +53,10 @@
     <loc>https://Duks31.github.io/tags/self-driving-cars/</loc>
     <lastmod>2024-12-27T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://Duks31.github.io/projects/air_quality_predictor/</loc>
-    <lastmod>2024-10-05T00:00:00+00:00</lastmod>
+    <loc>https://Duks31.github.io/projects/my_bot/</loc>
+    <lastmod>2024-12-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://Duks31.github.io/projects/</loc>
+    <loc>https://Duks31.github.io/projects/air_quality_predictor/</loc>
     <lastmod>2024-10-05T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://Duks31.github.io/projects/car_price_prediction/</loc>

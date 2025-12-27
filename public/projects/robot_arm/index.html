@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>
+  Robot Arm · Ndukwe Chidubem
+</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="Ndukwe Chidubem">
+<meta name="description" content="This project involves the development of a robotic arm using ROS2 (Robot Operating System 2). The robotic arm is simulated in Gazebo, controlled through ROS2 nodes, and equipped with various configuration and control capabilities.
+Project StructureLink to headingros2_ws/ ├── README.md # Project documentation ├── build/ # Build files and intermediate outputs ├── install/ # Installed ROS2 packages and dependencies ├── log/ # Build and runtime logs ├── src/ # Source code of the project │ └── robot_arm/ # Main robotic arm package │ ├── config/ # Configuration files (controllers, RViz settings) │ ├── include/ # Header files │ ├── launch/ # ROS2 launch files │ ├── meshes/ # 3D STL models for the robotic arm │ ├── scripts/ # Python scripts (e.">
+<meta name="keywords" content="blog,developer,personal">
+
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Robot Arm"/>
+<meta name="twitter:description" content="This project involves the development of a robotic arm using ROS2 (Robot Operating System 2). The robotic arm is simulated in Gazebo, controlled through ROS2 nodes, and equipped with various configuration and control capabilities.
+Project StructureLink to headingros2_ws/ ├── README.md # Project documentation ├── build/ # Build files and intermediate outputs ├── install/ # Installed ROS2 packages and dependencies ├── log/ # Build and runtime logs ├── src/ # Source code of the project │ └── robot_arm/ # Main robotic arm package │ ├── config/ # Configuration files (controllers, RViz settings) │ ├── include/ # Header files │ ├── launch/ # ROS2 launch files │ ├── meshes/ # 3D STL models for the robotic arm │ ├── scripts/ # Python scripts (e."/>
+
+<meta property="og:title" content="Robot Arm" />
+<meta property="og:description" content="This project involves the development of a robotic arm using ROS2 (Robot Operating System 2). The robotic arm is simulated in Gazebo, controlled through ROS2 nodes, and equipped with various configuration and control capabilities.
+Project StructureLink to headingros2_ws/ ├── README.md # Project documentation ├── build/ # Build files and intermediate outputs ├── install/ # Installed ROS2 packages and dependencies ├── log/ # Build and runtime logs ├── src/ # Source code of the project │ └── robot_arm/ # Main robotic arm package │ ├── config/ # Configuration files (controllers, RViz settings) │ ├── include/ # Header files │ ├── launch/ # ROS2 launch files │ ├── meshes/ # 3D STL models for the robotic arm │ ├── scripts/ # Python scripts (e." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://Duks31.github.io/projects/robot_arm/" /><meta property="article:section" content="projects" />
+<meta property="article:published_time" content="2025-01-24T00:00:00+00:00" />
+<meta property="article:modified_time" content="2025-01-24T00:00:00+00:00" />
+
+
+
+
+
+<link rel="canonical" href="https://Duks31.github.io/projects/robot_arm/">
+
+
+<link rel="preload" href="/fonts/forkawesome-webfont.woff2?v=1.2.0" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/css/coder.min.135e22c97ff685fe983fc60048e309ced8f00d8d38f536aa67dba8a13a03dfa4.css" integrity="sha256-E14iyX/2hf6YP8YASOMJztjwDY049TaqZ9uooToD36Q=" crossorigin="anonymous" media="screen" />
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="/css/coder-dark.min.a00e6364bacbc8266ad1cc81230774a1397198f8cfb7bcba29b7d6fcb54ce57f.css" integrity="sha256-oA5jZLrLyCZq0cyBIwd0oTlxmPjPt7y6KbfW/LVM5X8=" crossorigin="anonymous" media="screen" />
+  
+
+
+
+ 
+
+
+
+
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg" sizes="any">
+<link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+	
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+
+
+
+
+
+
+
+</head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-dark">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="/">
+      Ndukwe Chidubem
+    </a>
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/about/">About</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/posts/">Blog</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/projects/">Projects</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/experience/">Experience</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/contact/">Contact me</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container page">
+  <article>
+    <header>
+      <h1 class="title">
+        <a class="title-link" href="https://Duks31.github.io/projects/robot_arm/">
+          Robot Arm
+        </a>
+      </h1>
+    </header>
+
+    <p><img src="/images/robot_arm.png" alt="RobotArm"></p>
+<p>This project involves the development of a robotic arm using ROS2 (Robot Operating System 2). The robotic arm is simulated in Gazebo, controlled through ROS2 nodes, and equipped with various configuration and control capabilities.</p>
+<h2 id="project-structure">
+  Project Structure
+  <a class="heading-link" href="#project-structure">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">ros2_ws/
+</span></span><span class="line"><span class="cl">├── README.md               # Project documentation
+</span></span><span class="line"><span class="cl">├── build/                  # Build files and intermediate outputs
+</span></span><span class="line"><span class="cl">├── install/                # Installed ROS2 packages and dependencies
+</span></span><span class="line"><span class="cl">├── log/                    # Build and runtime logs
+</span></span><span class="line"><span class="cl">├── src/                    # Source code of the project
+</span></span><span class="line"><span class="cl">│   └── robot_arm/          # Main robotic arm package
+</span></span><span class="line"><span class="cl">│       ├── config/         # Configuration files (controllers, RViz settings)
+</span></span><span class="line"><span class="cl">│       ├── include/        # Header files
+</span></span><span class="line"><span class="cl">│       ├── launch/         # ROS2 launch files
+</span></span><span class="line"><span class="cl">│       ├── meshes/         # 3D STL models for the robotic arm
+</span></span><span class="line"><span class="cl">│       ├── scripts/        # Python scripts (e.g., motion control)
+</span></span><span class="line"><span class="cl">│       ├── urdf/           # URDF/XACRO files for the robot description
+</span></span><span class="line"><span class="cl">│       ├── worlds/         # Gazebo simulation worlds
+</span></span><span class="line"><span class="cl">│       └── src/            # C++ source files (if any)
+</span></span></code></pre></div><h2 id="features">
+  Features
+  <a class="heading-link" href="#features">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<ul>
+<li><strong>URDF/XACRO</strong>: Descriptions for the robotic arm&rsquo;s physical structure.</li>
+<li><strong>Control System</strong>: Configurable ROS2 control files for manipulating the robotic arm.</li>
+<li><strong>Simulation</strong>: Gazebo worlds and launch files for testing in virtual environments.</li>
+<li><strong>RViz Visualization</strong>: Visualization setup for robot interaction.</li>
+<li><strong>Python Script</strong>: Custom scripts for robotic arm motion.</li>
+</ul>
+<h2 id="installation-and-setup">
+  Installation and Setup
+  <a class="heading-link" href="#installation-and-setup">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<ol>
+<li>
+<p>Clone this repository into your ROS2 workspace:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git clone https://github.com/Duks31/robot-arm ~/ros2_ws/src
+</span></span></code></pre></div></li>
+<li>
+<p>Build the workspace:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">cd</span> ~/ros2_ws
+</span></span><span class="line"><span class="cl">colcon build
+</span></span></code></pre></div></li>
+<li>
+<p>Source the workspace:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">source</span> install/setup.bash
+</span></span></code></pre></div></li>
+</ol>
+<h2 id="running-the-simulations">
+  Running the Simulations
+  <a class="heading-link" href="#running-the-simulations">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<h3 id="launch-the-robotic-arm-in-gazebo">
+  Launch the Robotic Arm in Gazebo
+  <a class="heading-link" href="#launch-the-robotic-arm-in-gazebo">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ros2 launch robot_arm gazebo.launch.py
+</span></span></code></pre></div><h3 id="control-the-robotic-arm">
+  Control the Robotic Arm
+  <a class="heading-link" href="#control-the-robotic-arm">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ros2 launch robot_arm controller.launch.py
+</span></span></code></pre></div><h3 id="visualize-in-rviz">
+  Visualize in RViz
+  <a class="heading-link" href="#visualize-in-rviz">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ros2 launch robot_arm display.launch.py
+</span></span></code></pre></div><h2 id="configuration-files">
+  Configuration Files
+  <a class="heading-link" href="#configuration-files">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<ul>
+<li><strong>Controller Configuration</strong>: <code>config/controller.yaml</code> defines joint controllers.</li>
+<li><strong>URDF/XACRO Models</strong>: Located in <code>urdf/</code>, these describe the robotic arm&rsquo;s structure and dynamics.</li>
+</ul>
+<h2 id="scripts">
+  Scripts
+  <a class="heading-link" href="#scripts">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<ul>
+<li><strong><code>scripts/move_arm.py</code></strong>: A Python script to command the robotic arm to specific positions.</li>
+</ul>
+<h2 id="contributing">
+  Contributing
+  <a class="heading-link" href="#contributing">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>Contributions are welcome</p>
+<hr>
+<p><em>Note: The project is a work in progress.</em></p>
+
+  </article>
+</section>
+
+  
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+      2020 -
+    
+    2025
+     Ndukwe Chidubem 
+    ·
+    
+    Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/" target="_blank" rel="noopener">Coder</a>.
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/js/coder.min.6ae284be93d2d19dad1f02b0039508d9aab3180a12a06dcc71b0b0ef7825a317.js" integrity="sha256-auKEvpPS0Z2tHwKwA5UI2aqzGAoSoG3McbCw73gloxc="></script>
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+
+</html>

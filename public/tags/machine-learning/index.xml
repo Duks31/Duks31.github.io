@@ -6,8 +6,15 @@
     <description>Recent content in Machine Learning on Ndukwe Chidubem</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 19 Feb 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 26 Jul 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://Duks31.github.io/tags/machine-learning/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Attention in Transformers</title>
+      <link>https://Duks31.github.io/posts/2025-07-26-attention-in-transformers/</link>
+      <pubDate>Sat, 26 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>https://Duks31.github.io/posts/2025-07-26-attention-in-transformers/</guid>
+      <description>Attention is all you need introduced the attention mechanism in 2017 specifically for language translation, Today, every major language model you hear about BERT, GPT, Llama builds on this foundation.&#xA;But what attention? And why did it change how machines understand language?&#xA;The Transformer is a deep learning architecture designed to handle sequential data like text. It processes all words in a sentence in parallel and uses attention mechanisms to learn which words matter more when understanding a given word.</description>
+    </item>
     <item>
       <title>Monolith By TikTok (ByteDance)</title>
       <link>https://Duks31.github.io/posts/2025-02-19-monolith-by-tiktok-bytedance/</link>

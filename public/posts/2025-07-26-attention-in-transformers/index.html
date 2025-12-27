@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>
+  Attention in Transformers · Ndukwe Chidubem
+</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="Ndukwe Chidubem">
+<meta name="description" content="Attention is all you need introduced the attention mechanism in 2017 specifically for language translation, Today, every major language model you hear about BERT, GPT, Llama builds on this foundation.
+But what attention? And why did it change how machines understand language?
+The Transformer is a deep learning architecture designed to handle sequential data like text. It processes all words in a sentence in parallel and uses attention mechanisms to learn which words matter more when understanding a given word.">
+<meta name="keywords" content="blog,developer,personal">
+
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Attention in Transformers"/>
+<meta name="twitter:description" content="Attention is all you need introduced the attention mechanism in 2017 specifically for language translation, Today, every major language model you hear about BERT, GPT, Llama builds on this foundation.
+But what attention? And why did it change how machines understand language?
+The Transformer is a deep learning architecture designed to handle sequential data like text. It processes all words in a sentence in parallel and uses attention mechanisms to learn which words matter more when understanding a given word."/>
+
+<meta property="og:title" content="Attention in Transformers" />
+<meta property="og:description" content="Attention is all you need introduced the attention mechanism in 2017 specifically for language translation, Today, every major language model you hear about BERT, GPT, Llama builds on this foundation.
+But what attention? And why did it change how machines understand language?
+The Transformer is a deep learning architecture designed to handle sequential data like text. It processes all words in a sentence in parallel and uses attention mechanisms to learn which words matter more when understanding a given word." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://Duks31.github.io/posts/2025-07-26-attention-in-transformers/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2025-07-26T00:00:00+00:00" />
+<meta property="article:modified_time" content="2025-07-26T00:00:00+00:00" />
+
+
+
+
+
+<link rel="canonical" href="https://Duks31.github.io/posts/2025-07-26-attention-in-transformers/">
+
+
+<link rel="preload" href="/fonts/forkawesome-webfont.woff2?v=1.2.0" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/css/coder.min.135e22c97ff685fe983fc60048e309ced8f00d8d38f536aa67dba8a13a03dfa4.css" integrity="sha256-E14iyX/2hf6YP8YASOMJztjwDY049TaqZ9uooToD36Q=" crossorigin="anonymous" media="screen" />
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="/css/coder-dark.min.a00e6364bacbc8266ad1cc81230774a1397198f8cfb7bcba29b7d6fcb54ce57f.css" integrity="sha256-oA5jZLrLyCZq0cyBIwd0oTlxmPjPt7y6KbfW/LVM5X8=" crossorigin="anonymous" media="screen" />
+  
+
+
+
+ 
+
+
+
+
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg" sizes="any">
+<link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+	
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+
+
+
+
+
+
+
+</head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-dark">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="/">
+      Ndukwe Chidubem
+    </a>
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/about/">About</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/posts/">Blog</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/projects/">Projects</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/experience/">Experience</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/contact/">Contact me</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">
+            <a class="title-link" href="https://Duks31.github.io/posts/2025-07-26-attention-in-transformers/">
+              Attention in Transformers
+            </a>
+          </h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa fa-calendar" aria-hidden="true"></i>
+              <time datetime="2025-07-26T00:00:00Z">
+                July 26, 2025
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fa fa-clock-o" aria-hidden="true"></i>
+              5-minute read
+            </span>
+          </div>
+          
+          
+          <div class="tags">
+  <i class="fa fa-tag" aria-hidden="true"></i>
+    <span class="tag">
+      <a href="/tags/artificial-intelligence/">Artificial Intelligence</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/machine-learning/">Machine Learning</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/transformers/">Transformers</a>
+    </span></div>
+
+        </div>
+      </header>
+
+      <div class="post-content">
+        
+        <p><a href="https://arxiv.org/pdf/1706.03762"  class="external-link" target="_blank" rel="noopener">Attention is all you need</a> introduced the attention mechanism in 2017 specifically for language translation, Today, every major language model you hear about BERT, GPT, Llama builds on this foundation.</p>
+<p>But what attention? And why did it change how machines understand language?</p>
+<p>The Transformer is a deep learning architecture designed to handle sequential data like text. It processes all words in a sentence in parallel and uses attention mechanisms to learn which words matter more when understanding a given word.</p>
+<p>Instead of moving word-by-word through a sentence, Transformers look at the entire sentence at once—allowing them to capture long-range dependencies and complex relationships with ease.</p>
+<p>Why does Attention matter?</p>
+<p>“The cat sat on the mat because it was tired.”</p>
+<p>To understand what &ldquo;it&rdquo; refers to, you instinctively look back at &ldquo;cat.&rdquo;</p>
+<p>Your brain assigns more attention to “cat” than to “mat” when resolving the pronoun &ldquo;it&rdquo;.</p>
+<p>This is exactly what attention mechanisms do in Transformers they allow the model to dynamically decide which words to focus on while processing a sentence.</p>
+<h2 id="the-big-picture">
+  The Big Picture
+  <a class="heading-link" href="#the-big-picture">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p><img src="https://cdn-images-1.medium.com/max/900/0*eypQiRGVaHAVY4PY.png" alt="Transformer Architectire"></p>
+<p>To understand the role of attention, it is important to first understand where it fits in transformer architecture</p>
+<p>The transformer consists of two main parts:</p>
+<ul>
+<li>
+<p>The Encoder stack</p>
+</li>
+<li>
+<p>The Decoder stack</p>
+</li>
+</ul>
+<p>The Encoder stack is to process each input sequence and to generate contextualize representation of each word</p>
+<ul>
+<li>
+<p>Multi-Head Self-Attention</p>
+</li>
+<li>
+<p>Feed-Forward Neural Network (FFN)</p>
+</li>
+</ul>
+<p>Additional components:</p>
+<ul>
+<li>Norm layers: A residual connection followed by layer normalization wraps around both the attention and the FFN layers.</li>
+</ul>
+<p>The Decoder generates the output sequence, one word at a time, while also attending to the encoder&rsquo;s outputs.</p>
+<ul>
+<li>
+<p>Masked Multi-Head Self-Attention: Prevents a word from attending to future words (ensures causality in autoregressive generation).</p>
+</li>
+<li>
+<p>Multi-Head Cross-Attention: Allows the decoder to attend to the encoder outputs.</p>
+</li>
+<li>
+<p>Feed-Forward Neural Network</p>
+</li>
+</ul>
+<p>As in the encoder, each of these blocks is wrapped in Norm layers.</p>
+<p>Where Attention Fits In</p>
+<ul>
+<li>
+<p>Self-Attention (Encoder &amp; Decoder): Helps the model understand relationships within a sequence.</p>
+</li>
+<li>
+<p>Cross-Attention (Decoder only): Helps the decoder decide which parts of the input to focus on while generating each word in the output.</p>
+</li>
+</ul>
+<p>In other words:</p>
+<ul>
+<li>
+<p>Encoder self-attention: “How does each word relate to other words in the input?”</p>
+</li>
+<li>
+<p>Decoder self-attention: “How should I build the output so far?”</p>
+</li>
+<li>
+<p>Cross-attention: “Which parts of the input should I look at while generating this word?”</p>
+</li>
+</ul>
+<h2 id="the-core-idea">
+  The Core Idea
+  <a class="heading-link" href="#the-core-idea">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>Digging deeper…</p>
+<p>In transformer, attention helps each word focus on relevant parts of the sentence no matter the position.</p>
+<p>The core components that make this possible are:</p>
+<ul>
+<li>
+<p>Query (Q): What we are asking about. (pretty easy)</p>
+</li>
+<li>
+<p>key (K): What we are scanning. (The other words)</p>
+</li>
+<li>
+<p>Value (V): What we will extract if the key is important</p>
+</li>
+</ul>
+<p>Each word (token) becomes a query, a key, and a value.</p>
+<p>Let’s look at some quick maths from the “Attention is all you need” paper.</p>
+<p><img src="https://cdn-images-1.medium.com/max/900/0*3uDxU_CVSzMpfAoY.png" alt="attention"></p>
+<ul>
+<li>
+<p>Q @ K.T: Calculates the similarity between words</p>
+</li>
+<li>
+<p>sqrt(d_k): Scales down dot products.</p>
+</li>
+<li>
+<p>softmax(…): Converts Scores to probabilities</p>
+</li>
+<li>
+<p>@V: Applies Attention to values</p>
+</li>
+</ul>
+<p>Let’s say:</p>
+<p>You ask a question (Query)</p>
+<p>Your friends each have opinions (Keys + Values)</p>
+<ol>
+<li>
+<p>You compare your question (Q) to their answers (K) → similarity</p>
+</li>
+<li>
+<p>You discount extremely strong opinions (sqrt(d_k))</p>
+</li>
+<li>
+<p>You weigh their advice fairly (softmax)</p>
+</li>
+<li>
+<p>You make a final decision by combining what they say (V) based on those weights.</p>
+</li>
+</ol>
+<p>To illustrate further let’s see some code:</p>
+<p><img src="https://cdn-images-1.medium.com/max/900/0*MMBWrtL2CLTwHz1e.png" alt="attention code"></p>
+<p>Comments made code self-explanatory :)</p>
+<p>Output:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Attention to <span class="s1">&#39;She&#39;</span>: 0.15
+</span></span><span class="line"><span class="cl">Attention to <span class="s1">&#39;went&#39;</span>: 0.20
+</span></span><span class="line"><span class="cl">Attention to <span class="s1">&#39;to&#39;</span>: 0.21
+</span></span><span class="line"><span class="cl">Attention to <span class="s1">&#39;the&#39;</span>: 0.19
+</span></span><span class="line"><span class="cl">Attention to <span class="s1">&#39;market&#39;</span>: 0.25
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Contextual embedding <span class="k">for</span> <span class="s1">&#39;went&#39;</span>:
+</span></span><span class="line"><span class="cl"> <span class="o">[</span>0.75 0.77 0.25 0.49<span class="o">]</span>
+</span></span></code></pre></div><p>The question we are asking here is</p>
+<p>When trying to understand the word “went”, which other words in the sentence matter the most?</p>
+<p>The output of the code describes the individual attention given to the word “went”</p>
+<p>Then the final contextualized output “went” given below the attention output, that is the new vector representation of “went”, computed as weighted sum of all the value vectors (V), based on how much attention was given to each token.</p>
+<p>If each word were a student in a discussion group, and &ldquo;went&rdquo; was trying to understand its own role:</p>
+<ul>
+<li>
+<p>It listens a little to itself (0.20)</p>
+</li>
+<li>
+<p>It pays close attention to “market” (0.25), that’s where it’s going!</p>
+</li>
+<li>
+<p>It also listens to the preposition “to” (0.21), which links it to the destination.</p>
+</li>
+</ul>
+<p>This is the heart of the self-attention mechanism: Every word learns where to look (via attention scores) and what to take (via value vectors) — allowing it to adapt its meaning dynamically depending on context.</p>
+<h2 id="multi-head-attention">
+  Multi-head Attention
+  <a class="heading-link" href="#multi-head-attention">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>But one head self-attention is not enough, take a look at this …</p>
+<p>Let’s say we’re analyzing the sentence: &ldquo;She saw the man with the telescope.&rdquo;</p>
+<p>Depending on how you attend, “with the telescope” could describe “saw” or “man”. One attention head might focus on syntax (structure), another on semantics(meaning) and many more (depending on scenario). Multi-head attention gives the model the ability to look at the sentence from different &ldquo;angles&rdquo; — syntactic, semantic, positional, etc.</p>
+<p>Instead of using a single attention operation, we use multiple heads. Each head:</p>
+<ul>
+<li>
+<p>Has its own Query, Key, and Value matrices.</p>
+</li>
+<li>
+<p>Performs attention separately.</p>
+</li>
+<li>
+<p>The outputs are concatenated and projected.</p>
+</li>
+</ul>
+<p>This allows the model to attend to different types of relationships simultaneously</p>
+
+      </div>
+
+
+      <footer>
+        
+
+
+        
+        
+        
+        
+        
+      </footer>
+    </article>
+
+    
+  </section>
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+      2020 -
+    
+    2025
+     Ndukwe Chidubem 
+    ·
+    
+    Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/" target="_blank" rel="noopener">Coder</a>.
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/js/coder.min.6ae284be93d2d19dad1f02b0039508d9aab3180a12a06dcc71b0b0ef7825a317.js" integrity="sha256-auKEvpPS0Z2tHwKwA5UI2aqzGAoSoG3McbCw73gloxc="></script>
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+
+</html>

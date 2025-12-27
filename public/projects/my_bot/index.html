@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>
+  My Bot · Ndukwe Chidubem
+</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="Ndukwe Chidubem">
+<meta name="description" content="Check out the live demo on github: https://github.com/Duks31/my_bot/
+Diff Drive Robot Using ROS2, Gazebo, Rviz2 and Fusion 360
+DescriptionLink to headingThis repository contains the ROS2 implementation for a differential drive robot. The package includes nodes for controlling the robot, simulating its motion.
+System RequirementsLink to headingUbuntu 20.04 &gt;= ROS2 Humble Python 3.XX Repository StructureLink to headingmy_bot ├── CMakeLists.txt ├── LICENSE.md ├── README.md ├── config │ ├── drive_bot.">
+<meta name="keywords" content="blog,developer,personal">
+
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="My Bot"/>
+<meta name="twitter:description" content="Check out the live demo on github: https://github.com/Duks31/my_bot/
+Diff Drive Robot Using ROS2, Gazebo, Rviz2 and Fusion 360
+DescriptionLink to headingThis repository contains the ROS2 implementation for a differential drive robot. The package includes nodes for controlling the robot, simulating its motion.
+System RequirementsLink to headingUbuntu 20.04 &gt;= ROS2 Humble Python 3.XX Repository StructureLink to headingmy_bot ├── CMakeLists.txt ├── LICENSE.md ├── README.md ├── config │ ├── drive_bot."/>
+
+<meta property="og:title" content="My Bot" />
+<meta property="og:description" content="Check out the live demo on github: https://github.com/Duks31/my_bot/
+Diff Drive Robot Using ROS2, Gazebo, Rviz2 and Fusion 360
+DescriptionLink to headingThis repository contains the ROS2 implementation for a differential drive robot. The package includes nodes for controlling the robot, simulating its motion.
+System RequirementsLink to headingUbuntu 20.04 &gt;= ROS2 Humble Python 3.XX Repository StructureLink to headingmy_bot ├── CMakeLists.txt ├── LICENSE.md ├── README.md ├── config │ ├── drive_bot." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://Duks31.github.io/projects/my_bot/" /><meta property="article:section" content="projects" />
+<meta property="article:published_time" content="2024-12-24T00:00:00+00:00" />
+<meta property="article:modified_time" content="2024-12-24T00:00:00+00:00" />
+
+
+
+
+
+<link rel="canonical" href="https://Duks31.github.io/projects/my_bot/">
+
+
+<link rel="preload" href="/fonts/forkawesome-webfont.woff2?v=1.2.0" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/css/coder.min.135e22c97ff685fe983fc60048e309ced8f00d8d38f536aa67dba8a13a03dfa4.css" integrity="sha256-E14iyX/2hf6YP8YASOMJztjwDY049TaqZ9uooToD36Q=" crossorigin="anonymous" media="screen" />
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="/css/coder-dark.min.a00e6364bacbc8266ad1cc81230774a1397198f8cfb7bcba29b7d6fcb54ce57f.css" integrity="sha256-oA5jZLrLyCZq0cyBIwd0oTlxmPjPt7y6KbfW/LVM5X8=" crossorigin="anonymous" media="screen" />
+  
+
+
+
+ 
+
+
+
+
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg" sizes="any">
+<link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+	
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+
+
+
+
+
+
+
+</head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-dark">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="/">
+      Ndukwe Chidubem
+    </a>
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/about/">About</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/posts/">Blog</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/projects/">Projects</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/experience/">Experience</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/contact/">Contact me</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container page">
+  <article>
+    <header>
+      <h1 class="title">
+        <a class="title-link" href="https://Duks31.github.io/projects/my_bot/">
+          My Bot
+        </a>
+      </h1>
+    </header>
+
+    <p>Check out the live demo on github: <a href="https://github.com/Duks31/my_bot/"  class="external-link" target="_blank" rel="noopener">https://github.com/Duks31/my_bot/</a></p>
+<p>Diff Drive Robot Using ROS2, Gazebo, Rviz2 and Fusion 360</p>
+<h3 id="description">
+  Description
+  <a class="heading-link" href="#description">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>This repository contains the ROS2 implementation for a differential drive robot. The package includes nodes for controlling the robot, simulating its motion.</p>
+<h3 id="system-requirements">
+  System Requirements
+  <a class="heading-link" href="#system-requirements">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<ul>
+<li>Ubuntu 20.04</li>
+<li>&gt;= ROS2 Humble</li>
+<li>Python 3.XX</li>
+</ul>
+<h3 id="repository-structure">
+  Repository Structure
+  <a class="heading-link" href="#repository-structure">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">my_bot
+</span></span><span class="line"><span class="cl">├── CMakeLists.txt
+</span></span><span class="line"><span class="cl">├── LICENSE.md
+</span></span><span class="line"><span class="cl">├── README.md
+</span></span><span class="line"><span class="cl">├── config
+</span></span><span class="line"><span class="cl">│   ├── drive_bot.rviz
+</span></span><span class="line"><span class="cl">│   ├── empty.yaml
+</span></span><span class="line"><span class="cl">│   ├── my_controllers.yaml
+</span></span><span class="line"><span class="cl">│   └── view_bot.rviz
+</span></span><span class="line"><span class="cl">├── description
+</span></span><span class="line"><span class="cl">│   ├── gazebo_control.xacro
+</span></span><span class="line"><span class="cl">│   ├── inertial_macros.xacro
+</span></span><span class="line"><span class="cl">│   ├── robot.urdf.xacro
+</span></span><span class="line"><span class="cl">│   ├── robot_core.xacro
+</span></span><span class="line"><span class="cl">│   └── ros2_control.xacro
+</span></span><span class="line"><span class="cl">├── launch
+</span></span><span class="line"><span class="cl">│   ├── launch_sim.launch.py
+</span></span><span class="line"><span class="cl">│   └── rsp.launch.py
+</span></span><span class="line"><span class="cl">├── log
+</span></span><span class="line"><span class="cl">│   ├── COLCON_IGNORE
+</span></span><span class="line"><span class="cl">│   ├── latest -&gt; latest_list
+</span></span><span class="line"><span class="cl">│   ├── latest_list -&gt; list_2024-11-25_17-22-41
+</span></span><span class="line"><span class="cl">│   └── list_2024-11-25_17-22-41
+</span></span><span class="line"><span class="cl">│       └── logger_all.log
+</span></span><span class="line"><span class="cl">├── package.xml
+</span></span><span class="line"><span class="cl">└── worlds
+</span></span><span class="line"><span class="cl">    ├── empty.world
+</span></span><span class="line"><span class="cl">    └── obstacles.world
+</span></span></code></pre></div><h3 id="installation-and-build-instructions">
+  Installation and Build Instructions
+  <a class="heading-link" href="#installation-and-build-instructions">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<ol>
+<li>Make a ros2 workspace and initialize it</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">   mkdir -p ~/my_bot_ws/src
+</span></span><span class="line"><span class="cl">   <span class="nb">cd</span> ~/my_bot_ws
+</span></span><span class="line"><span class="cl">   colcon build
+</span></span><span class="line"><span class="cl">   <span class="nb">source</span> install/setup.bash
+</span></span></code></pre></div><ol start="2">
+<li>Clone the repository</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">    <span class="nb">cd</span> ~/my_bot_ws/src
+</span></span><span class="line"><span class="cl">    git clone https://github.com/Duks31/my_bot
+</span></span></code></pre></div><ol start="3">
+<li>Navigate to the workspace and build the package</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">    <span class="nb">cd</span> ~/my_bot_ws
+</span></span><span class="line"><span class="cl">    colcon build
+</span></span></code></pre></div><ol start="4">
+<li>Install dependencies and build the workspace</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">    <span class="nb">cd</span> ~/ros2_ws
+</span></span><span class="line"><span class="cl">    rosdep install --from-paths src --ignore-src -r -y
+</span></span><span class="line"><span class="cl">    colcon build
+</span></span><span class="line"><span class="cl">    <span class="nb">source</span> install/setup.bash
+</span></span></code></pre></div><ol start="5">
+<li>Run the simulation</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">    ros2 launch my_bot launch_sim.launch.py world:<span class="o">=</span>./src/my_bot/worlds/obstacles.world
+</span></span></code></pre></div><ol start="6">
+<li>Remap and run the teleop node</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">    ros2 run teleop_twist_keyboard teleop_twist_keyboard --ros-args -r /cmd_vel:<span class="o">=</span>/diff_cont/cmd_vel_unstamped
+</span></span></code></pre></div><ol start="7">
+<li>Visualize the robot in RViz2 (Optional)
+<ul>
+<li>Open a new terminal and run the following command</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Rviz2
+</span></span></code></pre></div><ul>
+<li>In RViz2, set the Fixed Frame to <code>odom</code> and add the RobotModel to visualize the robot.</li>
+<li>Add tf and RobotModel to visualize the robot in RViz2.</li>
+</ul>
+</li>
+</ol>
+<h3 id="robot-description-urdf">
+  Robot Description (URDF)
+  <a class="heading-link" href="#robot-description-urdf">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p><img src="https://github.com/user-attachments/assets/4ef3cf61-0392-4404-9eaf-3be592056547" alt="diff_drive v4"></p>
+<p>The robot&rsquo;s URDF (Unified Robot Description Format) file was initially designed using <strong>Autodesk Fusion 360</strong>. The 3D model of the robot was created in Fusion 360, which provided an accurate representation of the robot&rsquo;s physical dimensions, joints, and links.</p>
+<ol>
+<li>
+<p><strong>Modeling in Fusion 360</strong>:</p>
+<ul>
+<li>The robot&rsquo;s physical design, including the chassis, wheels was created in Fusion 360.</li>
+<li>The 3D model was exported as a URDF file for integration into ROS.</li>
+</ul>
+</li>
+<li>
+<p><strong>Conversion to URDF</strong>:</p>
+<ul>
+<li>The exported model was processed using <a href="https://github.com/syuntoku14/fusion2urdf"  class="external-link" target="_blank" rel="noopener">fusion2urdf</a> into a URDF file.</li>
+<li>Additional features like collision and visual properties were added to make the robot compatible with Gazebo simulation and ROS visualization tools (e.g., RViz2).</li>
+</ul>
+</li>
+</ol>
+<h3 id="nodes-and-launch-files">
+  Nodes and Launch Files
+  <a class="heading-link" href="#nodes-and-launch-files">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<h4 id="nodes">
+  Nodes
+  <a class="heading-link" href="#nodes">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<ol>
+<li>
+<p><strong><code>robot_state_publisher</code></strong></p>
+<ul>
+<li>Publishes the robot&rsquo;s URDF to the <code>/robot_description</code> topic.</li>
+<li><strong>Key Parameters</strong>:
+<ul>
+<li><code>robot_description</code>: Processed URDF description of the robot.</li>
+<li><code>use_sim_time</code>: Enables simulated time for Gazebo.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong><code>spawn_entity.py</code></strong></p>
+<ul>
+<li>Spawns the robot into the Gazebo simulation.</li>
+<li><strong>Arguments</strong>:
+<ul>
+<li><code>-topic robot_description</code>: Specifies the URDF topic.</li>
+<li><code>-entity my_bot</code>: Unique name for the robot in the simulation.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong><code>diff_drive_controller/DiffDriveController</code></strong></p>
+<ul>
+<li>Controls the differential drive system by translating velocity commands to wheel motions.</li>
+<li><strong>Key Parameters</strong>:
+<ul>
+<li><code>wheel_separation</code>: 0.35 m</li>
+<li><code>wheel_radius</code>: 0.05 m</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong><code>joint_state_broadcaster/JointStateBroadcaster</code></strong></p>
+<ul>
+<li>Publishes joint states (position, velocity) to the <code>/joint_states</code> topic.</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h4 id="launch-files">
+  Launch Files
+  <a class="heading-link" href="#launch-files">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<ol>
+<li>
+<p><strong><code>launch_sim.launch.py</code></strong></p>
+<ul>
+<li>Launches the simulation with the following components:
+<ul>
+<li><strong>Robot State Publisher</strong>: Publishes the robot description.</li>
+<li><strong>Gazebo</strong>: Starts the simulation environment.</li>
+<li><strong>Robot Spawner</strong>: Adds the robot to the simulation.</li>
+<li><strong>Controller Spawners</strong>: Launches the <code>diff_drive_controller</code> and <code>joint_state_broadcaster</code>.</li>
+</ul>
+</li>
+<li><strong>Command</strong>:
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ros2 launch my_bot launch_sim.launch.py
+</span></span></code></pre></div></li>
+</ul>
+</li>
+<li>
+<p><strong><code>rsp.launch.py</code></strong></p>
+<ul>
+<li>Configures and launches the <code>robot_state_publisher</code> node.</li>
+<li>Processes the <code>robot.urdf.xacro</code> file.</li>
+<li><strong>Command</strong>:
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ros2 launch my_bot rsp.launch.py use_sim_time:<span class="o">=</span><span class="nb">true</span>
+</span></span></code></pre></div></li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="worlds">
+  Worlds
+  <a class="heading-link" href="#worlds">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<ul>
+<li><strong>obstacles.world</strong>: This world file is used to simulate the robot in a world with obstacles.</li>
+</ul>
+<h3 id="acknowledgments">
+  Acknowledgments
+  <a class="heading-link" href="#acknowledgments">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<ul>
+<li>Thanks to <a href="https://www.youtube.com/@ArticulatedRobotics"  class="external-link" target="_blank" rel="noopener">https://www.youtube.com/@ArticulatedRobotics</a></li>
+</ul>
+
+  </article>
+</section>
+
+  
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+      2020 -
+    
+    2025
+     Ndukwe Chidubem 
+    ·
+    
+    Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/" target="_blank" rel="noopener">Coder</a>.
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/js/coder.min.6ae284be93d2d19dad1f02b0039508d9aab3180a12a06dcc71b0b0ef7825a317.js" integrity="sha256-auKEvpPS0Z2tHwKwA5UI2aqzGAoSoG3McbCw73gloxc="></script>
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+
+</html>

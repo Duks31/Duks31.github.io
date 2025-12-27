@@ -6,8 +6,29 @@
     <description>Recent content on Ndukwe Chidubem</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 19 Feb 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 03 Aug 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://Duks31.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Control Drive</title>
+      <link>https://Duks31.github.io/projects/control_drive/</link>
+      <pubDate>Sun, 03 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>https://Duks31.github.io/projects/control_drive/</guid>
+      <description>Using ROS and Gazebo to simulate a Differential Drive Robot.&#xA;Check out the project on Github&#xA;Requirements:&#xD;Link to heading&#xD;ROS2 Humble Gazebo (Ign) Building&#xD;Link to heading&#xD;colcon build Launching Gazebo (Ign Gz):&#xD;Link to heading&#xD;ros2 launch control_drive gazebo.launch.py Launching rviz&#xD;Link to heading&#xD;ros2 launch control_drive display.launch.py Change Fixed Frame in Global options to odom&#xA;Test linear velocity publisher&#xD;Link to heading&#xD;ros2 topic pub /control_drive_controller/cmd_vel_unstamped geometry_msgs/msg/Twist &amp;#34;{linear: {x: 1.</description>
+    </item>
+    <item>
+      <title>Attention in Transformers</title>
+      <link>https://Duks31.github.io/posts/2025-07-26-attention-in-transformers/</link>
+      <pubDate>Sat, 26 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>https://Duks31.github.io/posts/2025-07-26-attention-in-transformers/</guid>
+      <description>Attention is all you need introduced the attention mechanism in 2017 specifically for language translation, Today, every major language model you hear about BERT, GPT, Llama builds on this foundation.&#xA;But what attention? And why did it change how machines understand language?&#xA;The Transformer is a deep learning architecture designed to handle sequential data like text. It processes all words in a sentence in parallel and uses attention mechanisms to learn which words matter more when understanding a given word.</description>
+    </item>
+    <item>
+      <title>Django Rag</title>
+      <link>https://Duks31.github.io/projects/django_rag/</link>
+      <pubDate>Sun, 11 May 2025 00:00:00 +0000</pubDate>
+      <guid>https://Duks31.github.io/projects/django_rag/</guid>
+      <description>A RAG-Based Chat with Django REST Framework&#xA;Check out the project on github&#xA;rest_rag is a lightweight Retrieval-Augmented Generation (RAG) chat application built with Django REST Framework. Users can upload documents and chat with an AI assistant that understands and responds based on the uploaded content.&#xA;Features&#xD;Link to heading&#xD;🔐 User authentication (Login/Register) 📄 Document upload with parsing 💬 Chat interface with context-aware responses 🧠 RAG pipeline for document-based Q&amp;amp;A ⚙️ Django REST API backend 🎨 Simple HTML(Django template) frontend Tech Stack&#xD;Link to heading&#xD;Backend: Django, Django REST Framework AI/NLP: Groq(OpenAI API) and ChromaDB Database: PostgreSQL Installation&#xD;Link to heading&#xD;git clone https://github.</description>
+    </item>
     <item>
       <title>Monolith By TikTok (ByteDance)</title>
       <link>https://Duks31.github.io/posts/2025-02-19-monolith-by-tiktok-bytedance/</link>
@@ -20,7 +41,14 @@
       <link>https://Duks31.github.io/experience/</link>
       <pubDate>Sat, 15 Feb 2025 13:46:46 +0100</pubDate>
       <guid>https://Duks31.github.io/experience/</guid>
-      <description>Engineering Intern (Information Technology)&#xD;Link to heading&#xD;Seplat Energy Plc | Aug 2024 – Sep 2024 (2 months)&#xA;Location: Lagos State, Nigeria&#xA;Gained hands-on experience in networking, system deployment, and system configuration. Skills: Networking, System Deployment, System Configuration&#xA;Full-stack Developer Intern&#xD;Link to heading&#xD;Synecoo | Apr 2024 – May 2024 (2 months)&#xA;Location: Madhya Pradesh, India (Remote)&#xA;Developed DishDash, a food delivery software using Flutter and Firebase during individual stages of the internship.</description>
+      <description>Reservoir Performance Intern&#xD;Link to heading&#xD;SLB | Mar 2025 – Sep 2025 (7 months)&#xA;Location: Port-Harcourt, Nigeria&#xA;Data Acquisition for Nitrogen pumps to ensure fit for offshore pumping operation. Collaborated with Mechanical and Electrical Technicians on the maintenance and troubleshooting of Coiled Tubing and High-Pressure Pumping Units. Supported day-to-day administrative and operational activities within the Reservoir Performance division. Gained hands-on exposure to oilfield service equipment, enhancing practical understanding of reservoir performance operations.</description>
+    </item>
+    <item>
+      <title>Robot Arm</title>
+      <link>https://Duks31.github.io/projects/robot_arm/</link>
+      <pubDate>Fri, 24 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>https://Duks31.github.io/projects/robot_arm/</guid>
+      <description>This project involves the development of a robotic arm using ROS2 (Robot Operating System 2). The robotic arm is simulated in Gazebo, controlled through ROS2 nodes, and equipped with various configuration and control capabilities.&#xA;Project Structure&#xD;Link to heading&#xD;ros2_ws/ ├── README.md # Project documentation ├── build/ # Build files and intermediate outputs ├── install/ # Installed ROS2 packages and dependencies ├── log/ # Build and runtime logs ├── src/ # Source code of the project │ └── robot_arm/ # Main robotic arm package │ ├── config/ # Configuration files (controllers, RViz settings) │ ├── include/ # Header files │ ├── launch/ # ROS2 launch files │ ├── meshes/ # 3D STL models for the robotic arm │ ├── scripts/ # Python scripts (e.</description>
     </item>
     <item>
       <title>Comma.ai — Solving Self driving cars</title>
@@ -28,6 +56,13 @@
       <pubDate>Fri, 27 Dec 2024 00:00:00 +0000</pubDate>
       <guid>https://Duks31.github.io/posts/2024-12-27-comma-ai-solving-self-driving-cars/</guid>
       <description>The bitter lesson in ML is that we must make methods that learn how to discover, not contain what we have discovered&#xA;A couple of years ago, the idea of self-driving cars was primarily focused on the use of multiple sensors like LIDAR, radar, ultrasonic sensors, and cameras. These sensors were mounted on custom-made vehicles or heavily modified production cars to achieve full autonomous functionality. The combination of these sensors enabled the vehicles to detect obstacles, map their surroundings in real time, and make complex driving decisions.</description>
+    </item>
+    <item>
+      <title>My Bot</title>
+      <link>https://Duks31.github.io/projects/my_bot/</link>
+      <pubDate>Tue, 24 Dec 2024 00:00:00 +0000</pubDate>
+      <guid>https://Duks31.github.io/projects/my_bot/</guid>
+      <description>Check out the live demo on github: https://github.com/Duks31/my_bot/&#xA;Diff Drive Robot Using ROS2, Gazebo, Rviz2 and Fusion 360&#xA;Description&#xD;Link to heading&#xD;This repository contains the ROS2 implementation for a differential drive robot. The package includes nodes for controlling the robot, simulating its motion.&#xA;System Requirements&#xD;Link to heading&#xD;Ubuntu 20.04 &amp;gt;= ROS2 Humble Python 3.XX Repository Structure&#xD;Link to heading&#xD;my_bot ├── CMakeLists.txt ├── LICENSE.md ├── README.md ├── config │ ├── drive_bot.</description>
     </item>
     <item>
       <title>Air Quality Prediction</title>
@@ -41,7 +76,7 @@
       <link>https://Duks31.github.io/projects/car_price_prediction/</link>
       <pubDate>Thu, 01 Aug 2024 00:00:00 +0000</pubDate>
       <guid>https://Duks31.github.io/projects/car_price_prediction/</guid>
-      <description>ML: From Data scraping to Deployment&#xD;Link to heading&#xD;Building a Car Prediction Model&#xD;Link to heading&#xD;Machine learning systems are not built from Jupyter notebooks, for the most part of it they are much complex systems.&#xA;In my self-learning journey, I wanted to learn about putting different systems and technologies together. So, I used a simple, not to complicated problem — car price prediction- to understand how it done in a small scale.</description>
+      <description>ML: From Data scraping to Deployment&#xD;Link to heading&#xD;Read the details here: https://medium.com/@chidubemndukwe/ml-from-data-scraping-to-deployment-fa7ddc5fab5c&#xA;watch the demo here: https://github.com/Duks31/car_price-prediction/blob/main/README.md&#xA;Project Workflow&#xD;Link to heading&#xD;Project Overview&#xD;Link to heading&#xD;Data Scraping Data Scraping workflow&#xD;Link to heading&#xD;* Scrapy: Developed a web scraper to extract car data, saved it as CSV.&#xD;* PostgreSQL: Hosted the scraped data on a local PostgreSQL database.&#xD;* GCP VM Instance: Deployed the scraper using ScrapeOps, scheduled to run daily at midnight.</description>
     </item>
     <item>
       <title>Churn Prediction</title>
