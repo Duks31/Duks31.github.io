@@ -17,7 +17,7 @@ author = "Ndukwe Chidubem"
 # license = '<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA-4.0</a>'
 description = "Ndukwe Chidubem's personal website"
 keywords = "blog,developer,personal"
-info = ["Learning and Building"]
+info = ["Learning and Building (LAB)"]
 avatarURL = "images/bw_face.jpg"
 #gravatar = "john.doe@example.com"
 dateFormat = "January 2, 2006"
