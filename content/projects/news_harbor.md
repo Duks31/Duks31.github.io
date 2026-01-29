@@ -11,7 +11,7 @@ Check out the project on [github](https://github.com/Duks31/news-harbor)
 
 ## Overview 
 
-News Harbor is a news platform that detects the sentiment of News articles. check out this [demo](https://drive.google.com/file/d/1FEtVAbNGc0cyHIeUU4fDTx3miG0SN6r4/view?usp=sharing)
+News Harbor is a news platform that detects the sentiment of News articles.
 
 ![workflow](/images/newsharbor_workflow.png)
 
