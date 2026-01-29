@@ -95,7 +95,7 @@ const float MUTATION_RATE = 0.05f;
 
 ```
 
-## 📊 Results Summary
+## Results Summary
 
 | **Algorithm**    | **Avg Time (μs)** | **Path Length**   | **Outcome**   |
 | ---------------- | ----------------- | ----------------- | ------------- |
