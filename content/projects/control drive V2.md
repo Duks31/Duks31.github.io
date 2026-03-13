@@ -9,6 +9,8 @@ date: 2026-03-11
 
 The first part of this project was done [here](https://duks31.github.io/projects/control_drive/)
 
+Check out the current project on [Github](https://github.com/Duks31/control_drive)
+
 In this version, I implemented a modular control architecture with multiple input sources (keyboard, gamepad (PS4), and script) that all publish to a common `/cmd_vel` topic. A relay node then forwards these commands to the robot's controller topic. This allows for easy addition of new control methods without modifying the core robot logic.
 
 ## Requirements
