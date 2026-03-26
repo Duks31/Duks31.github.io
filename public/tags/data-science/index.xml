@@ -2,39 +2,39 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Data Science on Ndukwe Chidubem</title>
-    <link>https://Duks31.github.io/tags/data-science/</link>
+    <link>http://localhost:1313/tags/data-science/</link>
     <description>Recent content in Data Science on Ndukwe Chidubem</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Wed, 19 Feb 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://Duks31.github.io/tags/data-science/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/data-science/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Monolith By TikTok (ByteDance)</title>
-      <link>https://Duks31.github.io/posts/2025-02-19-monolith-by-tiktok-bytedance/</link>
+      <link>http://localhost:1313/posts/2025-02-19-monolith-by-tiktok-bytedance/</link>
       <pubDate>Wed, 19 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>https://Duks31.github.io/posts/2025-02-19-monolith-by-tiktok-bytedance/</guid>
-      <description>Social media timelines are so captivating because they’re powered by incredibly sophisticated recommendation systems that seem almost magical in how well they understand user preferences. TikTok is a master of this, delivering a personalized feed that keeps users hooked for hours. The secret behind this is ByteDance’s cutting-edge recommendation engine, Monolith — a scalable, real-time system designed to optimize engagement like never before.&#xA;Recommendation systems can be built using production-scale deep learning frameworks like Pytorch and Tensorflow but they fall short of reaching the main business demands.</description>
+      <guid>http://localhost:1313/posts/2025-02-19-monolith-by-tiktok-bytedance/</guid>
+      <description>&lt;p&gt;Social media timelines are so captivating because they’re powered by incredibly sophisticated recommendation systems that seem almost magical in how well they understand user preferences. TikTok is a master of this, delivering a personalized feed that keeps users hooked for hours. The secret behind this is ByteDance’s cutting-edge recommendation engine, &lt;a href=&#34;https://arxiv.org/pdf/2209.07663&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Monolith&lt;/a&gt; — a scalable, real-time system designed to optimize engagement like never before.&lt;/p&gt;&#xA;&lt;p&gt;Recommendation systems can be built using production-scale deep learning frameworks like Pytorch and Tensorflow but they fall short of reaching the main business demands. In making Monolith, they came up with a &lt;strong&gt;collision-less embedding&lt;/strong&gt; table with clever optimizations like expiring embeddings and frequency filtering and also &lt;strong&gt;production-ready online training&lt;/strong&gt; architecture with high fault-tolerance, then finally they also proved that &lt;strong&gt;system reliability could be a trade-off&lt;/strong&gt; for real-time learning.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Understanding Gradient Descent</title>
-      <link>https://Duks31.github.io/posts/2023-08-11-understanding-gradient-descent/</link>
+      <link>http://localhost:1313/posts/2023-08-11-understanding-gradient-descent/</link>
       <pubDate>Fri, 11 Aug 2023 00:00:00 +0000</pubDate>
-      <guid>https://Duks31.github.io/posts/2023-08-11-understanding-gradient-descent/</guid>
-      <description>Introduction&#xA;Gradient Descent (GD) is a first order optimization algorithms that is used to find the minimum of a given function, it is commonly used in training machine learning and deep learning algorithms.&#xA;In machine learning after you train a model you would like to check how the model performed either by checking the accuracy or any other measure that suites the problem, let’s say you generate a **cost function **which is a measure of how wrong the model is finding a relationship between the input and the output, this is where Gradient Descent comes in, the gradient descent algorithm will optimize the cost function, it will give the minimum value of possible error of your model.</description>
+      <guid>http://localhost:1313/posts/2023-08-11-understanding-gradient-descent/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://cdn-images-1.medium.com/max/2000/1*RCdeL2GnRkuqKRIg7LzaJA.gif&#34; alt=&#34;Gradient Descent. image by author&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Introduction&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Gradient Descent&lt;/strong&gt; (GD) is a first order optimization algorithms that is used to find the minimum of a given function, it is commonly used in training machine learning and deep learning algorithms.&lt;/p&gt;&#xA;&lt;p&gt;In &lt;strong&gt;machine learning&lt;/strong&gt; after you train a model you would like to check how the model performed either by checking the accuracy or any other measure that suites the problem, let’s say you generate a **cost function **which is a measure of how wrong the model is finding a relationship between the input and the output, this is where Gradient Descent comes in, the gradient descent algorithm will optimize the cost function, it will give the minimum value of possible error of your model.&lt;/p&gt;</description>
     </item>
     <item>
       <title>9 Different levels of Measuring Distance</title>
-      <link>https://Duks31.github.io/posts/2023-07-25-9-levels-of-measuring-distance/</link>
+      <link>http://localhost:1313/posts/2023-07-25-9-levels-of-measuring-distance/</link>
       <pubDate>Tue, 25 Jul 2023 00:00:00 +0000</pubDate>
-      <guid>https://Duks31.github.io/posts/2023-07-25-9-levels-of-measuring-distance/</guid>
-      <description>In our daily lives, we encounter the concept of distance in various forms and contexts. Whether we’re navigating through a busy city, exploring the vastness of the universe, or even contemplating the emotional space between ourselves and others, distance plays a fundamental role in shaping our experiences and understanding of the world. But did you know that distance can be perceived and measured in numerous ways, each offering unique insights into the relationships between objects, ideas, and individuals?</description>
+      <guid>http://localhost:1313/posts/2023-07-25-9-levels-of-measuring-distance/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://cdn-images-1.medium.com/max/2000/0*_xB6jYv8whs2DabL&#34; alt=&#34;9 levels of measuring distance source: abacus.ai&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;In our daily lives, we encounter the concept of distance in various forms and contexts. Whether we’re navigating through a busy city, exploring the vastness of the universe, or even contemplating the emotional space between ourselves and others, distance plays a fundamental role in shaping our experiences and understanding of the world. But did you know that distance can be perceived and measured in numerous ways, each offering unique insights into the relationships between objects, ideas, and individuals?&lt;/p&gt;</description>
     </item>
     <item>
       <title>Understanding Confusion Matrix</title>
-      <link>https://Duks31.github.io/posts/2022-10-16-understanding-confusion-matrix/</link>
+      <link>http://localhost:1313/posts/2022-10-16-understanding-confusion-matrix/</link>
       <pubDate>Sun, 16 Oct 2022 00:00:00 +0000</pubDate>
-      <guid>https://Duks31.github.io/posts/2022-10-16-understanding-confusion-matrix/</guid>
-      <description>If you have ever made a classification model, you have probably found out the quality of your model by maybe checking the accuracy. Well that good but check this out.&#xA;Imagine you have a model that predict cats when it is trained on 1000 features containing 990 cats and 10 dogs, if we are to calculate the accuracy it will be 99%. But here the model completely misclassifies all of the apples.</description>
+      <guid>http://localhost:1313/posts/2022-10-16-understanding-confusion-matrix/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/confusionmatrix.jpg&#34; alt=&#34;confusionmatrix&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;If you have ever made a classification model, you have probably found out the quality of your model by maybe checking the accuracy. Well that good but check this out.&lt;/p&gt;&#xA;&lt;p&gt;Imagine you have a model that predict cats when it is trained on 1000 features containing 990 cats and 10 dogs, if we are to calculate the accuracy it will be 99%. But here the model completely misclassifies all of the apples. So sometimes we need better metrics to evaluate the overall quality and performance of our model.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

@@ -4,7 +4,8 @@ title = 'Ndukwe Chidubem'
 theme = 'hugo-coder'
 
 defaultContentLanguage = "en"
-paginate = 20
+[pagination]
+  pagerSize = 20
 enableEmoji = true
 # Enable Disqus comments
 disqusShortname = "chidubem"
@@ -185,3 +186,8 @@ url = "contact/"
 favicon = true
 
 canonifyURLs = false
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true

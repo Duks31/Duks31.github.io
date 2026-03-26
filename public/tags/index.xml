@@ -2,108 +2,136 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Ndukwe Chidubem</title>
-    <link>https://Duks31.github.io/tags/</link>
+    <link>http://localhost:1313/tags/</link>
     <description>Recent content in Tags on Ndukwe Chidubem</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 26 Jul 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://Duks31.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 26 Mar 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Artificial Intelligence</title>
-      <link>https://Duks31.github.io/tags/artificial-intelligence/</link>
-      <pubDate>Sat, 26 Jul 2025 00:00:00 +0000</pubDate>
-      <guid>https://Duks31.github.io/tags/artificial-intelligence/</guid>
+      <link>http://localhost:1313/tags/artificial-intelligence/</link>
+      <pubDate>Thu, 26 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/artificial-intelligence/</guid>
       <description></description>
     </item>
     <item>
-      <title>Machine Learning</title>
-      <link>https://Duks31.github.io/tags/machine-learning/</link>
-      <pubDate>Sat, 26 Jul 2025 00:00:00 +0000</pubDate>
-      <guid>https://Duks31.github.io/tags/machine-learning/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Transformers</title>
-      <link>https://Duks31.github.io/tags/transformers/</link>
-      <pubDate>Sat, 26 Jul 2025 00:00:00 +0000</pubDate>
-      <guid>https://Duks31.github.io/tags/transformers/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Data Science</title>
-      <link>https://Duks31.github.io/tags/data-science/</link>
-      <pubDate>Wed, 19 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>https://Duks31.github.io/tags/data-science/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>comma ai</title>
-      <link>https://Duks31.github.io/tags/comma-ai/</link>
-      <pubDate>Fri, 27 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>https://Duks31.github.io/tags/comma-ai/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>self driving cars</title>
-      <link>https://Duks31.github.io/tags/self-driving-cars/</link>
-      <pubDate>Fri, 27 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>https://Duks31.github.io/tags/self-driving-cars/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>RAG</title>
-      <link>https://Duks31.github.io/tags/rag/</link>
-      <pubDate>Mon, 29 Apr 2024 00:00:00 +0000</pubDate>
-      <guid>https://Duks31.github.io/tags/rag/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Generative AI</title>
-      <link>https://Duks31.github.io/tags/generative-ai/</link>
-      <pubDate>Sun, 31 Mar 2024 00:00:00 +0000</pubDate>
-      <guid>https://Duks31.github.io/tags/generative-ai/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Gradient Descent</title>
-      <link>https://Duks31.github.io/tags/gradient-descent/</link>
-      <pubDate>Fri, 11 Aug 2023 00:00:00 +0000</pubDate>
-      <guid>https://Duks31.github.io/tags/gradient-descent/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Distance</title>
-      <link>https://Duks31.github.io/tags/distance/</link>
-      <pubDate>Tue, 25 Jul 2023 00:00:00 +0000</pubDate>
-      <guid>https://Duks31.github.io/tags/distance/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Confusion Matrix</title>
-      <link>https://Duks31.github.io/tags/confusion-matrix/</link>
-      <pubDate>Sun, 16 Oct 2022 00:00:00 +0000</pubDate>
-      <guid>https://Duks31.github.io/tags/confusion-matrix/</guid>
+      <title>Computer Vision</title>
+      <link>http://localhost:1313/tags/computer-vision/</link>
+      <pubDate>Thu, 26 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/computer-vision/</guid>
       <description></description>
     </item>
     <item>
       <title>Deep Learning</title>
-      <link>https://Duks31.github.io/tags/deep-learning/</link>
-      <pubDate>Wed, 12 Oct 2022 00:00:00 +0000</pubDate>
-      <guid>https://Duks31.github.io/tags/deep-learning/</guid>
+      <link>http://localhost:1313/tags/deep-learning/</link>
+      <pubDate>Thu, 26 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/deep-learning/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Robotics</title>
+      <link>http://localhost:1313/tags/robotics/</link>
+      <pubDate>Thu, 26 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/robotics/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Biology</title>
+      <link>http://localhost:1313/tags/biology/</link>
+      <pubDate>Sat, 21 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/biology/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Genomics</title>
+      <link>http://localhost:1313/tags/genomics/</link>
+      <pubDate>Sat, 21 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/genomics/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Machine Learning</title>
+      <link>http://localhost:1313/tags/machine-learning/</link>
+      <pubDate>Sun, 11 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/machine-learning/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Transformers</title>
+      <link>http://localhost:1313/tags/transformers/</link>
+      <pubDate>Sat, 26 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/transformers/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Data Science</title>
+      <link>http://localhost:1313/tags/data-science/</link>
+      <pubDate>Wed, 19 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/data-science/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Comma Ai</title>
+      <link>http://localhost:1313/tags/comma-ai/</link>
+      <pubDate>Fri, 27 Dec 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/comma-ai/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Self Driving Cars</title>
+      <link>http://localhost:1313/tags/self-driving-cars/</link>
+      <pubDate>Fri, 27 Dec 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/self-driving-cars/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>RAG</title>
+      <link>http://localhost:1313/tags/rag/</link>
+      <pubDate>Mon, 29 Apr 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/rag/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Generative AI</title>
+      <link>http://localhost:1313/tags/generative-ai/</link>
+      <pubDate>Sun, 31 Mar 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/generative-ai/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Gradient Descent</title>
+      <link>http://localhost:1313/tags/gradient-descent/</link>
+      <pubDate>Fri, 11 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/gradient-descent/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Distance</title>
+      <link>http://localhost:1313/tags/distance/</link>
+      <pubDate>Tue, 25 Jul 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/distance/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Confusion Matrix</title>
+      <link>http://localhost:1313/tags/confusion-matrix/</link>
+      <pubDate>Sun, 16 Oct 2022 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/confusion-matrix/</guid>
       <description></description>
     </item>
     <item>
       <title>Career</title>
-      <link>https://Duks31.github.io/tags/career/</link>
+      <link>http://localhost:1313/tags/career/</link>
       <pubDate>Thu, 20 Aug 2020 00:00:00 +0000</pubDate>
-      <guid>https://Duks31.github.io/tags/career/</guid>
+      <guid>http://localhost:1313/tags/career/</guid>
       <description></description>
     </item>
     <item>
       <title>Learning</title>
-      <link>https://Duks31.github.io/tags/learning/</link>
+      <link>http://localhost:1313/tags/learning/</link>
       <pubDate>Thu, 20 Aug 2020 00:00:00 +0000</pubDate>
-      <guid>https://Duks31.github.io/tags/learning/</guid>
+      <guid>http://localhost:1313/tags/learning/</guid>
       <description></description>
     </item>
   </channel>

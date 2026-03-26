@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Career on Ndukwe Chidubem</title>
-    <link>https://Duks31.github.io/tags/career/</link>
+    <link>http://localhost:1313/tags/career/</link>
     <description>Recent content in Career on Ndukwe Chidubem</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Thu, 20 Aug 2020 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://Duks31.github.io/tags/career/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/career/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>An Honest AI /Machine Learning Journey</title>
-      <link>https://Duks31.github.io/posts/2020-08-20-an-honest-ml-journey/</link>
+      <link>http://localhost:1313/posts/2020-08-20-an-honest-ml-journey/</link>
       <pubDate>Thu, 20 Aug 2020 00:00:00 +0000</pubDate>
-      <guid>https://Duks31.github.io/posts/2020-08-20-an-honest-ml-journey/</guid>
-      <description>In this article I would like to share my journey in the field of Machine Learning and Artificial Intelligence, it will be useful for you if you want to start a career in Machine Learning / AI; the Do’s and Don’ts 🙂 at least from my experience.&#xA;I will be kinda brief 🤞…&#xA;I learnt Python in 2020, as a geek i get fascinated with anything tech and I always loved programming.</description>
+      <guid>http://localhost:1313/posts/2020-08-20-an-honest-ml-journey/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/anhonestjourney.jpg&#34; alt=&#34;anhonestjourney&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;In this article I would like to share my journey in the field of Machine Learning and Artificial Intelligence, it will be useful for you if you want to start a career in Machine Learning / AI; the Do’s and Don’ts 🙂 at least from my experience.&lt;/p&gt;&#xA;&lt;p&gt;I will be kinda brief 🤞…&lt;/p&gt;&#xA;&lt;p&gt;I learnt Python in 2020, as a geek i get fascinated with anything tech and I always loved programming. As of that time I didn&amp;rsquo;t have any use case of python in my head — just wanted to look cool :).&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

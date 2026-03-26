@@ -2,32 +2,32 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Generative AI on Ndukwe Chidubem</title>
-    <link>https://Duks31.github.io/tags/generative-ai/</link>
+    <link>http://localhost:1313/tags/generative-ai/</link>
     <description>Recent content in Generative AI on Ndukwe Chidubem</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Sun, 31 Mar 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://Duks31.github.io/tags/generative-ai/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/generative-ai/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>GANs pt2: Building GANs</title>
-      <link>https://Duks31.github.io/posts/2024-03-31-ganspt2/</link>
+      <link>http://localhost:1313/posts/2024-03-31-ganspt2/</link>
       <pubDate>Sun, 31 Mar 2024 00:00:00 +0000</pubDate>
-      <guid>https://Duks31.github.io/posts/2024-03-31-ganspt2/</guid>
-      <description>This is the second part of the GANs episodes, if you missed the first you can check that out here. In the first part, I talked about the why of GANs and a couple of other things, do check it out.&#xA;In this part we will be looking at what it takes to build a very simple GAN architecture. Link to Code here.&#xA;The above code is a very simple implementation of GAN, I will use this to expand on the concept talked about in part 1.</description>
+      <guid>http://localhost:1313/posts/2024-03-31-ganspt2/</guid>
+      <description>&lt;p&gt;This is the second part of the GANs episodes, if you missed the first you can check that out &lt;a href=&#34;https://medium.com/@chidubemndukwe/gans-pt1-d49bfd7e9b12&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;here&lt;/a&gt;. In the first part, I talked about the why of GANs and a couple of other things, do check it out.&lt;/p&gt;&#xA;&lt;p&gt;In this part we will be looking at what it takes to build a very simple GAN architecture. Link to Code &lt;a href=&#34;https://github.com/Duks31/GAN&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://cdn-images-1.medium.com/max/2912/0*pAvnxa8VbYHG-_46.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;The above code is a very simple implementation of GAN, I will use this to expand on the concept talked about in part 1.&lt;/p&gt;</description>
     </item>
     <item>
       <title>GANs pt1: Understanding GANs</title>
-      <link>https://Duks31.github.io/posts/2024-03-13-gans-pt1/</link>
+      <link>http://localhost:1313/posts/2024-03-13-gans-pt1/</link>
       <pubDate>Wed, 13 Mar 2024 00:00:00 +0000</pubDate>
-      <guid>https://Duks31.github.io/posts/2024-03-13-gans-pt1/</guid>
-      <description>Understanding GANs&#xA;Generative Adversarial Networks (GANs) are one of the exciting model architectures that gave rise to the increasing popularity of machine learning in the space recently. GANs are generative models, meaning that they create new data that resembles the training data, for example, by creating realistic images of human faces. The images below were created by GANs:&#xA;quite realistic, right? In a GAN, there are two fundamental blocks (neural networks), the generator and the discriminator.</description>
+      <guid>http://localhost:1313/posts/2024-03-13-gans-pt1/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Understanding GANs&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;Generative Adversarial Networks (GANs) are one of the exciting model architectures that gave rise to the increasing popularity of machine learning in the space recently. GANs are generative models, meaning that they create new data that resembles the training data, for example, by creating realistic images of human faces. The images below were created by GANs:&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://cdn-images-1.medium.com/max/2000/0*8FOT6T_Zw9z1lv8f.png&#34; alt=&#34;source: Nvidia (karras2018iclr-paper.pdf) (nvidia.com)&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;quite realistic, right? In a GAN, there are two fundamental blocks (neural networks), the generator and the discriminator.&lt;/p&gt;</description>
     </item>
     <item>
       <title>LLMs: Generative AI at the moment</title>
-      <link>https://Duks31.github.io/posts/2024-03-12-llms/</link>
+      <link>http://localhost:1313/posts/2024-03-12-llms/</link>
       <pubDate>Tue, 12 Mar 2024 00:00:00 +0000</pubDate>
-      <guid>https://Duks31.github.io/posts/2024-03-12-llms/</guid>
-      <description>Generative AI at the moment&#xD;Link to heading&#xD;Generative AI, particularly propagated by large language models (LLMs), is a rapidly advancing field with numerous exciting developments. LLMs, like GPT-4, exhibit remarkable proficiency in generating coherent and contextually relevant text. Capable of producing grammatically correct and semantically meaningful content, these models have found applications in diverse domains, such as generating articles, stories, chatbot responses, and even entire books. The key strength of LLMs lies in their capacity to learn complex language patterns from vast datasets, enabling them to generate text with a level of complexity and nuance that manual programming would struggle to achieve.</description>
+      <guid>http://localhost:1313/posts/2024-03-12-llms/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://miro.medium.com/v2/resize:fit:828/format:webp/0*HB4gxxS6YLSFhith&#34; alt=&#34;Artificial Intelligence&#34;&gt;&lt;/p&gt;&#xA;&lt;h3 id=&#34;generative-ai-at-the-moment&#34;&gt;&#xA;  Generative AI at the moment&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#generative-ai-at-the-moment&#34;&gt;&#xA;    &lt;i class=&#34;fa fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h3&gt;&#xA;&lt;p&gt;Generative AI, particularly propagated by large language models (LLMs), is a rapidly advancing field with numerous exciting developments. LLMs, like GPT-4, exhibit remarkable proficiency in generating coherent and contextually relevant text. Capable of producing grammatically correct and semantically meaningful content, these models have found applications in diverse domains, such as generating articles, stories, chatbot responses, and even entire books. The key strength of LLMs lies in their capacity to learn complex language patterns from vast datasets, enabling them to generate text with a level of complexity and nuance that manual programming would struggle to achieve.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

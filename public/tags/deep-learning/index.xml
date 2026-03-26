@@ -2,18 +2,32 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Deep Learning on Ndukwe Chidubem</title>
-    <link>https://Duks31.github.io/tags/deep-learning/</link>
+    <link>http://localhost:1313/tags/deep-learning/</link>
     <description>Recent content in Deep Learning on Ndukwe Chidubem</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 12 Oct 2022 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://Duks31.github.io/tags/deep-learning/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 26 Mar 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/deep-learning/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Vision Language Action (VLA) Models</title>
+      <link>http://localhost:1313/posts/2026-03-26-vla/</link>
+      <pubDate>Thu, 26 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/2026-03-26-vla/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;../../images/vla.png&#34; alt=&#34;VLA&#34;&gt;&lt;/p&gt;&#xA;&lt;h3 id=&#34;from-pixels-to-poses&#34;&gt;&#xA;  From Pixels to Poses&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#from-pixels-to-poses&#34;&gt;&#xA;    &lt;i class=&#34;fa fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h3&gt;&#xA;&lt;p&gt;Vision Language Action Models are large transformer models which predict robot actions, given observations from multiple cameras. They are usually trained on some pretrained vision language models, which makes them have a lot of knowledge of the world baked into them. VLA models bridge the gap between perception and physical movement. Unlike traditional modular pipelines, a VLA is typically end-to-end.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Alphagenome: AI for the Genome</title>
+      <link>http://localhost:1313/posts/2026-02-21-alphagenome/</link>
+      <pubDate>Sat, 21 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/2026-02-21-alphagenome/</guid>
+      <description>&lt;p&gt;AlphaGenome is a deep learning model developed by Google DeepMind, announced in 2025 and detailed in Nature in January 2026, designed to interpret the &amp;ldquo;non-coding&amp;rdquo; or &amp;ldquo;dark&amp;rdquo; 98% of the human genome. It functions as a &amp;ldquo;sequence-to-function&amp;rdquo; model that predicts how DNA sequences regulate gene expression. You can access the model here.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;../../images/alphagenome.png&#34; alt=&#34;Alphagenome&#34;&gt;&#xA;source: google DeepMind&lt;/p&gt;&#xA;&lt;p&gt;I am not really a biology person myself, but I was fascinated about this technology, so bear with me when I use tech terms to explain things.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Why Deep Learning?</title>
-      <link>https://Duks31.github.io/posts/2022-10-12-why-deep-learning/</link>
+      <link>http://localhost:1313/posts/2022-10-12-why-deep-learning/</link>
       <pubDate>Wed, 12 Oct 2022 00:00:00 +0000</pubDate>
-      <guid>https://Duks31.github.io/posts/2022-10-12-why-deep-learning/</guid>
-      <description>In the Recent Trends in the Field of Artificial Intelligence (AI), DeepLearning has gained more popularity in Reasearch over the years compared to Traditional Machine Learning.&#xA;The Question is Why? If you would like to know continue Reading 🙂&#xA;Firstly, Deep learning is a subset of machine learning which provides the ability to machine to perform human-like tasks without human involvement. It provides the ability to an AI agent to mimic the human brain.</description>
+      <guid>http://localhost:1313/posts/2022-10-12-why-deep-learning/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/whydl.jpg&#34; alt=&#34;why-deep-learning&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;In the Recent Trends in the Field of Artificial Intelligence (AI), DeepLearning has gained more popularity in Reasearch over the years compared to Traditional Machine Learning.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/dl-trend.jpg&#34; alt=&#34;dltrend&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;The Question is Why? If you would like to know continue Reading 🙂&lt;/p&gt;&#xA;&lt;p&gt;Firstly, Deep learning is a subset of machine learning which provides the ability to machine to perform human-like tasks without human involvement. It provides the ability to an AI agent to mimic the human brain. Deep learning can use both supervised and unsupervised learning to train an AI agent. Deep learning is implemented through neural networks architecture hence also called a deep neural network. Deep learning is the primary technology behind self-driving cars, speech recognition, image recognition, automatic machine translation, etc. The main challenge for deep learning is that it requires lots of data with lots of computational power.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

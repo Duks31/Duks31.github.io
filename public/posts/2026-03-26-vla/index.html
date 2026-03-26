@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <title>
+  Vision Language Action (VLA) Models · Ndukwe Chidubem
+</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="Ndukwe Chidubem">
+<meta name="description" content="
+
+  From Pixels to Poses
+  
+    
+    Link to heading
+  
+
+Vision Language Action Models are large transformer models which predict robot actions, given observations from multiple cameras. They are usually trained on some pretrained vision language models, which makes them have a lot of knowledge of the world baked into them. VLA models bridge the gap between perception and physical movement. Unlike traditional modular pipelines, a VLA is typically end-to-end.">
+<meta name="keywords" content="blog,developer,personal">
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Vision Language Action (VLA) Models">
+  <meta name="twitter:description" content="From Pixels to Poses Link to heading Vision Language Action Models are large transformer models which predict robot actions, given observations from multiple cameras. They are usually trained on some pretrained vision language models, which makes them have a lot of knowledge of the world baked into them. VLA models bridge the gap between perception and physical movement. Unlike traditional modular pipelines, a VLA is typically end-to-end.">
+
+<meta property="og:url" content="http://localhost:1313/posts/2026-03-26-vla/">
+  <meta property="og:site_name" content="Ndukwe Chidubem">
+  <meta property="og:title" content="Vision Language Action (VLA) Models">
+  <meta property="og:description" content="From Pixels to Poses Link to heading Vision Language Action Models are large transformer models which predict robot actions, given observations from multiple cameras. They are usually trained on some pretrained vision language models, which makes them have a lot of knowledge of the world baked into them. VLA models bridge the gap between perception and physical movement. Unlike traditional modular pipelines, a VLA is typically end-to-end.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2026-03-26T00:00:00+00:00">
+    <meta property="article:modified_time" content="2026-03-26T00:00:00+00:00">
+    <meta property="article:tag" content="Artificial Intelligence">
+    <meta property="article:tag" content="Deep Learning">
+    <meta property="article:tag" content="Computer Vision">
+    <meta property="article:tag" content="Robotics">
+
+
+
+
+<link rel="canonical" href="http://localhost:1313/posts/2026-03-26-vla/">
+
+
+<link rel="preload" href="/fonts/forkawesome-webfont.woff2?v=1.2.0" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/css/coder.css" media="screen">
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="/css/coder-dark.css" media="screen">
+  
+
+
+
+ 
+
+
+
+
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg" sizes="any">
+<link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+	
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+
+
+
+
+
+
+
+</head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-dark">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="/">
+      Ndukwe Chidubem
+    </a>
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/about/">About</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/posts/">Blog</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/projects/">Projects</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/experience/">Experience</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/contact/">Contact me</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">
+            <a class="title-link" href="http://localhost:1313/posts/2026-03-26-vla/">
+              Vision Language Action (VLA) Models
+            </a>
+          </h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa fa-calendar" aria-hidden="true"></i>
+              <time datetime="2026-03-26T00:00:00Z">
+                March 26, 2026
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fa fa-clock-o" aria-hidden="true"></i>
+              9-minute read
+            </span>
+          </div>
+          
+          
+          <div class="tags">
+  <i class="fa fa-tag" aria-hidden="true"></i>
+    <span class="tag">
+      <a href="/tags/artificial-intelligence/">Artificial Intelligence</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/deep-learning/">Deep Learning</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/computer-vision/">Computer Vision</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/robotics/">Robotics</a>
+    </span></div>
+
+        </div>
+      </header>
+
+      <div class="post-content">
+        
+        <p><img src="../../images/vla.png" alt="VLA"></p>
+<h3 id="from-pixels-to-poses">
+  From Pixels to Poses
+  <a class="heading-link" href="#from-pixels-to-poses">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>Vision Language Action Models are large transformer models which predict robot actions, given observations from multiple cameras. They are usually trained on some pretrained vision language models, which makes them have a lot of knowledge of the world baked into them. VLA models bridge the gap between perception and physical movement. Unlike traditional modular pipelines, a VLA is typically end-to-end.</p>
+<p>VLA architecture comprises of three things mainly:</p>
+<ul>
+<li><strong>Vision Encoder</strong>: A pretrained vision model that encodes camera frames into visual tokens</li>
+<li><strong>Language</strong>: A Large Language Model, this provides the reasoning and instruction following capabilities</li>
+<li><strong>Action Head</strong>: This is the robotic part. The model does not just output text, it outputs action tokens. These tokens represent joint velocities or end effector poses (x, y, z, roll, pitch yaw, gripper).</li>
+</ul>
+<p>I found these to be the general and most intuitive way to show VLA main components, a basic “see → understand → act” model. But different people have added flavours to the mix which introduce sophisticated variations to this fundamental flow. While the &ldquo;see → understand → act&rdquo; pipeline is the bedrock, modern architectures add layers of complexity to make the robot&rsquo;s motion more fluid and precise.</p>
+<p>I would be diving into few specific VLA models that are defining the field.</p>
+<h2 id="rt-2">
+  <a href="https://robotics-transformer2.github.io/assets/rt2.pdf"  class="external-link" target="_blank" rel="noopener">RT-2</a>
+  <a class="heading-link" href="#rt-2">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p><img src="../../images/rt2.png" alt="RT2">
+RT-2 Overview</p>
+<p>Developed by Google DeepMind, <a href="https://robotics-transformer2.github.io/assets/rt2.pdf"  class="external-link" target="_blank" rel="noopener">RT-2</a> is the poster child for the VLA movement. It proved that scaling works for robotics just as it does for LLMs, essentially &ldquo;re-wiring&rdquo; high-capacity vision-language models to output physical actions.</p>
+<p>RT-2 isn’t built from scratch. Instead, it takes massive pre-trained models specifically <a href="https://arxiv.org/abs/2305.18565"  class="external-link" target="_blank" rel="noopener">PaLI-X</a> (up to 55B parameters) and <a href="https://arxiv.org/pdf/2303.03378"  class="external-link" target="_blank" rel="noopener">PaLM-E</a> (12B parameters) and fine-tunes them for robotic tasks.</p>
+<p>As shown in the diagram, the workflow follows a specific pipeline:</p>
+<ul>
+<li><strong>Internet-Scale Data (Co-Fine-Tuning)</strong>: The model is pre-trained on massive datasets of Visual Question Answering (VQA). This gives it the ability to understand that eggs and flour are used to “bake a cake,” knowledge it later applies to physical objects.</li>
+<li><strong>The Robot’s View</strong>: The robot’s camera feed is split into patches and fed through a ViT (Vision Transformer), combining visual information with a natural language task (e.g., <em>“What should the robot do to <task>?”</em>).</li>
+<li><strong>Action as Language</strong>: The genius of RT-2 is that it treats robot actions like text tokens. Just as an LLM predicts the next word, RT-2 predicts the next “action word” (discretized into 256 “bins” for movement).</li>
+</ul>
+<p>When the LLM backbone processes the instruction, it outputs a string of numbers (e.g., <code>132 114 128 5 25 156</code>) which is processed by the De-Tokenizer. This component converts those numbers into real-world units: Translation (movement in x, y, z space) and Rotation (changing the angle of the gripper).</p>
+<p>Then the Closed-Loop Control, this allows the robot to perform complex tasks like picking up an object that is “different” from others, tasks requiring a deep semantic understanding of the world.</p>
+<h4 id="emergent-capabilities-reasoning-in-the-real-world">
+  <strong>Emergent Capabilities: Reasoning in the Real World</strong>
+  <a class="heading-link" href="#emergent-capabilities-reasoning-in-the-real-world">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<p>Because RT-2 is backed by a model that has “read the internet,” it exhibits emergent behavior, the ability to perform tasks it was never explicitly trained for in a lab:</p>
+<ul>
+<li><strong>Semantic Reasoning</strong>: If you tell RT-2 to <em>“pick up the extinct animal,”</em> it can identify a toy dinosaur because its training taught it that dinosaurs are extinct.</li>
+<li><strong>Improvised Problem Solving</strong>: It can reason through text-based logic to choose a rock when asked to find an “improvised hammer”.</li>
+</ul>
+<h4 id="the-trade-off-power-vs-latency">
+  <strong>The Trade-off: Power vs. Latency</strong>
+  <a class="heading-link" href="#the-trade-off-power-vs-latency">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<p>While RT-2 achieves a 90% success rate and vastly outperforms models using only robotic data, its size is its bottleneck. At 55B parameters, it cannot run locally on most robots. It typically requires a cloud-based multi-TPU setup, resulting in inference speeds of roughly 1–5 Hz. It’s a brilliant “thinker,” but often too slow for high-speed, reactive tasks.</p>
+<h2 id="openvla">
+  OpenVLA
+  <a class="heading-link" href="#openvla">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p><img src="../../images/openvla.png" alt="OpenVLA">
+OpenVLA architecture</p>
+<p>If RT-2 is the proprietary giant, <a href="https://arxiv.org/pdf/2406.09246"  class="external-link" target="_blank" rel="noopener">OpenVLA</a> is the community’s answer, a high-performance, open-source VLA model designed to be accessible and fine-tunable for a wide variety of robotic platforms. Unlike its predecessors that rely on massive, closed-source backbones, OpenVLA is built on a 7B-parameter Llama 2 model. This makes it powerful enough for complex reasoning but efficient enough to be practical for researchers and developers.</p>
+<p>The architecture of OpenVLA follows a sophisticated multi-stage pipeline as shown in your diagram above:</p>
+<ul>
+<li><strong>Dual-Vision Encoder</strong>: It utilizes a fused visual encoder system, combining <a href="https://arxiv.org/pdf/2304.07193"  class="external-link" target="_blank" rel="noopener">DinoV2</a> and <a href="https://arxiv.org/abs/2303.15343"  class="external-link" target="_blank" rel="noopener">SigLIP</a> to process the input image. This “fused” approach allows the model to capture high-level semantic meaning alongside fine-grained spatial details.</li>
+<li><strong>Reasoning Backbone</strong>: The core of the model is the <a href="https://arxiv.org/pdf/2307.09288"  class="external-link" target="_blank" rel="noopener">Llama 2</a> 7B transformer. It takes in the projected visual tokens alongside language instructions (like <em>“Put eggplant in bowl”</em>), which have been processed through a standard Llama tokenizer.</li>
+<li><strong>Action Output</strong>: Just like RT-2, it predicts action tokens that are passed through an Action De-Tokenizer. This results in a 7D Robot Action vector, containing precise commands for translation (x, y, z), rotation (roll, pitch, yaw), and the gripper state (Grip).</li>
+</ul>
+<p>What makes OpenVLA a major milestone is its data efficiency and scale. It was trained on the Open X-Embodiment dataset, a massive collection of 970,000 robot manipulation trajectories across diverse tasks and scenes. Despite having 7x fewer parameters than RT-2-X, OpenVLA actually outperforms it by 16.5% in absolute task success rate across nearly 30 evaluation tasks.</p>
+<p>OpenVLA is designed for Parameter-Efficient Fine-Tuning (PEFT). By using techniques like <a href="https://arxiv.org/pdf/2106.09685"  class="external-link" target="_blank" rel="noopener">LoRA</a>, you can adapt this 7B model to a new robot setup or specific task using just a single consumer-grade GPU (like an A100 or even high-end RTX cards) in a matter of hours. This lowers the barrier to entry from “Google-level compute” to something an individual researcher or student can reasonably run.</p>
+<h2 id="smolvla">
+  <a href="https://arxiv.org/pdf/2506.01844"  class="external-link" target="_blank" rel="noopener">SmolVLA</a>
+  <a class="heading-link" href="#smolvla">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p><img src="../../images/smolvla.png" alt="SmolVLA">
+SmolVLA architecture</p>
+<p><a href="https://arxiv.org/pdf/2506.01844"  class="external-link" target="_blank" rel="noopener">SmolVLA</a> represents the move toward localized, efficient intelligence. Developed as part of the growing movement to make robotics more accessible, SmolVLA is designed specifically to run on affordable hardware and community-driven datasets. It bridges the gap between state-of-the-art AI and the world of “affordable robots” like the <a href="https://huggingface.co/lerobot"  class="external-link" target="_blank" rel="noopener">LeRobot</a> platform.</p>
+<p>The core innovation of SmolVLA, is its split architecture that separates general reasoning from high-speed motor control:</p>
+<ul>
+<li><strong>The VLM Backbone:</strong> The model uses a standard Vision-Language Model stack comprised of multiple Self-Attention layers to process the multimodal inputs: camera frames, the text-based Task (e.g., <em>“Grasp the object and put it in the bin”</em>), and the robot’s current proprioceptive State.</li>
+<li><strong>The Action Expert:</strong> Instead of the LLM trying to handle everything, it passes key information (via KV and QKV tensors) to a dedicated Action Expert. This specialized module uses a mix of Cross-Attention and Self-Attention to transform those high-level “thoughts” into a trajectory of actions [a(t), a(t+1), a(t+H)].</li>
+</ul>
+<h4 id="mastering-dexterity-with-diffusion">
+  <strong>Mastering Dexterity with Diffusion</strong>
+  <a class="heading-link" href="#mastering-dexterity-with-diffusion">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<p>A key feature highlighted in the general VLA architecture that is critical for SmolVLA is the integration of a Diffusion Transformer.</p>
+<ul>
+<li><strong>Handling Uncertainty:</strong> In complex physical environments, there isn’t always one “correct” next move. By taking the action tokens from the LLM and feeding them into a diffusion process with Noisy Actions, the model can iteratively refine its plan.</li>
+<li><strong>Smoothness and Precision:</strong> This allows the robot to achieve more fluid, human-like motion, especially when performing delicate tasks that require high-frequency adjustments.</li>
+</ul>
+<p>SmolVLA is a gamechanger because it prioritizes efficiency without sacrificing the “world knowledge” that makes VLAs so powerful. By leveraging large-scale Community datasets, it learns from a vast array of human and robotic experiences but remains small enough to run with low latency on consumer-grade hardware. It proves that you don’t need a massive server rack to give a robot the ability to understand instructions and interact intelligently with its environment you just need a smarter, more compact architecture.</p>
+<h2 id="pi0">
+  <a href="https://www.pi.website/download/pi0.pdf"  class="external-link" target="_blank" rel="noopener">Pi0</a>
+  <a class="heading-link" href="#pi0">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p><img src="../../images/pi0.png" alt="pi0">
+Pi0 framework overview</p>
+<p>While the models we’ve discussed so far focus on predicting discrete tokens, pi0 (developed by <a href="https://www.pi.website/"  class="external-link" target="_blank" rel="noopener">Physical Intelligence</a>) marks a shift toward a more continuous, “physical” approach to robotics. It is designed to move past the stiffness of early models to achieve the fluid dexterity required for complex human-like tasks, such as folding laundry or clearing a table.</p>
+<p>The architecture of pi0, is built on a massive foundation of multimodal data. It is pre-trained on a diverse “mix” of sources, including Internet pre-training, the OXE (Open X-Embodiment) dataset, and a proprietary pi dataset.</p>
+<ul>
+<li><strong>The Backbone:</strong> The model utilizes a pre-trained VLM, specifically a combination of <a href="https://arxiv.org/abs/2303.15343"  class="external-link" target="_blank" rel="noopener">SigLIP</a> (400M) for vision and <a href="https://deepmind.google/models/gemma/"  class="external-link" target="_blank" rel="noopener">Gemma</a> (2.6B) for language reasoning. This gives the robot a high-level understanding of instructions like <em>“fold shirt”</em> based on visual inputs from multiple ViT (Vision Transformer) encoders.</li>
+<li><strong>The Action Expert:</strong> The “brain” (VLM) then passes information to a specialized 300M parameter Action Expert. This is where the physical execution happens.</li>
+</ul>
+<h4 id="flow-matching-from-tokens-to-continuous-motion">
+  <strong>Flow Matching: From Tokens to Continuous Motion</strong>
+  <a class="heading-link" href="#flow-matching-from-tokens-to-continuous-motion">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<p>The most critical technical departure in pi0 is how it generates actions. Instead of simply outputting a single “word” for a move, it uses a Flow Matching approach (similar to Diffusion).</p>
+<ul>
+<li><strong>The Input:</strong> The Action Expert takes in the current robot state, q(t), and a set of noisy initial guesses.</li>
+<li><strong>The Process:</strong> By iteratively refining these guesses through the transformer, it “denoises” the plan to find the most efficient and fluid path for the robot’s joints.</li>
+<li><strong>The Output:</strong> It doesn’t just predict the next millisecond; it generates a trajectory, a sequence of future actions [a(t), a(t+1), a(t+H)], allowing for smoother, more reactive control.</li>
+</ul>
+<h4 id="generalization-across-different-bodies">
+  <strong>Generalization Across Different “Bodies”</strong>
+  <a class="heading-link" href="#generalization-across-different-bodies">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<p>A defining strength of pi0 is its ability to control vastly different types of hardware using the same underlying model. As illustrated in the image above, the model is versatile enough to drive:</p>
+<ul>
+<li><strong>14 DoF Bimanual Manipulators</strong> (two-armed robots).</li>
+<li><strong>18 DoF Mobile Manipulators</strong> (robots that move and grab).</li>
+<li><strong>7 and 8 DoF Single Arm Manipulators</strong>.</li>
+</ul>
+<p>By shifting the focus from “language prediction” to “physical flow matching,” pi0 represents a significant leap toward robots that don’t just understand what we say but can actually move with the grace and adaptability required to function in our messy, unpredictable world.</p>
+<hr>
+<p>We are witnessing a fundamental shift in how we build intelligent machines. VLAs are dissolving these boundaries, replacing rigid code with embodied intelligence.</p>
+<p>As we move from the “Google-sized” brains of RT-2 to the efficient, dexterous “physical intelligence” of pi0 and SmolVLA, the technology is moving out of the data center and onto the workshop floor. We are moving away from robots that merely “see” and “act” toward robots that “understand” the physical consequences of their movements.</p>
+<p>For the next generation of engineers, the challenge isn’t just about writing faster algorithms; it’s about curating the data and fine-tuning the models that will allow robots to navigate our messy, unpredictable world with the same common sense we take for granted. The stack is no longer just on your screen; it’s finally getting a body.</p>
+<hr>
+<p>Stay Nerdy!</p>
+<p>Thanks for reading The Nerd&rsquo;s Stack! Subscribe for free to receive new posts and support my work.</p>
+
+      </div>
+
+
+      <footer>
+        
+
+
+        
+        
+        
+        
+        
+      </footer>
+    </article>
+
+    
+  </section>
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+      2020 -
+    
+    2026
+     Ndukwe Chidubem 
+    ·
+    
+    Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/" target="_blank" rel="noopener">Coder</a>.
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/js/coder.js"></script>
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+
+</html>

@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <title>
+  Alphagenome: AI for the Genome · Ndukwe Chidubem
+</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="Ndukwe Chidubem">
+<meta name="description" content="AlphaGenome is a deep learning model developed by Google DeepMind, announced in 2025 and detailed in Nature in January 2026, designed to interpret the &ldquo;non-coding&rdquo; or &ldquo;dark&rdquo; 98% of the human genome. It functions as a &ldquo;sequence-to-function&rdquo; model that predicts how DNA sequences regulate gene expression. You can access the model here.
+
+source: google DeepMind
+I am not really a biology person myself, but I was fascinated about this technology, so bear with me when I use tech terms to explain things.">
+<meta name="keywords" content="blog,developer,personal">
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Alphagenome: AI for the Genome">
+  <meta name="twitter:description" content="AlphaGenome is a deep learning model developed by Google DeepMind, announced in 2025 and detailed in Nature in January 2026, designed to interpret the “non-coding” or “dark” 98% of the human genome. It functions as a “sequence-to-function” model that predicts how DNA sequences regulate gene expression. You can access the model here.
+source: google DeepMind
+I am not really a biology person myself, but I was fascinated about this technology, so bear with me when I use tech terms to explain things.">
+
+<meta property="og:url" content="http://localhost:1313/posts/2026-02-21-alphagenome/">
+  <meta property="og:site_name" content="Ndukwe Chidubem">
+  <meta property="og:title" content="Alphagenome: AI for the Genome">
+  <meta property="og:description" content="AlphaGenome is a deep learning model developed by Google DeepMind, announced in 2025 and detailed in Nature in January 2026, designed to interpret the “non-coding” or “dark” 98% of the human genome. It functions as a “sequence-to-function” model that predicts how DNA sequences regulate gene expression. You can access the model here.
+source: google DeepMind
+I am not really a biology person myself, but I was fascinated about this technology, so bear with me when I use tech terms to explain things.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2026-02-21T00:00:00+00:00">
+    <meta property="article:modified_time" content="2026-02-21T00:00:00+00:00">
+    <meta property="article:tag" content="Biology">
+    <meta property="article:tag" content="Artificial Intelligence">
+    <meta property="article:tag" content="Deep Learning">
+    <meta property="article:tag" content="Genomics">
+
+
+
+
+<link rel="canonical" href="http://localhost:1313/posts/2026-02-21-alphagenome/">
+
+
+<link rel="preload" href="/fonts/forkawesome-webfont.woff2?v=1.2.0" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/css/coder.css" media="screen">
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="/css/coder-dark.css" media="screen">
+  
+
+
+
+ 
+
+
+
+
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg" sizes="any">
+<link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+	
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+
+
+
+
+
+
+
+</head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-dark">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="/">
+      Ndukwe Chidubem
+    </a>
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/about/">About</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/posts/">Blog</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/projects/">Projects</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/experience/">Experience</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/contact/">Contact me</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">
+            <a class="title-link" href="http://localhost:1313/posts/2026-02-21-alphagenome/">
+              Alphagenome: AI for the Genome
+            </a>
+          </h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa fa-calendar" aria-hidden="true"></i>
+              <time datetime="2026-02-21T00:00:00Z">
+                February 21, 2026
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fa fa-clock-o" aria-hidden="true"></i>
+              7-minute read
+            </span>
+          </div>
+          
+          
+          <div class="tags">
+  <i class="fa fa-tag" aria-hidden="true"></i>
+    <span class="tag">
+      <a href="/tags/biology/">Biology</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/artificial-intelligence/">Artificial Intelligence</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/deep-learning/">Deep Learning</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/genomics/">Genomics</a>
+    </span></div>
+
+        </div>
+      </header>
+
+      <div class="post-content">
+        
+        <p>AlphaGenome is a deep learning model developed by Google DeepMind, announced in 2025 and detailed in Nature in January 2026, designed to interpret the &ldquo;non-coding&rdquo; or &ldquo;dark&rdquo; 98% of the human genome. It functions as a &ldquo;sequence-to-function&rdquo; model that predicts how DNA sequences regulate gene expression. You can access the model here.</p>
+<p><img src="../../images/alphagenome.png" alt="Alphagenome">
+source: google DeepMind</p>
+<p>I am not really a biology person myself, but I was fascinated about this technology, so bear with me when I use tech terms to explain things.</p>
+<h2 id="the-98-problem">
+  The 98% problem
+  <a class="heading-link" href="#the-98-problem">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>If you open a biology textbook, most of the focus is on Proteins. We’ve spent decades obsessed with the 2% of our DNA that actually codes for the “stuff” our bodies are made of. The other 98%? For a long time, we literally called it “Junk DNA.”</p>
+<p>But here’s the reality: If the 2% are the bricks that build the house, the other 98% is the electrical wiring, the thermostat, and the security system. It’s the “Regulatory Code” that tells your body when, where, and how much of those bricks to use.</p>
+<h2 id="why-should-you-care">
+  Why Should you care?
+  <a class="heading-link" href="#why-should-you-care">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>Imagine you have a bug in a software program. If the bug is in the logic (the 2%), the program crashes. But if the bug is in the config file (the 98%), the program might run, but it drains your battery in ten minutes or makes your screen flicker.</p>
+<p>In humans, “bugs” in the 98% are responsible for complex diseases like diabetes, heart disease, and autoimmune disorders. Until now, we were mostly guessing how a tiny change in this “Junk DNA” led to a massive health problem. AlphaGenome changes that. It’s essentially the first Universal Debugger for the non-coding genome.</p>
+<h2 id="what-does-aphagenome-actually-predict">
+  What does AphaGenome actually predict?
+  <a class="heading-link" href="#what-does-aphagenome-actually-predict">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p><img src="../../images/alphagenome_predict.png" alt="alphagenome_predict"></p>
+<p><em>Image explanation: a. Comparison of prediction outputs across deep learning models. All models predict at 1-bp resolution, except Borzoi (32 bp). Borzoi predicts splice sites implicitly through RNA-seq coverage, whereas others produce explicit predictions. b, Variant causing exon skipping in DLG1 (GTEx artery tibial tissue). Predicted splice junction, site usage and RNA-seq coverage are shown alongside observed coverage for reference (REF; blue) and alternative (ALT; red) alleles. c, New splice junction variant in COL6A2 (aorta), creating a new splicing donor and disrupting the extant one. d, ISM of U2SURP exon and flanking introns using the mean splice junction score across tissues. Splicing-related motifs are highlighted. e, Schema of splice variant effect prediction with AlphaGenome. The maximum difference between REF and ALT predictions across splice sites or splice junctions is used to score variants (Methods). f, Comparison of AlphaGenome composite and splice junction scorers versus other methods for classifying fine-mapped sQTL variants. Variants are stratified into two groups by distance to the splice site, as done in Borzoi. Tissue-specific auPRCs were averaged and weighted by variant count per tissue. g, Prediction of rare variants associated with splicing outliers. AlphaGenome was evaluated in both zero-shot and supervised settings (training an ensemble model similar to AbSplice). h, Classifying pathogenic versus benign ClinVar variants on the basis of splicing effects for deep intronic (more than 6 bp from splice sites) and synonymous (more than 3 bp from splice sites) variants, variants in the splice site region (within 6 bp intronic or 3 bp exonic) and missense variants predicted as ‘likely_benign’ by AlphaMissense. i, MFASS splicing variant classification (MPRA-tested variants). auPRC on the classification of experimentally validated splice-disrupting variants (data from Chong et al.).</em></p>
+<p>Think of AlphaGenome as a “Multimodal Oracle.” You give it a sequence of DNA, and it predicts thousands of biological signals simultaneously across 11 different “modalities” (categories). It tells you:</p>
+<ul>
+<li>
+<p>Gene Expression: Will this DNA sequence actually turn a gene “On” or “Off”?</p>
+</li>
+<li>
+<p>Splicing: Will the “instructions” be cut and pasted correctly, or will there be a typo that ruins the final protein?</p>
+</li>
+<li>
+<p>Chromatin Accessibility: Is the DNA “open” enough for the body’s machinery to read it, or is it packed away like an old book in a box?</p>
+</li>
+<li>
+<p>3D Contact Maps: Since DNA is a 3D ball of yarn, which parts are touching each other, even if they are far apart on the string?</p>
+</li>
+</ul>
+<p>The Breakthrough: Previous AI models could only “see” short snippets of DNA (like reading a single sentence). AlphaGenome has a 1-million-base-pair context window. It can read the entire “chapter” and understand how a “switch” at the beginning of the book affects a “gene” at the very end.</p>
+<h2 id="the-architectural-breakdown">
+  The Architectural Breakdown
+  <a class="heading-link" href="#the-architectural-breakdown">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p><img src="../../images/alphagenome_architecture.png" alt="AlphaGenome Architecture">
+source: nature</p>
+<p><em>Image explanation: a, Model overview. AlphaGenome processes 1 Mb of DNA sequences and species identity (human/mouse) to predict 5,930 human or 1,128 mouse genome tracks across diverse cell types and 11 output types at specific resolutions (far right). Computation leverages sequence parallelism, breaking the 1 Mb of DNA sequence into 131-kb chunks processed across devices. The core architecture features a U-Net-style design comprising an encoder (downsampling the sequence), transformers with inter device communication and a decoder (upsampling), which feed into task specific output heads at their respective resolutions (detailed in Extended Data Fig. 1). b, The pretraining process, in which 1-Mb DNA intervals are sampled from cross-validation folds, augmented (shifted and reverse complemented) and used to train the model against experimental targets, yields fold-specific and all-fold teacher models. c, The distillation process, in which a student model learns to reproduce predictions from frozen all-fold teacher models using augmented and mutationally perturbed input sequences, yields a single model suitable for variant effect prediction. d, Track prediction: pretrained fold-split model. Relative performance improvement (%) of AlphaGenome over the best competing model for a selection of genome track prediction tasks across modalities and resolutions (Supplementary Table 3). The ‘value’ column represents the absolute performance of AlphaGenome. For all tasks shown, a value of 1.0 indicates perfect performance, with the exception of ‘profile JSD’, for which the ideal value is 0. Both competing models and AlphaGenome pretrained fold-split models were evaluated on held-out genome regions unseen during model training. For classification tasks, we adjusted the relative improvement to account for the performance of a random classifier (Methods). e, Variant effect prediction: distilled all-fold model. Relative performance improvement of AlphaGenome over the best competing model for a subset of variant effect prediction tasks (Supplementary Table 4). The distilled student AlphaGenome model is used for these evaluations. The ds/caQTL direction (causality) rows represent the average relative improvement across several similar datasets (Methods). ds, DNase sensitivity; ca, chromatin accessibility; JSD, Jensen–Shannon divergence.</em></p>
+<p>To build AlphaGenome, DeepMind had to solve the “Context vs. Resolution” paradox. If you want to see far (1 million base pairs), you usually have to “blur” your vision (low resolution). If you want to see every single letter (1-bp resolution), you can usually only look at a tiny snippet. A hybrid U-Net + Transformer architecture that functions like a high-powered telescope with a wide-angle lens.</p>
+<h3 id="the-u-net-backbone-downsampling-the-noise">
+  The U-Net Backbone: “Downsampling” the Noise
+  <a class="heading-link" href="#the-u-net-backbone-downsampling-the-noise">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>AlphaGenome doesn’t just shove 1,000,000 base pairs into a Transformer that that would lead to trillions of calculations and would crash even the most powerful HPC cluster. Instead, it uses a U-Net style design, think of it as an “Information Funnel”</p>
+<p>The U-Net “skims” the DNA. It uses convolutional layers to group every 128 bp into a single “feature.” It does it again, grouping those features until it has a representation at 2,048-bp resolution. The result is you would have effectively shrunk a 1-million-pixel image into a smaller, denser map that highlights only the “landmarks” (like where the protein-binding sites are).</p>
+<h3 id="the-transformer-global-reasoning">
+  The Transformer: Global Reasoning
+  <a class="heading-link" href="#the-transformer-global-reasoning">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>Once the U-Net has compressed the data, the Transformer blocks take over. Training this required sequence parallelism across 8 interconnected TPU v3/v4 devices. They literally split the 1Mb sequence across different chips that “talk” to each other to calculate the attention mechanisms. Because the sequence is now much shorter, the Transformer can easily &ldquo;look&rdquo; at the beginning and the end of the 1Mb window at the same time. This is where it discovers the long-range logic like realizing a switch at the very start of the sequence is controlling a gene 800,000 letters away.</p>
+<h3 id="the-decoder">
+  The Decoder
+  <a class="heading-link" href="#the-decoder">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>Finally, the model needs to give us answers back at the 1-bp level (we need to know exactly which letter is the problem!). The other side of the &ldquo;U&rdquo; (the Decoder) takes those global insights and maps them back onto the original high-resolution sequence.</p>
+<h3 id="the-teacher-student-distillation">
+  The “Teacher-Student” Distillation
+  <a class="heading-link" href="#the-teacher-student-distillation">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>This is the part that makes the AlphaGenome API usable.</p>
+<ul>
+<li>
+<p>The Teacher: DeepMind first trained an “ensemble” (a group) of heavy, slow models to get maximum accuracy.</p>
+</li>
+<li>
+<p>The Student: They then used Knowledge Distillation to train a single, leaner “Student” model to mimic the ensemble’s results.</p>
+</li>
+<li>
+<p>The Result: You get “ensemble-level” accuracy in a model that can score a genetic variant in under one second on a single NVIDIA H100.</p>
+</li>
+</ul>
+
+      </div>
+
+
+      <footer>
+        
+
+
+        
+        
+        
+        
+        
+      </footer>
+    </article>
+
+    
+  </section>
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+      2020 -
+    
+    2026
+     Ndukwe Chidubem 
+    ·
+    
+    Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/" target="_blank" rel="noopener">Coder</a>.
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/js/coder.js"></script>
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+
+</html>

@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>comma ai on Ndukwe Chidubem</title>
-    <link>https://Duks31.github.io/tags/comma-ai/</link>
-    <description>Recent content in comma ai on Ndukwe Chidubem</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <title>Comma Ai on Ndukwe Chidubem</title>
+    <link>http://localhost:1313/tags/comma-ai/</link>
+    <description>Recent content in Comma Ai on Ndukwe Chidubem</description>
+    <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Fri, 27 Dec 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://Duks31.github.io/tags/comma-ai/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/comma-ai/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Comma.ai — Solving Self driving cars</title>
-      <link>https://Duks31.github.io/posts/2024-12-27-comma-ai-solving-self-driving-cars/</link>
+      <link>http://localhost:1313/posts/2024-12-27-comma-ai-solving-self-driving-cars/</link>
       <pubDate>Fri, 27 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>https://Duks31.github.io/posts/2024-12-27-comma-ai-solving-self-driving-cars/</guid>
-      <description>The bitter lesson in ML is that we must make methods that learn how to discover, not contain what we have discovered&#xA;A couple of years ago, the idea of self-driving cars was primarily focused on the use of multiple sensors like LIDAR, radar, ultrasonic sensors, and cameras. These sensors were mounted on custom-made vehicles or heavily modified production cars to achieve full autonomous functionality. The combination of these sensors enabled the vehicles to detect obstacles, map their surroundings in real time, and make complex driving decisions.</description>
+      <guid>http://localhost:1313/posts/2024-12-27-comma-ai-solving-self-driving-cars/</guid>
+      <description>&lt;p&gt;&lt;em&gt;The bitter lesson in ML is that we must make methods that learn how to discover, not contain what we have discovered&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://cdn-images-1.medium.com/max/2000/0*v7SCZDNkIuoyS2i9.jpeg&#34; alt=&#34;source: comma ai&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;A couple of years ago, the idea of self-driving cars was primarily focused on the use of multiple sensors like LIDAR, radar, ultrasonic sensors, and cameras. These sensors were mounted on custom-made vehicles or heavily modified production cars to achieve full autonomous functionality. The combination of these sensors enabled the vehicles to detect obstacles, map their surroundings in real time, and make complex driving decisions.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

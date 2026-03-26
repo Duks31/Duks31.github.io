@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <title>
+  The FTI (Feature Training Inference) Architecture · Ndukwe Chidubem
+</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="Ndukwe Chidubem">
+<meta name="description" content="
+Over the years I have training and developing Machine Learning algorithms and it didn’t take long before I noticed that I needed to find a way to take my models into production then I delved into the world of MLOps, actually I heard about it first from Pau Labarta Bajo, in this X post and it was actually through this PyData workshop were Jim Dowling, CEO of Hopsworks, talked about building production Machine Learning systems with only python using serverless service, that I got more exposed to MLOps">
+<meta name="keywords" content="blog,developer,personal">
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="The FTI (Feature Training Inference) Architecture">
+  <meta name="twitter:description" content="Over the years I have training and developing Machine Learning algorithms and it didn’t take long before I noticed that I needed to find a way to take my models into production then I delved into the world of MLOps, actually I heard about it first from Pau Labarta Bajo, in this X post and it was actually through this PyData workshop were Jim Dowling, CEO of Hopsworks, talked about building production Machine Learning systems with only python using serverless service, that I got more exposed to MLOps">
+
+<meta property="og:url" content="http://localhost:1313/posts/2026-01-11-fti/">
+  <meta property="og:site_name" content="Ndukwe Chidubem">
+  <meta property="og:title" content="The FTI (Feature Training Inference) Architecture">
+  <meta property="og:description" content="Over the years I have training and developing Machine Learning algorithms and it didn’t take long before I noticed that I needed to find a way to take my models into production then I delved into the world of MLOps, actually I heard about it first from Pau Labarta Bajo, in this X post and it was actually through this PyData workshop were Jim Dowling, CEO of Hopsworks, talked about building production Machine Learning systems with only python using serverless service, that I got more exposed to MLOps">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2026-01-11T00:00:00+00:00">
+    <meta property="article:modified_time" content="2026-01-11T00:00:00+00:00">
+    <meta property="article:tag" content="Machine Learning">
+
+
+
+
+<link rel="canonical" href="http://localhost:1313/posts/2026-01-11-fti/">
+
+
+<link rel="preload" href="/fonts/forkawesome-webfont.woff2?v=1.2.0" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/css/coder.css" media="screen">
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="/css/coder-dark.css" media="screen">
+  
+
+
+
+ 
+
+
+
+
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg" sizes="any">
+<link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+	
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+
+
+
+
+
+
+
+</head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-dark">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="/">
+      Ndukwe Chidubem
+    </a>
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/about/">About</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/posts/">Blog</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/projects/">Projects</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/experience/">Experience</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/contact/">Contact me</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">
+            <a class="title-link" href="http://localhost:1313/posts/2026-01-11-fti/">
+              The FTI (Feature Training Inference) Architecture
+            </a>
+          </h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa fa-calendar" aria-hidden="true"></i>
+              <time datetime="2026-01-11T00:00:00Z">
+                January 11, 2026
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fa fa-clock-o" aria-hidden="true"></i>
+              6-minute read
+            </span>
+          </div>
+          
+          
+          <div class="tags">
+  <i class="fa fa-tag" aria-hidden="true"></i>
+    <span class="tag">
+      <a href="/tags/machine-learning/">Machine Learning</a>
+    </span></div>
+
+        </div>
+      </header>
+
+      <div class="post-content">
+        
+        <p><img src="../../images/FTI.png" alt="FTI Architecture"></p>
+<p>Over the years I have training and developing Machine Learning algorithms and it didn’t take long before I noticed that I needed to find a way to take my models into production then I delved into the world of MLOps, actually I heard about it first from <a href="https://x.com/paulabartabajo_"  class="external-link" target="_blank" rel="noopener">Pau Labarta Bajo</a>, in this <a href="https://x.com/paulabartabajo_/status/1704380630547439702?s=20"  class="external-link" target="_blank" rel="noopener">X post</a> and it was actually through this PyData <a href="https://www.youtube.com/watch?v=Jf3259BDMC0"  class="external-link" target="_blank" rel="noopener">workshop</a> were Jim Dowling, CEO of Hopsworks, talked about building production Machine Learning systems with only python using serverless service, that I got more exposed to MLOps</p>
+<p>So, in this post I would just like to share why MLOps should be done more.</p>
+<h2 id="the-monolith-problem">
+  The Monolith Problem
+  <a class="heading-link" href="#the-monolith-problem">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>If your early days of machine learning were anything like mine, your workflow probably looked exactly like this: You open up a Jupyter Notebook. In the first few cells, you write some code to pull data from a CSV or an API. Next, you spend 50 cells cleaning it, dropping nulls, and doing feature engineering. Finally, you train your model, get a great accuracy score, and think, “Awesome, I am ready for production!”</p>
+<p>But here is the harsh reality: Jupyter Notebooks are for science experiments, not software engineering.</p>
+<p>When you try to take that massive, monolithic script and deploy it to a live server, things start breaking. This is the Monolith Problem. Early ML projects relied heavily on these manual, siloed workflows, which lack the scalability, reproducibility, and automation needed for real-world applications.</p>
+<p>Here is why the “all-in-one” pipeline falls apart in production:</p>
+<p><strong>The “All or Nothing” Failure</strong>: In a monolith, if a single upstream data source changes its schema (like a frontend developer adding a new category to a dropdown list), your entire data pipeline might quietly break. If the data extraction fails, your model can’t make predictions because everything is tied together.</p>
+<p><strong>Resource Waste &amp; Scaling Issues</strong>: Training a model requires expensive, high-powered compute like GPUs. Fetching and cleaning data usually just requires a basic CPU. If they are entangled in one script, you are paying for an expensive GPU to sit idle while it waits for data to download. You lose the ability to scale different parts of your system independently.</p>
+<p><strong>Training-Serving Skew (The Silent Killer)</strong>: This is the most dangerous issue. In a monolith, features are often computed one way during the model’s training phase, but then a backend engineer has to rewrite that same feature logic for the live production API. These subtle differences mean the model that got 95% accuracy on your laptop might predict complete garbage in production, and because no actual code crashed, it goes completely unnoticed.</p>
+<p>To fix this, we need to stop treating ML like a single massive script and start treating it like a modular, distributed system.</p>
+<h2 id="fti">
+  FTI?
+  <a class="heading-link" href="#fti">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>To solve the Monolith Problem, the industry had to rethink how we build ML systems. The solution is the FTI Architecture.</p>
+<p>FTI stands for Feature, Training, and Inference.</p>
+<p>Instead of writing one massive script that tries to do everything, the FTI pattern breaks your machine learning workflow down into three completely independent, decoupled pipelines. Think of it like the classic separation of concerns in software engineering (like splitting a web app into a Database, a Backend API, and a Frontend UI).</p>
+<p>Here is why this separation changes everything:</p>
+<p><strong>Modularity</strong>: Because the pipelines are separate, they can be written in different languages, managed by different teams, and scaled on completely different hardware.</p>
+<p><strong>Reusability</strong>: You stop rewriting the same data-cleaning code for every new project.</p>
+<p><strong>Solving the Skew</strong>: This architecture completely eliminates “Training-Serving Skew” by forcing both your training model and your live production app to pull data from the exact same central source.</p>
+<p>At the center of these three pipelines are two crucial pieces of shared storage that act as the glue: a Feature Store (for data) and a Model Registry (for the trained algorithms).</p>
+<p>Let’s break down exactly what each of these three pipelines does.</p>
+<h2 id="feature-pipeline">
+  Feature Pipeline
+  <a class="heading-link" href="#feature-pipeline">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>The Feature Pipeline is the foundation of the FTI architecture. Its only job is to extract raw, messy data from your sources (like APIs, SQL databases, or event logs), clean it up, and engineer it into useful features.</p>
+<p><strong>The Output</strong>: This pipeline does not talk to a machine learning model. Instead, it outputs all that clean data into a centralized database called a <strong>Feature Store</strong>.</p>
+<p><strong>Why it’s separate</strong>: Raw data is constantly changing. This pipeline needs to run continuously (or on a daily schedule) to keep your data fresh, entirely independent of your modeling process. By dumping everything into a Feature Store, you guarantee that both your training environment and your live production environment are pulling the exact same, version-controlled data.</p>
+<h2 id="training-pipeline">
+  Training Pipeline
+  <a class="heading-link" href="#training-pipeline">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>If the Feature Pipeline is the supply chain, the Training Pipeline is the “Brain Factory.” This pipeline pulls a historical snapshot of your data from the Feature Store and uses it to teach an algorithm how to find patterns.</p>
+<p><strong>The Output</strong>: It produces a trained algorithm and saves it into a version-controlled <strong>Model Registry</strong>.</p>
+<p><strong>Why it’s separate</strong>: Training an AI model is computationally heavy and often requires expensive hardware like GPUs. You do not want to run this process every time a user interacts with your app. You only trigger the Training Pipeline when necessary, like when you have accumulated enough new data, or when your current model starts to degrade.</p>
+<h2 id="inference-pipeline">
+  Inference Pipeline
+  <a class="heading-link" href="#inference-pipeline">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>The Inference Pipeline is the delivery system. It is where your trained model actually meets the real world and starts generating value by making predictions on new, unseen data.</p>
+<p><strong>The Output</strong>: Live predictions served directly to your users, usually via a REST API or a web dashboard.</p>
+<p><strong>Why it’s separate</strong>: Inference is all about ultra-low latency and high reliability. When a user asks for a prediction, this pipeline instantly downloads the latest approved model from the Model Registry, grabs the freshest features from the Feature Store, and calculates the answer in milliseconds. Because it is completely decoupled, if your heavy Training Pipeline crashes on a Tuesday, your Inference Pipeline will happily stay online, serving predictions using Monday’s model.</p>
+<p>Adopting the FTI architecture forces you to build modular, scalable, and resilient systems. It eliminates the headaches of training-serving skew and lets you update your data without breaking your live applications.</p>
+<p>If you are still deploying monolithic notebooks, give the FTI pattern a try on your next project. It might just change how you build ML systems forever.</p>
+
+      </div>
+
+
+      <footer>
+        
+
+
+        
+        
+        
+        
+        
+      </footer>
+    </article>
+
+    
+  </section>
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+      2020 -
+    
+    2026
+     Ndukwe Chidubem 
+    ·
+    
+    Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/" target="_blank" rel="noopener">Coder</a>.
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/js/coder.js"></script>
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+
+</html>

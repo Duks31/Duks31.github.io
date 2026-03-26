@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   <title>
   My Bot · Ndukwe Chidubem
 </title>
@@ -15,31 +15,147 @@
 <meta name="author" content="Ndukwe Chidubem">
 <meta name="description" content="Check out the live demo on github: https://github.com/Duks31/my_bot/
 Diff Drive Robot Using ROS2, Gazebo, Rviz2 and Fusion 360
-DescriptionLink to headingThis repository contains the ROS2 implementation for a differential drive robot. The package includes nodes for controlling the robot, simulating its motion.
-System RequirementsLink to headingUbuntu 20.04 &gt;= ROS2 Humble Python 3.XX Repository StructureLink to headingmy_bot ├── CMakeLists.txt ├── LICENSE.md ├── README.md ├── config │ ├── drive_bot.">
+
+  Description
+  
+    
+    Link to heading
+  
+
+This repository contains the ROS2 implementation for a differential drive robot. The package includes nodes for controlling the robot, simulating its motion.
+
+  System Requirements
+  
+    
+    Link to heading
+  
+
+
+Ubuntu 20.04
+&gt;= ROS2 Humble
+Python 3.XX
+
+
+  Repository Structure
+  
+    
+    Link to heading
+  
+
+my_bot
+├── CMakeLists.txt
+├── LICENSE.md
+├── README.md
+├── config
+│   ├── drive_bot.rviz
+│   ├── empty.yaml
+│   ├── my_controllers.yaml
+│   └── view_bot.rviz
+├── description
+│   ├── gazebo_control.xacro
+│   ├── inertial_macros.xacro
+│   ├── robot.urdf.xacro
+│   ├── robot_core.xacro
+│   └── ros2_control.xacro
+├── launch
+│   ├── launch_sim.launch.py
+│   └── rsp.launch.py
+├── log
+│   ├── COLCON_IGNORE
+│   ├── latest -&gt; latest_list
+│   ├── latest_list -&gt; list_2024-11-25_17-22-41
+│   └── list_2024-11-25_17-22-41
+│       └── logger_all.log
+├── package.xml
+└── worlds
+    ├── empty.world
+    └── obstacles.world
+
+  Installation and Build Instructions
+  
+    
+    Link to heading
+  
+
+
+Make a ros2 workspace and initialize it
+
+   mkdir -p ~/my_bot_ws/src
+   cd ~/my_bot_ws
+   colcon build
+   source install/setup.bash
+
+Clone the repository
+
+    cd ~/my_bot_ws/src
+    git clone https://github.com/Duks31/my_bot
+
+Navigate to the workspace and build the package
+
+    cd ~/my_bot_ws
+    colcon build
+
+Install dependencies and build the workspace
+
+    cd ~/ros2_ws
+    rosdep install --from-paths src --ignore-src -r -y
+    colcon build
+    source install/setup.bash
+
+Run the simulation
+
+    ros2 launch my_bot launch_sim.launch.py world:=./src/my_bot/worlds/obstacles.world
+
+Remap and run the teleop node
+
+    ros2 run teleop_twist_keyboard teleop_twist_keyboard --ros-args -r /cmd_vel:=/diff_cont/cmd_vel_unstamped
+
+Visualize the robot in RViz2 (Optional)
+
+Open a new terminal and run the following command
+
+Rviz2
+
+In RViz2, set the Fixed Frame to odom and add the RobotModel to visualize the robot.
+Add tf and RobotModel to visualize the robot in RViz2.
+
+
+
+
+  Robot Description (URDF)
+  
+    
+    Link to heading
+  
+
+">
 <meta name="keywords" content="blog,developer,personal">
 
-<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="My Bot"/>
-<meta name="twitter:description" content="Check out the live demo on github: https://github.com/Duks31/my_bot/
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="My Bot">
+  <meta name="twitter:description" content="Check out the live demo on github: https://github.com/Duks31/my_bot/
 Diff Drive Robot Using ROS2, Gazebo, Rviz2 and Fusion 360
-DescriptionLink to headingThis repository contains the ROS2 implementation for a differential drive robot. The package includes nodes for controlling the robot, simulating its motion.
-System RequirementsLink to headingUbuntu 20.04 &gt;= ROS2 Humble Python 3.XX Repository StructureLink to headingmy_bot ├── CMakeLists.txt ├── LICENSE.md ├── README.md ├── config │ ├── drive_bot."/>
+Description Link to heading This repository contains the ROS2 implementation for a differential drive robot. The package includes nodes for controlling the robot, simulating its motion.
+System Requirements Link to heading Ubuntu 20.04 &gt;= ROS2 Humble Python 3.XX Repository Structure Link to heading my_bot ├── CMakeLists.txt ├── LICENSE.md ├── README.md ├── config │ ├── drive_bot.rviz │ ├── empty.yaml │ ├── my_controllers.yaml │ └── view_bot.rviz ├── description │ ├── gazebo_control.xacro │ ├── inertial_macros.xacro │ ├── robot.urdf.xacro │ ├── robot_core.xacro │ └── ros2_control.xacro ├── launch │ ├── launch_sim.launch.py │ └── rsp.launch.py ├── log │ ├── COLCON_IGNORE │ ├── latest -&gt; latest_list │ ├── latest_list -&gt; list_2024-11-25_17-22-41 │ └── list_2024-11-25_17-22-41 │ └── logger_all.log ├── package.xml └── worlds ├── empty.world └── obstacles.world Installation and Build Instructions Link to heading Make a ros2 workspace and initialize it mkdir -p ~/my_bot_ws/src cd ~/my_bot_ws colcon build source install/setup.bash Clone the repository cd ~/my_bot_ws/src git clone https://github.com/Duks31/my_bot Navigate to the workspace and build the package cd ~/my_bot_ws colcon build Install dependencies and build the workspace cd ~/ros2_ws rosdep install --from-paths src --ignore-src -r -y colcon build source install/setup.bash Run the simulation ros2 launch my_bot launch_sim.launch.py world:=./src/my_bot/worlds/obstacles.world Remap and run the teleop node ros2 run teleop_twist_keyboard teleop_twist_keyboard --ros-args -r /cmd_vel:=/diff_cont/cmd_vel_unstamped Visualize the robot in RViz2 (Optional) Open a new terminal and run the following command Rviz2 In RViz2, set the Fixed Frame to odom and add the RobotModel to visualize the robot. Add tf and RobotModel to visualize the robot in RViz2. Robot Description (URDF) Link to heading">
 
-<meta property="og:title" content="My Bot" />
-<meta property="og:description" content="Check out the live demo on github: https://github.com/Duks31/my_bot/
+<meta property="og:url" content="http://localhost:1313/projects/my_bot/">
+  <meta property="og:site_name" content="Ndukwe Chidubem">
+  <meta property="og:title" content="My Bot">
+  <meta property="og:description" content="Check out the live demo on github: https://github.com/Duks31/my_bot/
 Diff Drive Robot Using ROS2, Gazebo, Rviz2 and Fusion 360
-DescriptionLink to headingThis repository contains the ROS2 implementation for a differential drive robot. The package includes nodes for controlling the robot, simulating its motion.
-System RequirementsLink to headingUbuntu 20.04 &gt;= ROS2 Humble Python 3.XX Repository StructureLink to headingmy_bot ├── CMakeLists.txt ├── LICENSE.md ├── README.md ├── config │ ├── drive_bot." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://Duks31.github.io/projects/my_bot/" /><meta property="article:section" content="projects" />
-<meta property="article:published_time" content="2024-12-24T00:00:00+00:00" />
-<meta property="article:modified_time" content="2024-12-24T00:00:00+00:00" />
+Description Link to heading This repository contains the ROS2 implementation for a differential drive robot. The package includes nodes for controlling the robot, simulating its motion.
+System Requirements Link to heading Ubuntu 20.04 &gt;= ROS2 Humble Python 3.XX Repository Structure Link to heading my_bot ├── CMakeLists.txt ├── LICENSE.md ├── README.md ├── config │ ├── drive_bot.rviz │ ├── empty.yaml │ ├── my_controllers.yaml │ └── view_bot.rviz ├── description │ ├── gazebo_control.xacro │ ├── inertial_macros.xacro │ ├── robot.urdf.xacro │ ├── robot_core.xacro │ └── ros2_control.xacro ├── launch │ ├── launch_sim.launch.py │ └── rsp.launch.py ├── log │ ├── COLCON_IGNORE │ ├── latest -&gt; latest_list │ ├── latest_list -&gt; list_2024-11-25_17-22-41 │ └── list_2024-11-25_17-22-41 │ └── logger_all.log ├── package.xml └── worlds ├── empty.world └── obstacles.world Installation and Build Instructions Link to heading Make a ros2 workspace and initialize it mkdir -p ~/my_bot_ws/src cd ~/my_bot_ws colcon build source install/setup.bash Clone the repository cd ~/my_bot_ws/src git clone https://github.com/Duks31/my_bot Navigate to the workspace and build the package cd ~/my_bot_ws colcon build Install dependencies and build the workspace cd ~/ros2_ws rosdep install --from-paths src --ignore-src -r -y colcon build source install/setup.bash Run the simulation ros2 launch my_bot launch_sim.launch.py world:=./src/my_bot/worlds/obstacles.world Remap and run the teleop node ros2 run teleop_twist_keyboard teleop_twist_keyboard --ros-args -r /cmd_vel:=/diff_cont/cmd_vel_unstamped Visualize the robot in RViz2 (Optional) Open a new terminal and run the following command Rviz2 In RViz2, set the Fixed Frame to odom and add the RobotModel to visualize the robot. Add tf and RobotModel to visualize the robot in RViz2. Robot Description (URDF) Link to heading">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="projects">
+    <meta property="article:published_time" content="2024-12-24T00:00:00+00:00">
+    <meta property="article:modified_time" content="2024-12-24T00:00:00+00:00">
 
 
 
 
-
-<link rel="canonical" href="https://Duks31.github.io/projects/my_bot/">
+<link rel="canonical" href="http://localhost:1313/projects/my_bot/">
 
 
 <link rel="preload" href="/fonts/forkawesome-webfont.woff2?v=1.2.0" as="font" type="font/woff2" crossorigin>
@@ -47,7 +163,7 @@ System RequirementsLink to headingUbuntu 20.04 &gt;= ROS2 Humble Python 3.XX R
 
   
   
-  <link rel="stylesheet" href="/css/coder.min.135e22c97ff685fe983fc60048e309ced8f00d8d38f536aa67dba8a13a03dfa4.css" integrity="sha256-E14iyX/2hf6YP8YASOMJztjwDY049TaqZ9uooToD36Q=" crossorigin="anonymous" media="screen" />
+  <link rel="stylesheet" href="/css/coder.css" media="screen">
 
 
 
@@ -57,7 +173,7 @@ System RequirementsLink to headingUbuntu 20.04 &gt;= ROS2 Humble Python 3.XX R
   
     
     
-    <link rel="stylesheet" href="/css/coder-dark.min.a00e6364bacbc8266ad1cc81230774a1397198f8cfb7bcba29b7d6fcb54ce57f.css" integrity="sha256-oA5jZLrLyCZq0cyBIwd0oTlxmPjPt7y6KbfW/LVM5X8=" crossorigin="anonymous" media="screen" />
+    <link rel="stylesheet" href="/css/coder-dark.css" media="screen">
   
 
 
@@ -153,7 +269,7 @@ System RequirementsLink to headingUbuntu 20.04 &gt;= ROS2 Humble Python 3.XX R
   <article>
     <header>
       <h1 class="title">
-        <a class="title-link" href="https://Duks31.github.io/projects/my_bot/">
+        <a class="title-link" href="http://localhost:1313/projects/my_bot/">
           My Bot
         </a>
       </h1>
@@ -421,7 +537,7 @@ System RequirementsLink to headingUbuntu 20.04 &gt;= ROS2 Humble Python 3.XX R
     
       2020 -
     
-    2025
+    2026
      Ndukwe Chidubem 
     ·
     
@@ -436,7 +552,7 @@ System RequirementsLink to headingUbuntu 20.04 &gt;= ROS2 Humble Python 3.XX R
 
   
   
-  <script src="/js/coder.min.6ae284be93d2d19dad1f02b0039508d9aab3180a12a06dcc71b0b0ef7825a317.js" integrity="sha256-auKEvpPS0Z2tHwKwA5UI2aqzGAoSoG3McbCw73gloxc="></script>
+  <script src="/js/coder.js"></script>
   
 
   
