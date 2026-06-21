@@ -16,10 +16,8 @@ from pathlib import Path
 
 
 CATEGORY_LABELS = {
-    "systems": "Systems",
+    "robotics": "Robotics",
     "ml": "ML",
-    "web": "Web",
-    "hackathon": "Hackathons",
 }
 
 STATUS_LABELS = {

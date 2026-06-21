@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0">
   <channel>
-    <title>aman behera</title>
-    <link>https://beingamanforever.github.io/</link>
-    <description>Notes on systems programming, performance, and infrastructure</description>
+    <title>ndukwe chidubem</title>
+    <link>https://duks31.github.io/</link>
+    <description>Notes on ROS2 robotics, MLOps, and machine learning systems</description>
     <language>en</language>
-    <managingEditor>aman.behera.systems@gmail.com (Aman Behera)</managingEditor>
-    <webMaster>aman.behera.systems@gmail.com (Aman Behera)</webMaster>
-    <lastBuildDate>Sun, 10 May 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://beingamanforever.github.io/feed.xml" rel="self" type="application/rss+xml"/>
+    <managingEditor>chidubemjan31@gmail.com (Ndukwe Chidubem)</managingEditor>
+    <webMaster>chidubemjan31@gmail.com (Ndukwe Chidubem)</webMaster>
+    <lastBuildDate>Sun, 21 Jun 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://duks31.github.io/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
-      <title>SWAR Parsing Internals</title>
-      <link>https://beingamanforever.github.io/posts/2026-05-07-swar-parsing-internals.html</link>
-      <guid isPermaLink="true">https://beingamanforever.github.io/posts/2026-05-07-swar-parsing-internals.html</guid>
-      <pubDate>Thu, 07 May 2026 00:00:00 +0000</pubDate>
-      <description>How SIMD-Within-A-Register turns ordinary 64-bit integers into 8-lane parallel byte processors.</description>
-      <category>systems, performance</category>
+      <title>Vision Language Action (VLA) Models</title>
+      <link>https://duks31.github.io/posts/2026-03-26-vision-language-action-vla-models.html</link>
+      <guid isPermaLink="true">https://duks31.github.io/posts/2026-03-26-vision-language-action-vla-models.html</guid>
+      <pubDate>Thu, 26 Mar 2026 00:00:00 +0000</pubDate>
+      <description>A look at how VLA models bridge perception and physical movement, from RT-2 to pi0.</description>
+      <category>robotics, deep learning, computer vision</category>
     </item>
   </channel>
 </rss>

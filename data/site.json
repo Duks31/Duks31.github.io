@@ -1,11 +1,11 @@
 {
-  "name": "Aman Behera",
-  "tagline": "Should they come looking for me? I intend to be found",
-  "site_url": "https://beingamanforever.github.io",
-  "site_title": "aman behera",
-  "site_description": "Notes on systems programming, performance, and infrastructure",
-  "email": "aman.behera.systems@gmail.com",
-  "github": "beingamanforever",
-  "linkedin": "aman-behera-",
-  "og_image": "https://beingamanforever.github.io/assets/og-home.png"
+  "name": "Ndukwe Chidubem",
+  "tagline": "Solving problems with Machine learning and building robots with AI",
+  "site_url": "https://duks31.github.io",
+  "site_title": "ndukwe chidubem",
+  "site_description": "Notes on ROS2 robotics, MLOps, and machine learning systems",
+  "email": "chidubemjan31@gmail.com",
+  "github": "Duks31",
+  "linkedin": "chidubem-ndukwe-b8778920a",
+  "og_image": "https://duks31.github.io/assets/og-home.png"
 }
