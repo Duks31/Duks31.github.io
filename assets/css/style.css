@@ -3054,3 +3054,11 @@ body.dark-mode .post-nav a {
 .post-header {
     margin-bottom: 0;
 }
+
+.post-content img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 1.5rem auto;
+    border-radius: 6px;
+}

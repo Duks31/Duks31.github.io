@@ -12,7 +12,7 @@ python3 -m http.server 3456
 ## Build
 
 ```sh
-./scripts/build.sh
+    ./scripts/build.sh
 ```
 
 Builds every page from its template, renders all posts via Pandoc,

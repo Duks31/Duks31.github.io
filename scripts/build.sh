@@ -191,7 +191,7 @@ fi
 mkdir -p assets/data
 PRS_CACHE="assets/data/recent-prs.json"
 PRS_QUERY="is:pr+author:$SITE_GITHUB+is:merged"
-PRS_URL="https://api.github.com/search/issues?q=${PRS_QUERY}&sort=updated&order=desc&per_page=5"
+PRS_URL="https://api.github.com/search/issues?q=${PRS_QUERY}&sort=created&order=desc&per_page=15"
 if [ -n "${GH_TOKEN:-}" ]; then
   pr_curl_ok=$(curl -fsSL --max-time 6 \
     -H 'Accept: application/vnd.github+json' \
@@ -209,7 +209,7 @@ if [ "$pr_curl_ok" = "y" ]; then
   python3 -c "
 import json, sys
 data = json.load(open('$PRS_CACHE.tmp'))
-items = data.get('items', [])[:5]
+items = sorted(data.get('items', []), key=lambda it: it.get('closed_at') or it.get('updated_at') or '', reverse=True)[:5]
 out = [
   {
     'title': it['title'],
@@ -431,7 +431,7 @@ if [ "$POST_COUNT" -ge "$TAGS_THRESHOLD" ]; then
 fi
 
 PAGE_TEMPLATES=(index_template.html work_template.html contact_template.html
-                blog_template.html now_template.html 404_template.html)
+                blog_template.html 404_template.html)
 if [ "$TAGS_PAGE_ENABLED" = "1" ]; then
   PAGE_TEMPLATES+=(tags_template.html)
 fi
@@ -480,7 +480,7 @@ sys.stdout.write(panel.replace('GRAPH_DATA_PLACEHOLDER', data))
   substitute_list "<!-- GRAPH_PANEL -->"     "$BUILD_DIR/graph_panel.final.html" "$BUILD_DIR/blog.html"
 fi
 
-OUT_PAGES=(index.html work.html contact.html blog.html now.html 404.html)
+OUT_PAGES=(index.html work.html contact.html blog.html 404.html)
 if [ "$TAGS_PAGE_ENABLED" = "1" ]; then
   OUT_PAGES+=(tags.html)
 else
@@ -556,7 +556,7 @@ fi
 {
   printf '<?xml version="1.0" encoding="UTF-8"?>\n'
   printf '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
-  SITEMAP_PATHS=("" work.html blog.html now.html contact.html)
+  SITEMAP_PATHS=("" work.html blog.html contact.html)
   if [ "$TAGS_PAGE_ENABLED" = "1" ]; then
     SITEMAP_PATHS+=(tags.html)
   fi

@@ -29,13 +29,22 @@
     "featured": true
   },
   {
+    "title": "Arxis: RAG Platform",
+    "description": "Retrieval-augmented generation platform using sentence-transformers, ChromaDB, and Mistral via Ollama, with FastAPI serving, MLflow tracking, and Evidently monitoring.",
+    "tags": ["RAG", "LLM", "Docker"],
+    "category": "ml",
+    "status": "building",
+    "signal": "scaffolded",
+    "featured": false
+  },
+  {
     "title": "Path Planning Algorithm Analysis",
     "description": "Comparative study of BFS, DFS, A*, and a Genetic Algorithm on static and dynamic grid environments. Custom C++ visualization engine built with Raylib, benchmarked across a 100x100 grid with moving obstacles.",
     "tags": ["C++", "algorithms", "Raylib"],
     "category": "ml",
     "status": "shipped",
     "signal": "A* 770μs",
-    "url": "https://github.com/Duks31/path_planner",
+    "url": "https://github.com/Duks31/path-planner",
     "featured": true
   },
   {
