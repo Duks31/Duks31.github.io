@@ -26,6 +26,7 @@
     "category": "ml",
     "status": "building",
     "signal": "ADTC '26",
+    "url": "https://github.com/Duks31/gramai",
     "featured": true
   },
   {
@@ -55,15 +56,6 @@
     "status": "shipped",
     "signal": "FTI pipeline",
     "url": "https://github.com/Duks31/air_quality",
-    "featured": false
-  },
-  {
-    "title": "Arxis: RAG Platform",
-    "description": "Retrieval-augmented generation platform using sentence-transformers, ChromaDB, and Mistral via Ollama, with FastAPI serving, MLflow tracking, and Evidently monitoring.",
-    "tags": ["RAG", "LLM", "Docker"],
-    "category": "ml",
-    "status": "building",
-    "signal": "scaffolded",
     "featured": false
   },
   {
