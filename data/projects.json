@@ -1,6 +1,6 @@
 [
   {
-    "title": "Cika: Autonomous Waste-Collecting Robot",
+    "title": "Cika: Autonomous Mobile Robot",
     "description": "4WD skid-steer AMR running ROS2 Humble with SLAM Toolbox, Nav2, and EKF sensor fusion. RPLIDAR + OAK-D Lite for perception, YOLOv8 on-device waste detection, 6-DOF arm via MoveIt2. Capstone project, compute split across Raspberry Pi and laptop over a UART-to-ESP32 control bridge.",
     "tags": ["ROS2", "Nav2", "SLAM", "robotics"],
     "category": "robotics",
@@ -28,15 +28,6 @@
     "signal": "ADTC '26",
     "url": "https://github.com/Duks31/gramai",
     "featured": true
-  },
-  {
-    "title": "Arxis: RAG Platform",
-    "description": "Retrieval-augmented generation platform using sentence-transformers, ChromaDB, and Mistral via Ollama, with FastAPI serving, MLflow tracking, and Evidently monitoring.",
-    "tags": ["RAG", "LLM", "Docker"],
-    "category": "ml",
-    "status": "building",
-    "signal": "scaffolded",
-    "featured": false
   },
   {
     "title": "Path Planning Algorithm Analysis",
