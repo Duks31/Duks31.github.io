@@ -20,16 +20,6 @@
     "featured": true
   },
   {
-    "title": "GramAI: Traceback Debugging Assistant",
-    "description": "Python traceback debugging assistant built on Qwen2.5-3B via llama.cpp, with a two-tier RAG corpus for grounded fixes. Built for the Africa Deep Tech Challenge 2026.",
-    "tags": ["LLM", "RAG", "llama.cpp"],
-    "category": "ml",
-    "status": "building",
-    "signal": "ADTC '26",
-    "url": "https://github.com/Duks31/gramai",
-    "featured": true
-  },
-  {
     "title": "Path Planning Algorithm Analysis",
     "description": "Comparative study of BFS, DFS, A*, and a Genetic Algorithm on static and dynamic grid environments. Custom C++ visualization engine built with Raylib, benchmarked across a 100x100 grid with moving obstacles.",
     "tags": ["C++", "algorithms", "Raylib"],
@@ -54,7 +44,7 @@
     "description": "6-DOF robotic arm simulated in Gazebo with URDF/XACRO modeling, ROS2 control, and Python scripting for motion commands.",
     "tags": ["ROS2", "Gazebo", "URDF"],
     "category": "robotics",
-    "status": "dormant",
+    "status": "shipped",
     "signal": "WIP",
     "url": "https://github.com/Duks31/robot-arm",
     "featured": false
